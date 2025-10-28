@@ -1,16 +1,21 @@
-<!DOCTYPE html>
+<v!DOC<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>テスト：checkAnswer動作確認</title>
+  <title>ボタン動作テスト</title>
 </head>
 <body>
-  <h1>答え入力テスト</h1>
-  <input type="text" id="answer" placeholder="答えを入力" />
+  <h2>ボタンテスト</h2>
+  <input type="text" id="answer" placeholder="答えを入力">
   <button onclick="checkAnswer()">送信</button>
   <p id="message"></p>
 
-  <script src="js/main.js" defer></script>
+  <script>
+  window.checkAnswer = function() {
+    const msg = document.getElementById("message");
+    msg.innerText = "ボタンが反応しました ✅";
+    msg.style.color = "lime";
+  };
+  </script>
 </body>
 </html>
