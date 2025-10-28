@@ -18,69 +18,114 @@
 
       <p>その足に結ばれた銀色の封筒には、光のように反射するインクでこう書かれていた。</p>
       <p>「次の宝は、“光の道”の奥にある。」</p>
-
-      <p>封筒を開けると、中には１枚の不思議な図が入っていた。<br>
-      鏡のような青い長方形、そして赤い矢印の光線――。だが、説明は一切ない。</p>
-
-      <p>灰原：「まるで……迷路ね。」<br>
-      コナン：「いや、これは“光の迷宮”。施設の中を走る光の経路を示している。」</p>
     </div>
 
+    <!-- 🕵️ Scene 1：KAGRAの通路 -->
+    <div class="scene-visual" style="background-image:url('images/bg_kagra_tunnel.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>まるで……迷路ね。</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p><em>いや、これは“光の迷宮”。施設の中を走る光の経路を示している。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📜 謎の図 -->
     <div class="puzzle-image">
       <img src="images/puzzle3_jp_main.png" alt="光の道と鏡が描かれた謎の図" />
     </div>
 
-    <div class="story">
-      <p>阿笠博士：「うむむ……鏡に当たって反射してるようじゃが、どこへ行くのかさっぱり分からん！」<br>
-      光彦：「矢印がバラバラで、ゴールもないように見えます！」<br>
-      コナン：「つまり――これは“ルールを知らないと解けない謎”ってわけだ。」</p>
+    <div class="scene-visual" style="background-image:url('images/bg_lab_discussion.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p><em>うむむ……鏡に当たって反射してるようじゃが、どこへ行くのかさっぱり分からん！</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/mitsuhiko.png" alt="光彦" class="char-face">
+        <div class="speech">
+          <div class="char-name mitsuhiko">光彦</div>
+          <p><em>矢印がバラバラで、ゴールもないように見えます！</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p><em>つまり――これは“ルールを知らないと解けない謎”ってわけだ。</em></p>
+        </div>
+      </div>
     </div>
 
+    <!-- 📘 光学ルール説明 -->
     <div class="puzzle-image">
       <img src="images/puzzle3_jp_rule.png" alt="光線の反射とビームスプリッターの説明図"
       style="max-width: 80%; height: auto; display: block; margin: 0 auto;" />
     </div>
 
-    <div class="story">
-      <p>コナンは手帳を取り出し、図に書き込みながら説明した。</p>
-      <p>コナン：「この装置の中では、光が鏡や“ビームスプリッター”に当たることで進む道が決まる。<br>
-      この素子は“半分反射・半分透過”する仕組みなんだ。」</p>
+    <div class="scene-visual" style="background-image:url('images/bg_optics_board.jpg');">
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p><em>この装置の中では、光が鏡や“ビームスプリッター”に当たることで進む道が決まる。<br>
+          この素子は“半分反射・半分透過”する仕組みなんだ。</em></p>
+        </div>
+      </div>
     </div>
 
     <div class="optics-rules">
       <h2>🌟 光学素子と光の動きのルールまとめ</h2>
-
       <ul>
         <li>🟥 <strong>光線（赤線）</strong><br>
           光が進む道を表す。矢印の方向に進む。<br>
-          光は途中で鏡やビームスプリッターに当たると、反射・透過などで進路が変わる。
+          鏡やビームスプリッターに当たると進路が変わる。
         </li>
-
         <li>🪞 <strong>鏡（Mirror）</strong><br>
-          光を反射する。入射角 = 反射角 の法則に従う。<br>
-          光は一方向に跳ね返るだけ（分かれない）。
+          光を反射する。入射角 = 反射角 の法則に従う。
         </li>
-
         <li>🔷 <strong>ビームスプリッター（Beam Splitter）</strong><br>
-          半透過鏡のような光学素子。<br>
-          光を2つの道に分ける：<br>
-          一部は透過してそのまま進み、<br>
-          一部は紺色の矢印の方向に反射して別の道へ進む。<br>
-          つまり、1本の光線が「透過光」と「反射光」に分かれて進む。
+          半透過鏡。光を二つの道に分ける。<br>
+          一部は透過し、一部は反射して別方向へ進む。
         </li>
-
         <li>⬛ <strong>黒い四角（停止点）</strong><br>
-          光がここに当たると止まる。<br>
-          それ以上は進まないし、反射もしない。
+          光が当たると止まる。反射もしない。
         </li>
       </ul>
     </div>
 
-    <div class="story">
-      <p>灰原：「つまり、この“光の動き”を正しく追えば、答えが出るということね。」<br>
-      コナン：「ああ――“真実の光”が導く言葉が、キッドの狙いだ。」</p>
+    <div class="scene-visual" style="background-image:url('images/bg_optics_reflect.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>つまり、この“光の動き”を正しく追えば、答えが出るということね。</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p><em>ああ――“真実の光”が導く言葉が、キッドの狙いだ。</em></p>
+        </div>
+      </div>
     </div>
 
+    <!-- 🔍 入力欄 -->
     <div class="controls">
       <input type="text" id="answer" placeholder="答えを入力してください…" />
       <button class="btn btn-primary" onclick="checkAnswer3()">送信</button>
@@ -91,30 +136,71 @@
     <p id="message"></p>
     <p id="hint" class="hint"></p>
 
-    <!-- 答えを出した後のみ表示 -->
+    <!-- ✅ 解説（正解後表示） -->
     <div id="explanation" class="explain" style="display:none;">
-      <div class="puzzle-image">
-        <img src="images/puzzle3_jp_answer.png" alt="LASERの答え図" />
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>赤い線をたどっていくと……文字が現れていく……L → A → S → E → R！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>LASER……！</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>そうか！ 光を増幅し、干渉させて距離の変化を測る装置……まさにこの施設の心臓部じゃ！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>キッドの言う“光の道”は、レーザーそのものを指していたんだ。</p>
+          </div>
+        </div>
       </div>
-
-      <p>コナンは赤い線をたどり、次々と鏡を反射していった。<br>
-      やがて、赤い光は一つの単語を描き出した――</p>
-
-      <p><strong>L → A → S → E → R</strong></p>
-
-      <p>灰原：「LASER……！」<br>
-      阿笠：「そうか！ 光を増幅し、干渉させて距離の変化を測る装置……まさにこの施設の心臓部じゃ！」<br>
-      コナン：「キッドの言う“光の道”は、レーザーそのものを指していたんだ。」</p>
     </div>
 
-    <div id="ending" class="story" style="display:none;">
+    <!-- 🌙 エンディング -->
+    <div id="ending" style="display:none;">
       <p>天井の反射光が集まり、白いマントの影が現れた。</p>
-      <p>キッド：「お見事、探偵くん。光の迷宮を抜けたようだね。<br>
-      だが――光がある限り、影もまた生まれる。」<br>
-      コナン：「“影の謎”……次の挑戦ってわけか。」<br>
-      キッド：「フフ、月明かりの下で会おう。――光と影の交わる場所で。」</p>
+      <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盗キッド" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盗キッド</div>
+            <p>お見事、探偵くん。光の迷宮を抜けたようだね。</p>
+          </div>
+        </div>
 
-      <p>キッドは眩い閃光の中へと姿を消した。</p>
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>だが――光がある限り、影もまた生まれる。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盗キッド" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盗キッド</div>
+            <p>フフ、月明かりの下で会おう。――光と影の交わる場所で。</p>
+          </div>
+        </div>
+      </div>
 
       <div class="next">
         <a href="puzzle4.html">▶ 第4話へ：消える光の謎</a>
@@ -163,3 +249,4 @@
   </script>
 </body>
 </html>
+
