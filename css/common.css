@@ -167,3 +167,80 @@ h1 {
   color: #eeeeee;
 }
 
+/* === キャラ演出共通設定 === */
+
+.scene-visual {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin: 20px 0 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* 背景の上に薄いフィルターで夜っぽさを出す */
+.scene-visual::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05), rgba(0,0,0,0.8));
+  z-index: 0;
+}
+
+.dialogue {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin: 16px 0;
+  z-index: 1;
+}
+
+.dialogue.left {
+  justify-content: flex-start;
+  animation: fadeInLeft 1.2s ease;
+}
+
+.dialogue.right {
+  justify-content: flex-end;
+  animation: fadeInRight 1.2s ease;
+}
+
+.char-face {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00ccff;
+  box-shadow: 0 0 10px #00ccff55;
+  background: #001020;
+}
+
+.speech {
+  max-width: 70%;
+  background: rgba(255,255,255,0.08);
+  border-left: 3px solid #00ccff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0 12px;
+  color: #e8faff;
+  font-size: 1.05em;
+  backdrop-filter: blur(4px);
+}
+
+/* 左右配置に応じた調整 */
+.dialogue.left .char-face { margin-right: 12px; }
+.dialogue.right .char-face { margin-left: 12px; border-color: #ff66cc; }
+
+/* === 登場アニメーション === */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}

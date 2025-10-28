@@ -68,3 +68,12 @@ window.kidReveal = function(lines) {
   })();
 };
 
+// 登場シーンの演出をゆっくりフェード
+document.addEventListener("DOMContentLoaded", () => {
+  const scenes = document.querySelectorAll(".scene-visual");
+  scenes.forEach(scene => {
+    scene.style.opacity = 0;
+    scene.style.transition = "opacity 1.5s ease";
+    setTimeout(() => { scene.style.opacity = 1; }, 300);
+  });
+});

@@ -12,17 +12,27 @@
   <div class="container">
     <h1>🎩《宇宙で一番優しい音》第1話　運命の交差点</h1>
 
-    <div class="scene">
-      <p>夜の帝都。満月が街を照らすころ、喫茶ポアロの店内に不思議な静寂が流れていた。</p>
-      <p>その時――店の窓を、ひらりと白いハトが横切り、一通の封筒がテーブルの上に舞い落ちた。</p>
-      <p>歩美：「あっ！ 手紙が降ってきた！」<br>
-         元太：「うまそうなにおいしねぇけど？」<br>
-         光彦：「いや、見て！ 宛名が……“江戸川コナン様”！」</p>
-      <p>封筒は真っ白な紙に、月光を反射する銀色のインクで文字が刻まれている。<br>
-         『To the Little Detective who sees through the dark』（闇を見抜く小さな探偵へ）</p>
-      <p>コナンは静かにそれを手に取り、封を切った。</p>
+    <!-- 🏙️ Scene 1：喫茶ポアロ -->
+    <div class="scene-visual" style="background-image:url('images/bg_cafe.jpg');">
+      <div class="dialogue left">
+        <img src="images/ayumi.png" alt="歩美" class="char-face">
+        <div class="speech"><p><strong>歩美：</strong>「あっ！ 手紙が降ってきた！」</p></div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/genta.png" alt="元太" class="char-face">
+        <div class="speech"><p><strong>元太：</strong>「うまそうなにおいしねぇけど？」</p></div>
+      </div>
+      <div class="dialogue left">
+        <img src="images/mitsuhiko.png" alt="光彦" class="char-face">
+        <div class="speech"><p><strong>光彦：</strong>「いや、見て！ 宛名が……“江戸川コナン様”！」</p></div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech"><p><strong>コナン：</strong>（静かに封を開けながら）「“闇を見抜く小さな探偵へ”、か……」</p></div>
+      </div>
     </div>
 
+    <!-- 💌 予告状 -->
     <div class="letter">
       <h2>💌 怪盗キッドの予告状</h2>
       <p>「次にいただくのは、“宇宙中で一番優しい音”。ヒントをあげます。<br>
@@ -31,58 +41,73 @@
          ――月下の奇術師より 🌙</p>
     </div>
 
-    <div class="scene">
-      <p>阿笠博士：「ほっほっ、相変わらず詩人じゃのぉ、あの泥棒は！」<br>
-         灰原：「赤い線が東大、紺が富山……じゃあ緑は何を意味してるのかしら？」<br>
-         コナン：「東大……富山……」</p>
-      <p>コナンはテーブルに図を広げた。そこには三本の線――赤、青、緑が、交わるように描かれていた。</p>
-
-      <h3>🧩 謎そのいち：光の交差点</h3>
-      <p>赤い線のときは「東大」、紺色線のときは「富山」。<br>
-         では、緑の線のときは何？</p>
-
-      <div class="puzzle-image">
-        <img src="images/puzzle1_jp.png" alt="第1問の謎（五十音表）" />
+    <!-- 🧠 Scene 2：推理 -->
+    <div class="scene-visual" style="background-image:url('images/bg_tokyo_night.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech"><p><strong>阿笠博士：</strong>「ほっほっ、相変わらず詩人じゃのぉ、あの泥棒は！」</p></div>
       </div>
-
-      <div class="controls">
-        <input type="text" id="answer" placeholder="答えを入力してください…" />
-        <button class="btn btn-primary" onclick="checkAnswer1()">送信</button>
-        <button class="btn btn-hint" onclick="showHint1()">ヒント</button>
-        <button class="btn btn-answer" onclick="showAnswer1()">答えを見る</button>
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech"><p><strong>灰原：</strong>「赤い線が東大、紺が富山……じゃあ緑は何を意味してるのかしら？」</p></div>
       </div>
-
-      <p id="message"></p>
-      <p id="hint" class="hint"></p>
-
-      <!-- 解説（※正解後に表示。ここではじめて KAGRA を出します） -->
-      <div id="explanation" class="explain" style="display:none;">
-        <h3>🧩 謎の構造</h3>
-        <p>この表は五十音表（あいうえお表）。縦は「行（あ・か・さ・た・な…）」、横は「段（a・i・u・e・o）」を表している。</p>
-        <p>線は、それぞれ音の位置をたどって、日本語の言葉を描いていた。</p>
-        <ul>
-          <li>🔴 赤い線：「と → う → だ → い」＝東大</li>
-          <li>🔵 紺色線：「と → や → ま」＝富山</li>
-          <li>🟢 緑色線：「か → ぐ → ら」＝KAGRA</li>
-        </ul>
-        <p><strong>コナン：</strong>「……“か → ぐ → ら”。 緑の線は『KAGRA（かぐら）』だ！」</p>
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech"><p><strong>コナン：</strong>「東大……富山……（何かの“線”を指してるのか？）」</p></div>
       </div>
+    </div>
 
-      <!-- エンディング（※正解後に表示。KAGRA の表記OK） -->
-      <div id="ending" style="display:none;">
-        <h3>🌙 結論と旅立ち</h3>
-        <p>灰原：「KAGRA……聞いたことがあるような、ないような。」<br>
-           コナン：「“見えない宇宙の声”を捕まえる施設――キッドが言いたかったのは、きっとそこだ。」<br>
-           阿笠：「ほっほっ、まさかコナンくん、そこへ行くつもりか？」<br>
-           コナン：「ああ。キッドが次に現れるのは、富山の山奥……“KAGRA”だ。」</p>
-        <p>歩美：「行こうよ！ 探偵団の出番だね！」<br>
-           光彦：「科学の謎に挑むなんて、わくわくします！」<br>
-           元太：「オレ、おにぎり持ってくぞ！」<br>
-           灰原：「まったく……あなたたち、ほんとに行く気なのね。」<br>
-           <em>コナン（心の声）：「宇宙中一番優しい声？　一体、キッドは何を狙ってるんだ？」</em></p>
-        <div class="next">
-          <a href="puzzle2.html">▶ 第2話へ：音のひみつ</a>
+    <!-- 🧩 謎の図 -->
+    <h3>🧩 謎そのいち：光の交差点</h3>
+    <p>赤い線のときは「東大」、紺色線のときは「富山」。<br>
+       では、緑の線のときは何？</p>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle1_jp.png" alt="第1問の謎（五十音表）" />
+    </div>
+
+    <div class="controls">
+      <input type="text" id="answer" placeholder="答えを入力してください…" />
+      <button class="btn btn-primary" onclick="checkAnswer1()">送信</button>
+      <button class="btn btn-hint" onclick="showHint1()">ヒント</button>
+      <button class="btn btn-answer" onclick="showAnswer1()">答えを見る</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- ✅ 解説（正解後） -->
+    <div id="explanation" class="explain" style="display:none;">
+      <h3>🧩 謎の構造</h3>
+      <p>この表は五十音表（あいうえお表）。縦は「行（あ・か・さ・た・な…）」、横は「段（a・i・u・e・o）」を表している。</p>
+      <p>線は、それぞれ音の位置をたどって、日本語の言葉を描いていた。</p>
+      <ul>
+        <li>🔴 赤い線：「と → う → だ → い」＝東大</li>
+        <li>🔵 紺色線：「と → や → ま」＝富山</li>
+        <li>🟢 緑色線：「か → ぐ → ら」＝KAGRA</li>
+      </ul>
+      <p><strong>コナン：</strong>「……“か → ぐ → ら”。 緑の線は『KAGRA（かぐら）』だ！」</p>
+    </div>
+
+    <!-- 🌙 エンディング -->
+    <div id="ending" style="display:none;">
+      <div class="scene-visual" style="background-image:url('images/bg_mountain_night.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech"><p><strong>コナン：</strong>「“見えない宇宙の声”を捕まえる施設――キッドが言いたかったのは、きっとそこだ。」</p></div>
         </div>
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech"><p><strong>灰原：</strong>「KAGRA……聞いたことがあるような、ないような。」</p></div>
+        </div>
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech"><p><strong>阿笠博士：</strong>「ほっほっ、まさかコナンくん、そこへ行くつもりか？」</p></div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle2.html">▶ 第2話へ：音のひみつ</a>
       </div>
     </div>
   </div>
@@ -96,9 +121,7 @@
       "🌌 ヒント③：緑の線は『か→ぐ→ら』。富山の山奥にある“とても大きな施設”を思い出してみよう。"
     ];
 
-    function showHint1() {
-      showHint(hints1); // common.js の汎用ヒント表示
-    }
+    function showHint1() { showHint(hints1); }
 
     function checkAnswer1() {
       const input = document.getElementById("answer").value.trim();
@@ -111,7 +134,7 @@
       if (["KAGRA", "かぐら", "カグラ"].includes(input)) {
         msg.style.color = "#00ffcc";
         msg.textContent = "🎉 正解！ 緑の線の答えにたどり着いた！";
-        setTimeout(revealExplanation, 1000); // 解説とエンディングを表示（common.js）
+        setTimeout(revealExplanation, 1000);
       } else {
         msg.style.color = "#ff6666";
         msg.textContent = "残念…もう一度考えてみよう。";
