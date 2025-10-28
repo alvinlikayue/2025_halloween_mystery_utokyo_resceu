@@ -1,62 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎩《重力波探偵団》第1話 光の交差点（KAGRA）</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テスト：checkAnswer動作確認</title>
 </head>
 <body>
-  <canvas id="stars"></canvas>
-
-  <div class="episode-container">
-    <h1 class="episode-title">🎩《重力波探偵団》第1話　光の交差点（KAGRA）</h1>
-
-    <div class="story">
-      <p>夜の帝都。<br>満月が街を照らすころ、喫茶ポアロの店内に不思議な静寂が流れていた。</p>
-
-      <p>その時――<br>店の窓を、ひらりと白いハトが横切り、一通の封筒がテーブルの上に舞い落ちた。</p>
-
-      <p>歩美：「あっ！ 手紙が降ってきた！」<br>
-         元太：「うまそうなにおいしねぇけど？」<br>
-         光彦：「いや、見て！ 宛名が……“江戸川コナン様”！」</p>
-
-      <p>封筒は真っ白な紙に、月光を反射する銀色のインクで文字が刻まれている。<br>
-      『To the Little Detective who sees through the dark』<br>
-      （闇を見抜く小さな探偵へ）</p>
-
-      <p>コナンは静かにそれを手に取り、封を切った。</p>
-    </div>
-
-    <div class="letter">
-      <h2>💌 キッドの予告状</h2>
-      <p>───怪盗キッドより予告状───</p>
-      <p>次にいただくのは、“宇宙ちゅうに一番優しい声”。ヒントをあげます。</p>
-      <p>赤い線のときは東大、<br>紺色の線のときは富山。<br>では、緑の線のときは？</p>
-      <p>――月下の奇術師より 🌙</p>
-    </div>
-
-    <div class="story">
-      <p>阿笠博士：「ほっほっ、相変わらず詩人じゃのぉ、あの泥棒は！」<br>
-      灰原：「赤い線が東大、紺が富山……じゃあ緑は何を意味してるのかしら？」<br>
-      コナン：「東大……富山……」</p>
-
-      <p>コナンはテーブルに図を広げた。<br>
-      そこには三本の線――赤、青、緑が、交わるように描かれていた。</p>
-
-      <h3>🧩 謎そのいち</h3>
-      <p>赤い線のときは「東大」、紺色線のときは「富山」。<br>
-      なら、緑の線のときは何？</p>
-
-      <div class="input-area">
-        <input type="text" id="answer" placeholder="答えを入力してください…" />
-        <button onclick="checkAnswer()">送信</button>
-      </div>
-      <p id="message"></p>
-    </div>
-  </div>
+  <h1>答え入力テスト</h1>
+  <input type="text" id="answer" placeholder="答えを入力" />
+  <button onclick="checkAnswer()">送信</button>
+  <p id="message"></p>
 
   <script src="js/main.js" defer></script>
 </body>
 </html>
-

@@ -90,21 +90,9 @@ if (canvas) {
 }
 
 // === 答えチェック ===
-window.checkAnswer = function () {
+window.checkAnswer = function() {
   const input = document.getElementById("answer").value.trim();
   const message = document.getElementById("message");
-
-  if (!message) return;
-
-  if (input === "KAGRA" || input === "かぐら" || input === "カグラ") {
-    message.style.color = "#00ffcc";
-    message.innerText = "🎉 正解！ 緑の線は『KAGRA』だ！";
-    localStorage.setItem("puzzle1Cleared", "true");
-  } else if (input === "") {
-    message.style.color = "#cccccc";
-    message.innerText = "答えを入力してください。";
-  } else {
-    message.style.color = "#ff6666";
-    message.innerText = "残念… もう一度考えてみよう。";
-  }
+  message.innerText = "ボタンが反応しました ✅ 入力：" + input;
 };
+
