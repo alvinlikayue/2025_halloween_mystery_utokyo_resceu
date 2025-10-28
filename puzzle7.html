@@ -4,148 +4,202 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🔭《宇宙で一番優しい音》第7話　希望の星（きぼうのほし）</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/common.css" />
 </head>
 <body>
   <canvas id="stars"></canvas>
 
-  <div class="episode-container">
-    <h1 class="episode-title">🔭《重力波探偵団》第7話　希望の星（きぼうのほし）</h1>
+  <div class="container">
+    <h1>🔭《宇宙で一番優しい音》第7話　希望の星（きぼうのほし）</h1>
 
     <div class="story">
       <p>東京大学・本郷キャンパス。<br>
       ビッグバン宇宙研究センター（RESCEU）の夜は静かだった。<br>
-      廊下の奥では、学生たちがKAGRAの観測データを解析し、<br>
-      “宇宙の音”をノイズの中から丁寧に分離していた。</p>
+      廊下の奥では、仲間たちが観測データを解析し、<br>
+      “宇宙の音”をノイズの海から丁寧にすくい上げている。</p>
+    </div>
 
-      <p>灰原：「……これが、重力波の“波形データ”？」</p>
-      <p>阿笠博士：「そうじゃ。ここRESCEUでは、観測所から届いたデータを分析して、<br>
-      宇宙の“声”を聞き取る研究をしておるんじゃ。」</p>
+    <!-- Scene：RESCEU・会話演出 -->
+    <div class="scene-visual" style="background-image:url('images/bg_resceu_night.jpg');">
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p>……これが重力波の“波形データ”？</p>
+        </div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p>そうじゃ。ここRESCEUでは観測所から届いたデータを分析して、<br>宇宙の“声”を聞き取っておる。</p>
+        </div>
+      </div>
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p>……ん？ 白いカードが落ちた。</p>
+        </div>
+      </div>
+    </div>
 
-      <p>その時、モニターの光に照らされて、白いカードがふわりと落ちた。</p>
-
+    <!-- 予告状 -->
+    <div class="letter">
+      <h2>💌 怪盗キッドの予告状</h2>
       <p>───怪盗キッドより───</p>
       <p>「日々に、月々に。<br>
       二つの光が重なり、新しい“日”が生まれる時――<br>
       その名は、“１２３の？？”。」</p>
     </div>
 
+    <!-- 謎の図：キーボード/巻物 -->
     <div class="puzzle-image">
       <img src="images/puzzle7_jp_keyboard.png" alt="三段のキーボードの謎" />
     </div>
-
     <div class="puzzle-image">
       <img src="images/puzzle7_jp_scroll.png" alt="巻物の謎" />
     </div>
 
-    <div class="rules">
+    <!-- ルール -->
+    <div class="rules-card">
       <h3>📘 ルール説明</h3>
-      <p>今回の挑戦状には、２つの謎が隠されている。</p>
       <ol>
-        <li>①　３段の謎の図（数字「1・2・3」に関係）</li>
-        <li>②　巻物に書かれた暗号文（「？？」の言葉に関係）</li>
+        <li>① 三段の図（数字「1・2・3」に対応）を読み解く。</li>
+        <li>② 巻物の対応式から「？？」に入る言葉を見つける。</li>
       </ol>
-
-      <p>キーボードの謎を解くと、数字“1・2・3”が示す「音」が現れる。<br>
-      そして、スクロールの謎を解くと、“？？”に入る言葉が浮かび上がる。</p>
-
-      <p>２つの謎を正しく組み合わせると、<br>
-      キッドの言う「新しい日が生まれる時」の意味が明らかになる――。</p>
+      <p>①で“1・2・3”が示す「音」を取り出し、②で対応式を解読する。<br>
+      二つを正しく組み合わせると、カードの言う「新しい日が生まれる時」の意味に辿り着く。答えはひらがなで。</p>
     </div>
 
-    <div class="input-area">
+    <!-- 入力UI -->
+    <div class="controls">
       <input type="text" id="answer" placeholder="答えを入力してください…" />
-      <button onclick="checkAnswer7()">送信</button>
-      <button class="hint-btn" onclick="showHint7()">ヒント</button>
-      <button class="answer-btn" onclick="showAnswer7()">答えを見る</button>
+      <button class="btn btn-primary" onclick="checkAnswer7()">送信</button>
+      <button class="btn btn-hint" onclick="showHint7()">ヒント</button>
+      <button class="btn btn-answer" onclick="showAnswer7()">答えを見る</button>
     </div>
 
     <p id="message"></p>
-    <p id="hint" class="hidden-hint"></p>
+    <p id="hint" class="hint"></p>
 
-    <div id="explanation" class="hidden-explanation">
+    <!-- 解説（正解後に表示） -->
+    <div id="explanation" class="explain" style="display:none;">
       <h3>🧩 解答の考え方</h3>
-      <p>三段のキーボードを重ねると、「キー（鍵）」「ボード（板）」「きぼー（希望）」の音が現れる。<br>
-      つまり、“Keyboard（キーボード）”の中に“きぼう”が隠れていた。</p>
-      <p>さらに、スクロールに書かれた対応式を解くと、<br>
-      【日】＋【生まれる】＝「星」となる。</p>
-      <p>二つの謎を組み合わせると、答えは――</p>
+      <p>三段のキーボードは“音の重なり”を表している。</p>
+      <ul>
+        <li>1段目＝ボード（板）</li>
+        <li>2段目＝キー（鍵）</li>
+        <li>3段目＝「きぼー」</li>
+      </ul>
+      <p>重ね合わせると <strong>キー＋ボード＋きぼー →「キーボード（Keyboard）」の中に「きぼう」</strong> が隠れていることが分かる。</p>
+      <p>さらに巻物の対応式から、【日】と【生まれる】の組合せが指すものを読み替えると、<br>
+      新しく生まれた“光”＝<strong>「星」</strong> に至る。</p>
+      <p>二つの謎を組み合わせた最終解は――</p>
       <p><strong>「希望の星」</strong></p>
     </div>
 
-    <div id="ending" class="story ending">
+    <!-- エンディング（正解後に表示） -->
+    <div id="ending" class="story" style="display:none;">
       <h3>🌙 結論と旅立ち</h3>
-      <p>阿笠博士：「なるほどのう……“希望の星”とは、<br>
-      どこかに隠された宝ではなく、わしら人間の心の中にあるものじゃな。」</p>
 
-      <p>灰原：「好奇心、探究心、そして未来を信じる気持ち。<br>
-      それが“希望”――キッドはそれを示していたのね。」</p>
+      <div class="scene-visual" style="background-image:url('images/bg_monitor_glow.jpg');">
+        <div class="dialogue right">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>なるほど……“希望の星”とは、どこかに隠された宝ではなく、<br>わしらの心に灯るもの、というわけじゃな。</p>
+          </div>
+        </div>
+        <div class="dialogue left">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>好奇心、探究心、そして未来を信じる気持ち。<br>キッドはそれを示していたのね。</p>
+          </div>
+        </div>
+　　　　
+　　　　<p>コナンは静かに画面を見つめた。<br> 解析装置の波形がゆるやかに揺れ、<br> まるで夜空の星のように瞬いている。</p>
 
-      <p>コナンは静かに画面を見つめた。<br>
-      解析装置の波形がゆるやかに揺れ、<br>
-      まるで夜空の星のように瞬いている。</p>
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>“希望の星”は、誰の心にもある。<br>宇宙を探る科学も、真実を追う推理も――<br>その星を見失わないためにあるんだ。</p>
+          </div>
+        </div>
+      </div>
 
-      <p>コナン：「……“希望の星”は、誰の心にもある。<br>
-      宇宙を探る科学も、真実を追う推理も――<br>
-      その星を見失わないためにあるんだ。」</p>
-
-      <p>モニターの光が静かに明滅する。<br>
-      それは、まるで宇宙から届く微かな返事のようだった。</p>
+　　　<p>モニターの光が静かに明滅する。<br> それは、まるで宇宙から届く微かな返事のようだった。</p>
 
       <blockquote>
         『本当の宝は、見える星ではない。<br>
-        それを“見上げ続ける心”だ。<br>
-        ――月下の奇術師より 🌙』
+        それを“見上げ続ける心”だ。――月下の奇術師より 🌙』
       </blockquote>
+      
+       <div class="dialogue left">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>……やっぱり、あの人も“探してる”のね。</p>
+          </div>
+        </div>
 
-      <p>灰原：「……やっぱり、あの人も“探してる”のね。」</p>
-      <p>コナンは微笑んだ。<br>
-      「ああ。俺たちも、同じ空を見上げてるんだ。」</p>
+     <p>コナンは微笑んだ。</p>
+         <div class="dialogue right">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>ああ。俺たちも、同じ空を見上げてるんだ。</p>
+          </div>
+        </div>
 
-      <p>外の空には、夜明けの光が広がっていた。<br>
-      それはまるで、未来へと続く“希望の星座”のようだった。</p>
+      <p>外の空には、夜明けの光が広がっていた。<br> それはまるで、未来へと続く“希望の星座”のようだった。</p>
+
+      <div class="next">
+        <a href="index.html">▶ 第1話へ戻る（もう一度、宇宙で一番優しい音へ）</a>
+      </div>
     </div>
   </div>
 
   <script src="js/common.js"></script>
   <script>
+    // ==== Puzzle 7 ====
     const hints7 = [
-      "💡 ヒント①：三段のキーボードは“音の重なり”を表している。重ねると、一つの日本語が浮かび上がる。",
-      "🎹 ヒント②：一段目は“ボード”、二段目は“キー”、三段目は“きぼー”。重ねると……？",
-      "📜 ヒント③：スクロールの【】と「」には対応関係がある。意味を対応づけると新しい言葉が見えてくる。",
-      "🧩 ヒント④：【立ちの日】→音、【重力】→動。つまり、現象や概念が別の形になるヒントだ。",
-      "🌟 ヒント⑤：最後の式【日が生まれた】→「星」。<br>すべてを結ぶ“言葉”は、人が未来に抱く願いを象徴している。"
+      "💡 ヒント①：三段の図は“音の重なり”。各段の読みを重ねると、日本語の語感が現れる。",
+      "🎹 ヒント②：1段目は『ボード』、2段目は『キー』、3段目は『きぼー』。重ね合わせを意識して。",
+      "📜 ヒント③：巻物の【】と「」は対応関係。意味を置き換えると“新しく生まれた光”に関係する語になる。",
+      "🧩 ヒント④：カードの“１２３の？？”は、①（音）＋②（対応式）の合成結果を指す。",
     ];
+    function showHint7(){ showHint(hints7); }
 
-    function showHint7() {
-      showHint(hints7);
-    }
-
-    function checkAnswer7() {
-      const input = document.getElementById("answer").value.trim();
-      const msg = document.getElementById("message");
-      if (!input) {
-        msg.style.color = "#ccc";
-        msg.textContent = "答えを入力してください。";
+    function checkAnswer7(){
+      const input = (document.getElementById('answer').value || '').trim();
+      const msg = document.getElementById('message');
+      if(!input){
+        msg.style.color = '#ccc';
+        msg.textContent = '答えを入力してください。';
         return;
       }
-      if (["希望の星", "きぼうのほし", "HOPE STAR", "HOPE"].includes(input)) {
-        msg.style.color = "#00ffcc";
-        msg.textContent = "🎉 正解！　“希望の星”が輝いた！";
+      const ok = ['希望の星','きぼうのほし','HOPE STAR','HOPE'];
+      if(ok.includes(input.toUpperCase()) || ok.includes(input)){
+        msg.style.color = '#00ffcc';
+        msg.textContent = '🎉 正解！　“希望の星”が輝いた！';
         setTimeout(revealExplanation, 1000);
-      } else {
-        msg.style.color = "#ff6666";
-        msg.textContent = "残念…もう一度考えてみよう。";
+      }else{
+        msg.style.color = '#ff6666';
+        msg.textContent = '残念…もう一度、三段の音と対応式を組み合わせて考えてみよう。';
       }
     }
 
-    function showAnswer7() {
+    function showAnswer7(){
       kidReveal([
-        "🎩『フッ……最後の謎も見抜いたようだね、探偵くん。』",
-        "💫『“希望の星”――それは、未来を信じる心のことさ。』",
-        "🌙『科学も真実も、そこから始まるんだ。』"
+        '🎩『フッ……最後の謎も見抜いたようだね、探偵くん。』',
+        '💫『“音”と“意味”が重なるとき――心に灯る光が生まれる。』',
+        '🌙『その名は……「希望の星」。』'
       ]);
     }
   </script>
 </body>
 </html>
+
