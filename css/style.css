@@ -148,3 +148,69 @@ html, body {
   .puzzle-list a { font-size: 1rem; }
 }
 
+.episode-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  line-height: 1.8;
+  color: #f5f5f5;
+}
+
+.episode-title {
+  text-align: center;
+  color: #ffd700;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px #ffcc33;
+}
+
+/* 手紙 */
+.letter {
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #1b1b1b 0%, #0e0e0e 100%);
+  color: #f5f5dc;
+  margin: 40px auto;
+  padding: 20px 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 200, 0.2);
+  text-align: center;
+  font-family: "Zen Old Mincho", "Times New Roman", serif;
+}
+
+/* 入力欄 */
+.input-area {
+  text-align: center;
+  margin: 30px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  width: 60%;
+  max-width: 400px;
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6600;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffaa00;
+}
+
+#message {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
