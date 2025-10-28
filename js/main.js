@@ -78,9 +78,27 @@ window.showAnswer = function() {
   const message = document.getElementById("message");
   const explanation = document.getElementById("explanation");
 
-  message.style.color = "#00ffcc";
-  message.innerText = "✨ 正解は『KAGRA（かぐら）』です！";
-  explanation.style.display = "block";
-  explanation.scrollIntoView({ behavior: "smooth" });
-};
+  // キッド風セリフを段階的に表示
+  const lines = [
+    "🎩『フッ……探偵くん、どうやら僕の謎は難しかったようだね。』",
+    "🌙『まあいい、月下の奇術師は優しいからね。特別に教えてあげよう。』",
+    "💎『緑の線の正体は……“KAGRA（かぐら）”。』"
+  ];
 
+  message.style.color = "#66ccff";
+  message.innerText = "";
+  let index = 0;
+
+  function showNextLine() {
+    if (index < lines.length) {
+      message.innerText = lines[index];
+      index++;
+      setTimeout(showNextLine, 2500); // 2.5秒ごとに次のセリフ
+    } else {
+      explanation.style.display = "block";
+      explanation.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  showNextLine();
+};

@@ -82,8 +82,12 @@ button:hover {
 
 #message {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: 10px;
+  color: #66ccff;
+  font-style: italic;
+  text-shadow: 0 0 6px #0099ff;
+  transition: opacity 0.5s ease;
 }
 
 /* === スマホ対応 === */
