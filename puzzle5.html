@@ -12,30 +12,68 @@
   <div class="container">
     <h1>🔭《宇宙で一番優しい音》第5話　迷宮の果て（めいきゅうのはて）</h1>
 
-    <div class="story">
-      <p>KAGRAで“光”の謎を解いた翌夜。<br>
-      少年探偵団の研究所に、黒いカードが届いた。</p>
+    <!-- 🌌 Scene 1：黒いカードの到着 -->
+    <p>KAGRAで“光”の謎を解いた翌夜。<br> 少年探偵団の研究所に、黒いカードが届いた。</p>
 
-      <p>カードの表には白いトランプのマーク、そして銀色の文字が光っている。</p>
-
-      <div class="letter">
-        <h2>💌 怪盗キッドの予告状</h2>
-        <p>───怪盗キッドより───</p>
-        <p>光を見たなら、次は闇を見よ。<br>
-        宇宙の果て、黒き渦を越えた者だけが辿りつく。</p>
-        <p>すべてのブラックホールを通り抜けよ。<br>
-        だが、星や月の輝きに惑わされるな。<br>
-        それらは“観測者の錯覚”にすぎない。</p>
-        <p>――月下の奇術師より 🌙</p>
+    <div class="scene-visual" style="background-image:url('images/bg_night_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p>……またキッドから？　今度は黒いカードね。</p>
+        </div>
       </div>
 
-      <p>テーブルに広げられたのは、光と闇が入り混じる不思議な迷路。<br>
-      所々に黒い渦――ブラックホールが点在していた。</p>
-
-      <p>灰原：「太陽や月のマークもあるけど……これは一体？」<br>
-      コナン：「“惑わされるな”って書いてある。通るべきは……黒い渦だけだ。」</p>
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p>“光を見たなら、次は闇を見よ”……なるほど。また挑戦状か。</p>
+        </div>
+      </div>
     </div>
 
+    <!-- 💌 予告状 -->
+    <div class="letter">
+      <h2>💌 怪盗キッドの予告状</h2>
+      <p>───怪盗キッドより───</p>
+      <p>光を見たなら、次は闇を見よ。<br>
+      宇宙の果て、黒き渦を越えた者だけが辿りつく。</p>
+      <p>すべてのブラックホールを通り抜けよ。<br>
+      だが、星や月の輝きに惑わされるな。<br>
+      それらは“観測者の錯覚”にすぎない。</p>
+      <p>――月下の奇術師より 🌙</p>
+    </div>
+
+    <p>テーブルに広げられたのは、光と闇が入り混じる不思議な迷路。<br> 所々に黒い渦――ブラックホールが点在していた。</p>
+
+    <div class="scene-visual" style="background-image:url('images/bg_table_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p>むむ……光と闇の迷路か。どこを通ればええんじゃ？</p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p>太陽や月のマークもあるけど……これは一体？</p>
+        </div>
+     </div>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p>“惑わされるな”って書いてある。通るべきは……黒い渦だけだ。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🧭 ルール -->
     <div class="rules-card">
       <h3>🧭 ルール</h3>
       <ul>
@@ -51,6 +89,7 @@
       <img src="images/puzzle5_jp.png" alt="ブラックホール迷路の図" />
     </div>
 
+    <!-- ✏️ 入力フォーム -->
     <div class="controls">
       <input type="text" id="answer" placeholder="答えを入力してください…" />
       <button class="btn btn-primary" onclick="checkAnswer5()">送信</button>
@@ -61,39 +100,95 @@
     <p id="message"></p>
     <p id="hint" class="hint"></p>
 
-    <div id="explanation" class="explain">
-      <div class="puzzle-image">
-        <img src="images/puzzle5_jp_answer.png" alt="迷路を通った後に現れる言葉" />
+    <!-- ✅ 解説 -->
+    <div id="explanation" class="explain" style="display:none;">
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>すべてのブラックホールを通って進むと、現れたのは……『しんじつはいつもひとつ』。</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/mitsuhiko.png" alt="光彦" class="char-face">
+          <div class="speech">
+            <div class="char-name mitsuhiko">光彦</div>
+            <p>コナンくんの言葉だ！</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/genta.png" alt="元太" class="char-face">
+          <div class="speech">
+            <div class="char-name genta">元太</div>
+            <p>やっぱりオレたち、名探偵だな！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>……ふふ。まさかこの謎が、その言葉だったとはね。</p>
+          </div>
+        </div>
       </div>
-
-      <p>迷路をすべてのブラックホールを通りながら抜けると、１１の文字が現れた。</p>
-      <p><strong>「しんじつはいつもひとつ」</strong></p>
-
-      <p>灰原：「……まさか、これ……！」<br>
-      光彦：「コナンくんの言葉だ！」<br>
-      元太：「やっぱり！ オレたちも名探偵だな！」</p>
-
-      <p>コナンは少し眉をひそめ、黒いカードを見つめた。</p>
     </div>
 
-    <div id="ending" class="story">
-      <p>天井から黒い羽が舞い落ちる。<br>
-      そこにはキッドの筆跡が記されていた。</p>
+    <!-- 🌙 エンディング -->
+    <div id="ending" style="display:none;">
+      <p>天井にまた白いマントの影が現れる。</p>
+      <div class="scene-visual" style="background-image:url('images/bg_kid_shadow.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盗キッド" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盗キッド</div>
+            <p>見えないものを見つめる者こそ、答えに辿りつく。……もっとも、君の“口癖”はもう聞き飽きたけどね？</p>
+          </div>
+        </div>
 
-      <blockquote>
-        『見えないものを見つめる者こそ、答えに辿りつく。<br>
-         ……もっとも、君の“口癖”はもう聞き飽きたけどね？』
-      </blockquote>
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>……皮肉のつもりか？　なら教えてやる。これは口癖じゃねぇ。俺の信念だ。</p>
+          </div>
+        </div>
 
-      <p>コナンの目が鋭く光り、静かに羽を掴む。</p>
-      <p>コナン：「……皮肉のつもりか？　なら教えてやる。」<br>
-         <strong>「これは口癖じゃねぇ。俺の信念だ。」</strong></p>
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>はっはっは……探偵の誇りを侮った報いじゃな。</p>
+          </div>
+        </div>
 
-      <p>灰原：「コナンくん、怒ってる？」<br>
-         阿笠：「はっはっは……探偵の誇りを侮った報いじゃな。」</p>
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>コナンくん、ちょっと怒ってる？</p>
+          </div>
+        </div>
+　　　
+　　　　<div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p>はっはっは……探偵の誇りを侮った報いじゃな。</p>
+        </div>
+      </div>
 
-      <p>コナンは短く息を吐き、闇の向こうを見据えた。<br>
-         （心の声）「光でも闇でもない……その先にあるものを、俺はこの目で確かめる。」</p>
+        <div class="dialogue center">
+          <img src="images/conan.png" alt="コナン（心の声）" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン（心の声）</div>
+            <p><em>光でも闇でもない……その先にあるものを、俺はこの目で確かめる。</em></p>
+          </div>
+        </div>
+      </div>
 
       <div class="next">
         <a href="puzzle6.html">▶ 第6話へ：方向の法則（The Law of Direction）</a>
@@ -103,7 +198,7 @@
 
   <script src="js/common.js"></script>
   <script>
-    // ==== Puzzle 5 ヒント ====
+    // ==== Puzzle 5 ====
     const hints5 = [
       "💡 ヒント①：黒い渦（ブラックホール）を全て通ろう。星や月のマークは避けるんだ。",
       "🌀 ヒント②：まっすぐ進める道だけ通行可能。全ての渦を一筆書きで通れるルートがある。",
@@ -143,4 +238,3 @@
   </script>
 </body>
 </html>
-
