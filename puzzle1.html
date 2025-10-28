@@ -98,7 +98,46 @@
   </div>
 </div>
 
-  <script src="js/main.js" defer></script>
+  <script src="../js/common.js"></script>
+  <script>
+    // ==== Puzzle 1 専用スクリプト ====
+
+    const hints1 = [
+      "🔍 ヒント①：線は“文字”ではなく“音”をたどっているようだ。読んでみると何かの言葉になるかも？",
+      "🧭 ヒント②：赤い線は『と→う→だ→い』（東大）、紺の線は『と→や→ま』（富山）。",
+      "🌌 ヒント③：緑の線は『か→ぐ→ら』。富山の山奥にある重力波観測施設――KAGRA！"
+    ];
+
+    function showHint1() {
+      showHint(hints1);
+    }
+
+    function checkAnswer1() {
+      const input = document.getElementById("answer").value.trim();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "答えを入力してください。";
+        return;
+      }
+      if (["KAGRA", "かぐら", "カグラ"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正解！ 緑の線は『KAGRA』だ！";
+        setTimeout(revealExplanation, 1200);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "残念…もう一度考えてみよう。";
+      }
+    }
+
+    function showAnswer1() {
+      kidReveal([
+        "🎩『フッ……探偵くん、線の意味は見抜けたかな？』",
+        "🌙『赤は東大、紺は富山。そして緑は――』",
+        "💎『“KAGRA（かぐら）”。それが答えさ。』"
+      ]);
+    }
+  </script>
 </body>
 </html>
 
