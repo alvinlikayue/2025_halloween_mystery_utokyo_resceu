@@ -244,3 +244,62 @@ h1 {
   from { opacity: 0; transform: translateX(40px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
+/* === キャラ名ラベル（ネームタグ） === */
+.char-name {
+  display: inline-block;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+/* キャラ別の色分け */
+.char-name.conan {
+  background: linear-gradient(90deg, #007bff, #00aaff);
+  box-shadow: 0 0 8px #007bffaa;
+}
+.char-name.haibara {
+  background: linear-gradient(90deg, #b84bff, #e07fff);
+  box-shadow: 0 0 8px #b84bffaa;
+}
+.char-name.agasa {
+  background: linear-gradient(90deg, #ffb300, #ff8800);
+  box-shadow: 0 0 8px #ffbb00aa;
+}
+.char-name.ayumi {
+  background: linear-gradient(90deg, #ff69b4, #ff99cc);
+  box-shadow: 0 0 8px #ff99ccaa;
+}
+.char-name.genta {
+  background: linear-gradient(90deg, #d35400, #ff7043);
+  box-shadow: 0 0 8px #ff7043aa;
+}
+.char-name.mitsuhiko {
+  background: linear-gradient(90deg, #2ecc71, #58d68d);
+  box-shadow: 0 0 8px #58d68daa;
+}
+.char-name.kid {
+  background: linear-gradient(90deg, #ffffff, #a0a0a0);
+  color: #111;
+  box-shadow: 0 0 8px #ffffffaa;
+}
+
+/* 名前を吹き出し上に自然に配置 */
+.speech {
+  position: relative;
+  background: rgba(255,255,255,0.07);
+  border-left: 3px solid #00ccff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 0 12px;
+  color: #e8faff;
+  backdrop-filter: blur(4px);
+  max-width: 70%;
+}
+
+.dialogue.left .speech { text-align: left; }
+.dialogue.right .speech { text-align: left; }
+
