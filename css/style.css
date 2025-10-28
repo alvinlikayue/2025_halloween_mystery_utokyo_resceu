@@ -110,6 +110,23 @@ button:hover {
   transform: scale(1.03);
 }
 
+.answer-btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff4444;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.answer-btn:hover {
+  background-color: #ff7777;
+}
+
+
 .hint-btn {
   margin-left: 10px;
   padding: 10px 20px;

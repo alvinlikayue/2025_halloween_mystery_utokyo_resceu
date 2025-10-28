@@ -74,3 +74,13 @@ window.showHint = function() {
   }
 };
 
+window.showAnswer = function() {
+  const message = document.getElementById("message");
+  const explanation = document.getElementById("explanation");
+
+  message.style.color = "#00ffcc";
+  message.innerText = "✨ 正解は『KAGRA（かぐら）』です！";
+  explanation.style.display = "block";
+  explanation.scrollIntoView({ behavior: "smooth" });
+};
+
