@@ -4,7 +4,7 @@ html, body {
   background: black;
   color: white;
   font-family: "Zen Kaku Gothic New", sans-serif;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
 }
@@ -90,5 +90,23 @@ button:hover {
 @media (max-width: 768px) {
   .episode-title { font-size: 1.5rem; }
   input[type="text"] { width: 80%; }
+}
+
+.puzzle-image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.puzzle-image img {
+  max-width: 90%;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.puzzle-image img:hover {
+  transform: scale(1.03);
 }
 
