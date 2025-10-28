@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌌《重力波探偵団》第4話 光の干渉（ひかりのかんしょう）</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌌《重力波探偵団》第4話　光の干渉（ひかりのかんしょう）</h1>
+
+    <div class="story">
+      <p>夜の神岡。KAGRAの地下実験室は、宇宙の静けさを閉じ込めたように静まり返っていた。</p>
+      <p>モニターには、赤と緑の光がときおり重なっては、ふっと姿を消す様子が映る。</p>
+      <p>阿笠：「むむ？　赤と緑のレーザーが……重なったり消えたりしておるぞ？」<br>
+         灰原：「波みたいに強まったり、消えたり……規則がありそうね。」<br>
+         コナン：「“ある法則”で重ねると、見えなくなる場所がある……ってことだな。」</p>
+    </div>
+
+    <div class="letter">
+      <h2>💌 怪盗キッドの予告状</h2>
+      <p>───怪盗キッドより───</p>
+      <p>二つの光が交わる時、真実は姿を変える。<br>
+         赤き道は「観測」を、緑の道は「心」を示す。<br>
+         しかし、同じ場所に重なれば――それは“消える”。</p>
+      <p>この“法則”を見抜いた時、次の扉は開かれる。<br>
+         ――月下の奇術師より 🌙</p>
+    </div>
+
+    <div class="puzzle-image">
+      <!-- 謎の図（赤と緑の経路） -->
+      <img src="images/puzzle4_jp.png" alt="赤線と緑線が重なる謎の図" />
+    </div>
+
+    <div class="rules-card">
+      <h3>🧭 ルール（この章で使う仕掛け）</h3>
+      <ul>
+        <li>🟥 <strong>赤線</strong>＝光のA経路</li>
+        <li>🟩 <strong>緑線</strong>＝光のB経路</li>
+        <li>✨ <strong>重なりの法則</strong>：<u>赤と緑が重なった部分は見えなくなる</u></li>
+      </ul>
+      <p>二つの図を“重ねた”とき、重なった線を消していくと「真実の形」が残る。</p>
+    </div>
+
+    <div class="story">
+      <p>灰原：「重なって消える線を取り除けばいい……残った形が答えってことね。」<br>
+         コナン：「ああ。光を“重ねて消す”パズルだ。」</p>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="answer" placeholder="答えを入力してください…" />
+      <button class="btn btn-primary" onclick="checkAnswer4()">送信</button>
+      <button class="btn btn-hint" onclick="showHint4()">ヒント</button>
+      <button class="btn btn-answer" onclick="showAnswer4()">答えを見る</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <div id="explanation" class="explain">
+      <div class="puzzle-image">
+        <!-- 完成図（重なりを消した後：カンショウ） -->
+        <img src="images/puzzle4_jp_answer.png" alt="重なりを消した後に浮かぶカンショウ" />
+      </div>
+
+      <p>コナンは赤と緑の透明シートを重ね、重なった部分を“消すように”なぞっていく。<br>
+         やがて――残った線は、ひとつの日本語を描き出した。</p>
+
+      <p><strong>『カンショウ』</strong></p>
+
+      <p>コナン：「そうか……二つの光を重ねると、ある場所では強まり、ある場所では消える。<br>
+         その現象の名は――<strong>干渉</strong>。」</p>
+
+      <p>阿笠：「なるほど！ KAGRAでは、この<strong>干渉</strong>の仕組みを使って、空間のわずかな伸び縮み――<br>
+         つまり重力波を測っておるのじゃ！」</p>
+    </div>
+
+    <div id="ending" class="story">
+      <p>天井の反射光が揺れ、白いマントの影が現れる。</p>
+      <p>キッド：「見事だね、探偵くん。重なりを“消す”ことで、真実を浮かび上がらせた。」<br>
+         コナン：「光の“重ね方”が、世界の見え方を変える――そういうことだな。」<br>
+         キッド：「フフ……見える真実と、見えない真実。重なったとき、世界は輝くのさ。」</p>
+
+      <div class="next">
+        <a href="puzzle5.html">▶ 第5話へ：真実はいつも一つ</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 4 ヒント（②と③を統合し、③で部分完成図を提示） ====
+    const hints4 = [
+      "💡 ヒント①：赤＝A経路、緑＝B経路。<u>重なった部分は見えなくなる</u>。⬛黒い四角は停止点。",
+      "📘 ヒント②：二つの図を“重ねて”考え、重なりを消していくと形が残る。カタカナのような連なりに注目。",
+      "🌙 ヒント③：重なりをいくつか消すと、下のように見えてくる。<br><br><img src='images/puzzle4_jp_hint.png' alt='puzzle4途中図' style='max-width:90%;border:1px solid #44aaff;border-radius:8px;margin:10px 0;'><br>あとは残りの重なりを消して、残る線を読み上げよう。"
+    ];
+
+    function showHint4() {
+      showHint(hints4); // common.js（innerHTML対応版）を利用
+    }
+
+    function checkAnswer4() {
+      const v = document.getElementById("answer").value.trim();
+      const msg = document.getElementById("message");
+      if (!v) {
+        msg.style.color = "#ccc";
+        msg.textContent = "答えを入力してください。";
+        return;
+      }
+      const norm = v.replace(/\s/g,"");
+      const ok = ["干渉","かんしょう","カンショウ"];
+      if (ok.includes(norm)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正解！ 二つの光を重ねて“見えなくなる”法則――答えは『干渉』！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "残念…もう一度、重なりを“消す”イメージで考えてみよう。";
+      }
+    }
+
+    function showAnswer4() {
+      kidReveal([
+        "🎩『フッ……二つの光を“重ねて消す”。その発想に辿り着けたかな？』",
+        "💡『重なる場所では消え、離れた場所では形が残る――』",
+        "🌙『答えは「干渉（カンショウ）」。次の扉が開く。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
