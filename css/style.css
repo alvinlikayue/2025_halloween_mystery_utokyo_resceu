@@ -1,31 +1,99 @@
 body {
-  background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
+  background: black;
   color: white;
   font-family: "Zen Kaku Gothic New", sans-serif;
-  text-align: center;
-  height: 100vh;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-.container {
-  position: relative;
-  top: 40%;
-  transform: translateY(-40%);
+/* 星のアニメーション背景 */
+.stars {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: twinkle 10s infinite alternate;
 }
 
-button {
-  background: #ff6600;
-  border: none;
-  padding: 15px 30px;
-  font-size: 18px;
+@keyframes twinkle {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+/* タイトル・物語部分 */
+.story-container {
+  text-align: center;
+  margin-top: 6vh;
+  padding: 0 10%;
+  animation: fadeIn 3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.story p {
+  opacity: 0;
+  animation: appearText 1s forwards;
+}
+
+.story p:nth-child(1) { animation-delay: 0.5s; }
+.story p:nth-child(2) { animation-delay: 1.0s; }
+.story p:nth-child(3) { animation-delay: 1.5s; }
+.story p:nth-child(4) { animation-delay: 2.0s; }
+.story p:nth-child(5) { animation-delay: 2.5s; }
+.story p:nth-child(6) { animation-delay: 3.0s; }
+.story p:nth-child(7) { animation-delay: 3.5s; }
+
+@keyframes appearText {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.highlight {
+  font-weight: bold;
+  color: #ffcc00;
+  margin-top: 20px;
+}
+
+/* 謎のリスト */
+.menu-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.menu-container h2 {
+  margin-bottom: 20px;
+  color: #ff9900;
+}
+
+.puzzle-list {
+  list-style: none;
+  padding: 0;
+}
+
+.puzzle-list li {
+  margin: 12px 0;
+}
+
+.puzzle-list a {
   color: white;
-  border-radius: 10px;
-  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
   transition: 0.3s;
 }
 
-button:hover {
-  background: #ffaa00;
-  transform: scale(1.1);
+.unlocked:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
 }
+
+.locked {
+  color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
