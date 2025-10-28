@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌《重力波探偵団》第7話　希望の星（きぼうのほし）</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="episode-container">
+    <h1 class="episode-title">🌌《重力波探偵団》第7話　希望の星（きぼうのほし）</h1>
+
+    <div class="story">
+      <p>KAGRAの観測室。<br>
+      長い夜の観測を終えた少年探偵団の前に、白いカードが一枚、光に照らされて現れた。</p>
+
+      <p>───怪盗キッドより───</p>
+      <p>「日々に、月々に。<br>
+      二つの光が重なり、新しい“日”が生まれる時――<br>
+      その名は、“□□□の□□”。」</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle7_jp_keyboard.png" alt="キーボードの謎" />
+    </div>
+
+    <div class="scroll-image">
+      <img src="images/puzzle7_jp_scroll.png" alt="巻物の謎" />
+    </div>
+
+    <div class="rules">
+      <h3>📘 ルール説明</h3>
+      <p>今回の挑戦状には、２つの謎が隠されている。</p>
+      <ul>
+        <li>①　３段の謎の図（数字「1・2・3」に関係）</li>
+        <li>②　巻物に書かれた暗号文（「□□」の言葉に関係）</li>
+      </ul>
+      <p>キーボードの謎を解くと、数字“1・2・3”が示す「音」が現れる。<br>
+      そして、スクロールの謎を解くと、“□□”に入る言葉が浮かび上がる。</p>
+      <p>２つの謎を正しく組み合わせると、<br>
+      キッドの言う「新しい日が生まれる時」の意味が明らかになる――。</p>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="answer" placeholder="答えを入力してください…" />
+      <button onclick="checkAnswer7()">送信</button>
+      <button class="hint-btn" onclick="showHint7()">ヒント</button>
+      <button class="answer-btn" onclick="showAnswer7()">答えを見る</button>
+    </div>
+    <p id="message"></p>
+    <p id="hint" class="hidden-hint"></p>
+
+    <div id="explanation" class="hidden-explanation">
+      <h3>🧩 謎の構造</h3>
+      <p>３段のキーボードのずれを重ねると、“キー”＋“ボード”＝“キーボード”。<br>
+      段ごとの位置が、“きぼー（希望）”の音を生み出していた。</p>
+
+      <blockquote>
+        A・Bを組み合わせて、新しい言葉を作れ。<br>
+        【立ちの日】→「音」<br>
+        【重力】→「動」<br>
+        【日々に、月々に】→「明」<br>
+        【日が生まれた】→「星」
+      </blockquote>
+
+      <p>「音」＋「動」＋「明」＋「星」――<br>
+      それは、宇宙と人の願いをつなぐ“希望の星”。</p>
+    </div>
+
+    <div id="ending" class="story ending">
+      <p>阿笠博士：「重力波も、光も、そして言葉も――<br>見えぬものを伝える“希望の波”なんじゃな。」</p>
+      <p>キッドの声が静かに響いた。</p>
+      <p>「探偵くん。科学の道も、言葉の道も同じさ。<br>“希望”を失わなければ、いつか必ず光は届く。」</p>
+      <p>画面の中の波形が、ゆっくりと輝きを増していく。<br>
+      KAGRAのレーザーが再び走り出す。</p>
+      <p>その瞬間、宇宙の奥から微かな“波”が届いた――。</p>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 7 専用スクリプト ====
+    const hints7 = [
+      "💡 ヒント①：３段のキーボードの段ごとにズレがある。重ねると新しい音ができるようだ。",
+      "⌨️ ヒント②：キーボードの構造は「キー（鍵）」＋「ボード（板）」＝“キーボード”。<br>音の手がかりはこの中にある。",
+      "🧩 ヒント③：スクロールの暗号は、【】と「」の関係を読み解くもの。自然現象と文字の対応を考えよう。",
+      "📜 ヒント④：AとBの組み合わせでできる新しい言葉をすべて並べてみよう。<br>すると、ある“法則”が見えてくる。",
+      "🌙 ヒント⑤：【立ちの日】→音、【重力】→動、【日々に、月々に】→明、【日が生まれた】→星。<br>これらを一つの意味のある言葉にまとめてみよう。"
+    ];
+
+    function showHint7() {
+      showHint(hints7);
+    }
+
+    function checkAnswer7() {
+      const input = document.getElementById("answer").value.trim();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "答えを入力してください。";
+        return;
+      }
+      if (["希望の星", "きぼうのほし", "HOPE STAR", "HOPESTAR"].includes(input.toUpperCase().replace(/\\s/g, ''))) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正解！ 君の“希望の星”が輝いた！";
+        setTimeout(revealExplanation, 1200);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "残念…もう一度考えてみよう。";
+      }
+    }
+
+    function showAnswer7() {
+      kidReveal([
+        "🎩『フッ……音と文字、二つの謎を繋げられたかな？』",
+        "💫『“キー”と“ボード”で“きぼう”の音が生まれ、』",
+        "🌌『“音・動・明・星”が結ばれて――“希望の星”となる。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
