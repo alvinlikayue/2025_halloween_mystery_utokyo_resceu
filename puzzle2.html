@@ -1,1 +1,128 @@
-TEST
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎩《重力波探偵団》第2話 波のひみつ（重力波）</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🎩《重力波探偵団》第2話　波のひみつ（重力波）</h1>
+
+    <div class="story">
+      <p>岐阜県・神岡。山をくり抜いた長いトンネルの奥――<br>
+      そこには、白く輝く鏡とレーザー装置が静かに並んでいた。</p>
+
+      <p>阿笠博士：「ここがKAGRAか……宇宙の“何か”を調べる施設らしいぞ。」<br>
+      灰原：「“何か”って何を？」<br>
+      コナン：「それは……この謎を解けばわかるかもな。」</p>
+
+      <p>コナンが封筒を取り出すと、その裏には三つの奇妙な図が印刷されていた。</p>
+    </div>
+
+    <div class="letter">
+      <h2>💌 怪盗キッドからの挑戦状</h2>
+      <p>───怪盗キッドより───</p>
+      <p>“宇宙秘宝の神殿”に眠る三つの印を解け。<br>
+      四角の中に入る文字を見つけよ。<br>
+      矢印の向きに漢字を組み合わせると、<br>
+      一つの“言葉”が浮かび上がる。</p>
+      <p>左は大地の重み。<br>
+      中央は内に秘めた力。<br>
+      右は揺らめく波。</p>
+      <p>三つがそろう時、“宇宙の声”が聴こえる。<br>
+      ――月下の奇術師より 🌙</p>
+    </div>
+
+    <div class="story">
+      <p>机の上の三つの図を、コナンはじっと見つめた。</p>
+
+      <div class="puzzle-image">
+        <img src="images/puzzle2_jp.png" alt="第2問の漢字パズル" />
+      </div>
+
+      <p>赤い矢印が外へ伸びる左の図。<br>
+      矢印が中心に集まる中央の図。<br>
+      青い波線が広がる右の図。</p>
+
+      <p>コナン：「三つの□に入る文字……何を意味しているんだ？」</p>
+
+      <div class="controls">
+        <input type="text" id="answer" placeholder="答えを入力してください…" />
+        <button class="btn btn-primary" onclick="checkAnswer2()">送信</button>
+        <button class="btn btn-hint" onclick="showHint2()">ヒント</button>
+        <button class="btn btn-answer" onclick="showAnswer2()">答えを見る</button>
+      </div>
+
+      <p id="message"></p>
+      <p id="hint" class="hint"></p>
+
+      <div id="explanation" class="explain">
+        <p>コナン：「三つの四角に入る漢字をつなげると……<br>
+        “重”＋“力”＋“波”＝“重力波”！」</p>
+
+        <p>阿笠：「じゅ、じゅうりょくは！？　宇宙の出来事が生む“時空の波”じゃ！」<br>
+        灰原：「つまり、KAGRAはその“重力波”を観測してるってことね。」<br>
+        コナン：「ああ。――“言葉”の中にも、“宇宙の謎”が隠れていたんだ。」</p>
+      </div>
+
+      <div id="ending">
+        <p>天井にレーザーの光が走る。鏡の上に、白いマントの影が揺れた。</p>
+        <p>キッド：「お見事、探偵くん。“言葉”から“宇宙”を読み解くとはね。」<br>
+        コナン：「最初から、俺たちに“学ばせる”つもりだったんだろ。」<br>
+        キッド：「科学も謎解きも同じさ。――見えない真実を“組み合わせて”見つける、それが探偵の仕事だろ？」</p>
+
+        <p>キッドは微笑み、レーザー光の中に溶けるように消えた。</p>
+
+        <div class="next">
+          <a href="puzzle3.html">▶ 第3話へ：光の迷宮（干渉）</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 2 専用スクリプト ====
+    const hints2 = [
+      "📘 ヒント①：３つの図には共通ルールがある。中央の□に入る漢字を考えよう。矢印の方向に意味のある熟語ができれば正解だ。",
+      "💡 ヒント②：左の図は、外へ広がる矢印。“重”を入れると『重量』『重圧』『重心』などが成立する。",
+      "🧭 ヒント③：中央の図は、矢印が中心へ向かっている。中央に“力”を入れると熟語になるものが多い。"
+    ];
+
+    function showHint2() {
+      showHint(hints2);
+    }
+
+    function checkAnswer2() {
+      const input = document.getElementById("answer").value.trim();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "答えを入力してください。";
+        return;
+      }
+      if (["重力波", "じゅうりょくは", "GRAVITATIONAL WAVE", "gravitational wave"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正解！ 宇宙の声、“重力波”だ！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "残念…もう一度考えてみよう。";
+      }
+    }
+
+    function showAnswer2() {
+      kidReveal([
+        "🎩『フッ……三つの印、見抜けたかな？』",
+        "🌙『重、力、波――三つが揃えば宇宙が震える。』",
+        "💎『“重力波”。それこそが、KAGRAが聴く“宇宙の声”だ。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
