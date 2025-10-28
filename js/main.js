@@ -31,18 +31,32 @@ if (canvas) {
   drawStars();
 }
 
-// === 答えチェック ===
 window.checkAnswer = function() {
   const input = document.getElementById("answer").value.trim();
   const message = document.getElementById("message");
   const explanation = document.getElementById("explanation");
+  const ending = document.getElementById("ending"); // ← まとめブロックを取得
 
   if (!message) return;
 
   if (input === "KAGRA" || input === "かぐら" || input === "カグラ") {
     message.style.color = "#00ffcc";
     message.innerText = "🎉 正解！ 緑の線は『KAGRA』だ！";
-    explanation.style.display = "block";  // ← ここで解説を表示！
+
+    // 1.5秒後に解説を表示
+    setTimeout(() => {
+      explanation.style.display = "block";
+      explanation.scrollIntoView({ behavior: "smooth" });
+
+      // さらに2秒後にまとめを表示
+      setTimeout(() => {
+        if (ending) {
+          ending.style.display = "block";
+          ending.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 2000);
+    }, 1500);
+
   } else if (input === "") {
     message.style.color = "#cccccc";
     message.innerText = "答えを入力してください。";
@@ -51,7 +65,6 @@ window.checkAnswer = function() {
     message.innerText = "残念… もう一度考えてみよう。";
   }
 };
-
 
 // === 3段階ヒント ===
 window.showHint = function() {

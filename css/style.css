@@ -200,6 +200,18 @@ button:hover {
   animation: appearLine 1.2s ease forwards;
 }
 
+#ending {
+  display: none; /* 最初は非表示 */
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+#ending[style*="display: block"] {
+  opacity: 1;
+}
+
+
+
 @keyframes appearLine {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
