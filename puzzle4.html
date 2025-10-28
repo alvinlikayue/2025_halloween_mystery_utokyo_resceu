@@ -12,14 +12,36 @@
   <div class="container">
     <h1>🌌《宇宙で一番優しい音》第4話　消える光の謎</h1>
 
-    <div class="story">
-      <p>夜の山奥。地下の研究施設は、宇宙の静けさを閉じ込めたように静まり返っていた。</p>
-      <p>モニターには、赤と緑の光がときおり重なっては、ふっと姿を消す様子が映る。</p>
-      <p>阿笠：「むむ？　赤と緑の光が……重なったり消えたりしておるぞ？」<br>
-         灰原：「波みたいに強まったり、消えたり……規則がありそうね。」<br>
-         コナン：「“ある法則”で重ねると、見えなくなる場所がある……ってことだな。」</p>
+    <div class="story"> <p>夜の山奥。地下の研究施設は、宇宙の静けさを閉じ込めたように静まり返っていた。</p> <p>モニターには、赤と緑の光がときおり重なっては、ふっと姿を消す様子が映る。</p></div>
+
+    <!-- 🌙 Scene 1：夜の施設 -->
+    <div class="scene-visual" style="background-image:url('images/bg_lab_dark.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p>むむ？　赤と緑の光が……重なったり消えたりしておるぞ？</p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p>波みたいに強まったり、消えたり……規則がありそうね。</p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p>“ある法則”で重ねると、見えなくなる場所がある……ってことだな。</p>
+        </div>
+      </div>
     </div>
 
+    <!-- 💌 予告状 -->
     <div class="letter">
       <h2>💌 怪盗キッドの予告状</h2>
       <p>───怪盗キッドより───</p>
@@ -34,8 +56,9 @@
       <img src="images/puzzle4_jp.png" alt="赤線と緑線が重なる謎の図" />
     </div>
 
+    <!-- 🔦 ルール説明 -->
     <div class="rules-card">
-      <h3>🧭 ルール（この章で使う仕掛け）</h3>
+      <h3>🧭 光の重なりルール</h3>
       <ul>
         <li>🟥 <strong>赤線</strong>＝光のA経路</li>
         <li>🟩 <strong>緑線</strong>＝光のB経路</li>
@@ -44,11 +67,25 @@
       <p>二つの図を“重ねた”とき、重なった線を消していくと「真実の形」が残る。</p>
     </div>
 
-    <div class="story">
-      <p>灰原：「重なって消える線を取り除けばいい……残った形が答えってことね。」<br>
-         コナン：「ああ。光を“重ねて消す”パズルだ。」</p>
+    <div class="scene-visual" style="background-image:url('images/bg_reflection_lab.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p>重なって消える線を取り除けばいい……残った形が答えってことね。</p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p>ああ。光を“重ねて消す”パズルだ。</p>
+        </div>
+      </div>
     </div>
 
+    <!-- ✏️ 答え入力 -->
     <div class="controls">
       <input type="text" id="answer" placeholder="答えを入力してください…" />
       <button class="btn btn-primary" onclick="checkAnswer4()">送信</button>
@@ -59,42 +96,74 @@
     <p id="message"></p>
     <p id="hint" class="hint"></p>
 
-    <!-- 正解後にのみ表示 -->
+    <!-- 🌠 解説 -->
     <div id="explanation" class="explain" style="display:none;">
-      <div class="puzzle-image">
-        <img src="images/puzzle4_jp_answer.png" alt="重なりを消した後に浮かぶカンショウ" />
+      <div class="puzzle-image"> <img src="images/puzzle4_jp_answer.png" alt="重なりを消した後に浮かぶカンショウ" /> </div>
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>赤と緑のシートを重ねて、重なった線を消していくと……浮かび上がったのは『カンショウ』！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>干渉……。二つの光が重なって、互いに強め合ったり打ち消し合ったりする現象ね。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>うむ！ この装置はその干渉を使って、空間のわずかな伸び縮み――つまり“宇宙のゆらぎ”を測っておるのじゃ！</p>
+          </div>
+        </div>
       </div>
-
-      <p>コナンは赤と緑の透明シートを重ね、重なった部分を“消すように”なぞっていく。<br>
-         やがて――残った線は、ひとつの日本語を描き出した。</p>
-
-      <p><strong>『カンショウ』</strong></p>
-
-      <p>コナン：「そうか……二つの光を重ねると、ある場所では強まり、ある場所では消える。<br>
-         その現象の名は――<strong>干渉</strong>。」</p>
-
-      <p>阿笠：「なるほど！ この装置では、その<strong>干渉</strong>の仕組みを使って、空間のわずかな伸び縮み――<br>
-         つまり“宇宙のゆらぎ”を測っておるのじゃ！」<br>
-         灰原：「ほんの1億分の1メートルの差でも、光は打ち消し合う……それを読み取るなんて、すごいわね。」</p>
     </div>
 
-    <div id="ending" class="story" style="display:none;">
+    <!-- 🌙 エンディング -->
+    <div id="ending" style="display:none;">
       <p>天井の反射光が揺れ、白いマントの影が現れる。</p>
-      <p>キッド：「見事だね、探偵くん。重なりを“消す”ことで、真実を浮かび上がらせた。」<br>
-         コナン：「光の“重ね方”が、世界の見え方を変える――そういうことだな。」<br>
-         キッド：「フフ……見える真実と、見えない真実。重なったとき、世界は輝くのさ。」</p>
+      <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盗キッド" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盗キッド</div>
+            <p>見事だね、探偵くん。重なりを“消す”ことで、真実を浮かび上がらせた。</p>
+          </div>
+        </div>
 
-      <p>残響のように、静かな光だけが部屋を照らしていた。</p>
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>光の“重ね方”が、世界の見え方を変える――そういうことだな。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盗キッド" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盗キッド</div>
+            <p>フフ……見える真実と、見えない真実。重なったとき、世界は輝くのさ。</p>
+          </div>
+        </div>
+      </div>
 
       <div class="next">
-        <a href="puzzle5.html">▶ 第5話へ：迷宮の果て（めいきゅうのはて）</a>
+        <a href="puzzle5.html">▶ 第5話へ：迷宮の果て</a>
       </div>
     </div>
   </div>
 
   <script src="js/common.js"></script>
   <script>
-    // ==== Puzzle 4 ヒント ====
+    // ==== Puzzle 4 ====
     const hints4 = [
       "💡 ヒント①：赤＝A経路、緑＝B経路。<u>重なった部分は見えなくなる</u>。⬛黒い四角は停止点。",
       "📘 ヒント②：二つの図を“重ねて”考え、重なりを消していくと形が残る。カタカナのような連なりに注目。",
@@ -135,3 +204,4 @@
   </script>
 </body>
 </html>
+
