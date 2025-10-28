@@ -15,11 +15,36 @@
     <div class="story">
       <p>岐阜県・神岡。山をくり抜いた長いトンネルの奥――<br>
       そこには、白く輝く鏡とレーザー装置が静かに並んでいた。</p>
+    </div>
 
-      <p>阿笠博士：「ここが……キッドが示した場所か。」<br>
-      灰原：「“宇宙の音”を聴く装置？　いったいどういう意味？」<br>
-      コナン：「それは……この謎を解けば見えてくる。」</p>
+    <!-- 🧠 Scene 1：KAGRA内部 -->
+    <div class="scene-visual" style="background-image:url('images/bg_kagra_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p><em>ここが……キッドが示した場所か。</em></p>
+        </div>
+      </div>
 
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>“宇宙の音”を聴く装置？　いったいどういう意味？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p><em>それは……この謎を解けば見えてくる。</em></p>
+        </div>
+      </div>
+    </div>
+     
+    <div class="story">
       <p>コナンが封筒を取り出すと、その裏には三つの奇妙な図が印刷されていた。</p>
     </div>
 
@@ -30,9 +55,6 @@
       四角の中に入る文字を見つけよ。<br>
       矢印の向きに漢字を組み合わせると、<br>
       一つの“言葉”が浮かび上がる。</p>
-      <p>左は大地の重み。<br>
-      中央は内に秘めた力。<br>
-      右は揺らめく波。</p>
       <p>三つがそろう時、“宇宙の音”が聴こえる。<br>
       ――月下の奇術師より 🌙</p>
     </div>
@@ -48,8 +70,19 @@
       矢印が中心に集まる中央の図。<br>
       青い波線が広がる右の図。</p>
 
-      <p>コナン：「三つの□に入る文字……何を意味しているんだ？」</p>
+    </div>
 
+    <div class="scene-visual" style="background-image:url('images/bg_table_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="コナン" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">コナン</div>
+          <p><em>三つの□に入る文字……何を意味しているんだ？</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story">
       <div class="controls">
         <input type="text" id="answer" placeholder="答えを入力してください…" />
         <button class="btn btn-primary" onclick="checkAnswer2()">送信</button>
@@ -62,25 +95,72 @@
 
       <!-- 正解後にのみ表示 -->
       <div id="explanation" class="explain" style="display:none;">
-        <p>コナン：「三つの四角に入る漢字をつなげると……<br>
-        “重”＋“力”＋“波”＝“重力波”！」</p>
+        <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>三つの四角に入る漢字をつなげると……“重”＋“力”＋“波”＝<strong>“重力波”</strong>！</p>
+          </div>
+        </div>
 
-        <p>阿笠：「じゅ、じゅうりょくは！？　宇宙の出来事が生む“時空の波”じゃ！」<br>
-        灰原：「つまり、この施設はその“波”を聴いているってことね。」<br>
-        コナン：「ああ。――“言葉”の中にも、“宇宙の謎”が隠れていたんだ。」</p>
+        <div class="dialogue right">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>じゅ、じゅうりょくは！？　宇宙の出来事が生む“時空の波”じゃ！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>つまり、この施設はその“波”を聴いているってことね。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>ああ。――“言葉”の中にも、“宇宙の謎”が隠れていたんだ。</p>
+          </div>
+        </div>        
       </div>
 
       <div id="ending" style="display:none;">
         <p>天井にレーザーの光が走る。鏡の上に、白いマントの影が揺れた。</p>
-        <p>キッド：「お見事、探偵くん。“言葉”から“宇宙”を読み解くとはね。」<br>
-        コナン：「最初から、俺たちに“学ばせる”つもりだったんだろ。」<br>
-        キッド：「科学も謎解きも同じさ。――見えない真実を“組み合わせて”見つける、それが探偵の仕事だろ？」</p>
 
-        <p>キッドは微笑み、レーザー光の中に溶けるように消えた。</p>
-
-        <div class="next">
-          <a href="puzzle3.html">▶ 第3話へ：光の迷宮</a>
+        <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盗キッド" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盗キッド</div>
+            <p>お見事、探偵くん。“言葉”から“宇宙”を読み解くとはね。</p>
+          </div>
         </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="コナン" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">コナン</div>
+            <p>最初から、俺たちに“学ばせる”つもりだったんだろ。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盗キッド" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盗キッド</div>
+            <p>科学も謎解きも同じさ。――見えない真実を“組み合わせて”見つける、それが探偵の仕事だろ？</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle3.html">▶ 第3話へ：光の迷宮</a>
+      </div>
       </div>
     </div>
   </div>
