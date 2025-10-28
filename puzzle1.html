@@ -4,104 +4,90 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🎩《重力波探偵団》第1話 光の交差点（KAGRA）</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/common.css" />
 </head>
 <body>
   <canvas id="stars"></canvas>
 
-  <div class="episode-container">
-    <h1 class="episode-title">🎩《重力波探偵団》第1話　光の交差点（KAGRA）</h1>
+  <div class="container">
+    <h1>🎩《重力波探偵団》第1話　光の交差点（KAGRA）</h1>
 
-    <div class="story">
-      <p>夜の帝都。<br>満月が街を照らすころ、喫茶ポアロの店内に不思議な静寂が流れていた。</p>
-      <p>その時――<br>店の窓を、ひらりと白いハトが横切り、一通の封筒がテーブルの上に舞い落ちた。</p>
+    <div class="scene">
+      <p>夜の帝都。満月が街を照らすころ、喫茶ポアロの店内に不思議な静寂が流れていた。</p>
+      <p>その時――店の窓を、ひらりと白いハトが横切り、一通の封筒がテーブルの上に舞い落ちた。</p>
       <p>歩美：「あっ！ 手紙が降ってきた！」<br>
          元太：「うまそうなにおいしねぇけど？」<br>
          光彦：「いや、見て！ 宛名が……“江戸川コナン様”！」</p>
       <p>封筒は真っ白な紙に、月光を反射する銀色のインクで文字が刻まれている。<br>
-      『To the Little Detective who sees through the dark』<br>
-      （闇を見抜く小さな探偵へ）</p>
+         『To the Little Detective who sees through the dark』（闇を見抜く小さな探偵へ）</p>
       <p>コナンは静かにそれを手に取り、封を切った。</p>
     </div>
 
     <div class="letter">
-      <h2>💌 キッドの予告状</h2>
-      <p>───怪盗キッドより予告状───</p>
-      <p>次にいただくのは、“宇宙ちゅうに一番優しい声”。ヒントをあげます。</p>
-      <p>赤い線のときは東大、<br>紺色の線のときは富山。<br>では、緑の線のときは？</p>
-      <p>――月下の奇術師より 🌙</p>
+      <h2>💌 怪盗キッドの予告状</h2>
+      <p>「次にいただくのは、“宇宙中で一番優しい声”。ヒントをあげます。<br>
+         赤い線のときは東大、紺色の線のときは富山。<br>
+         では、緑の線のときは？」<br>
+         ――月下の奇術師より 🌙</p>
     </div>
 
-    <div class="story">
+    <div class="scene">
       <p>阿笠博士：「ほっほっ、相変わらず詩人じゃのぉ、あの泥棒は！」<br>
-      灰原：「赤い線が東大、紺が富山……じゃあ緑は何を意味してるのかしら？」<br>
-      コナン：「東大……富山……」</p>
+         灰原：「赤い線が東大、紺が富山……じゃあ緑は何を意味してるのかしら？」<br>
+         コナン：「東大……富山……」</p>
+      <p>コナンはテーブルに図を広げた。そこには三本の線――赤、青、緑が、交わるように描かれていた。</p>
 
-      <p>コナンはテーブルに図を広げた。<br>
-      そこには三本の線――赤、青、緑が、交わるように描かれていた。</p>
-
-      <h3>🧩 謎そのいち</h3>
+      <h3>🧩 謎そのいち：光の交差点</h3>
       <p>赤い線のときは「東大」、紺色線のときは「富山」。<br>
-      なら、緑の線のときは何？</p>
+         では、緑の線のときは何？</p>
 
       <div class="puzzle-image">
-        <img src="images/puzzle1_jp.png" alt="第1問の謎" />
+        <img src="img/puzzle1.png" alt="第1問の謎（五十音表）" />
       </div>
 
-      <div class="input-area">
+      <div class="controls">
         <input type="text" id="answer" placeholder="答えを入力してください…" />
-        <button onclick="checkAnswer()">送信</button>
-        <button class="hint-btn" onclick="showHint()">ヒント</button>
-        <button class="answer-btn" onclick="showAnswer()">答えを見る</button>
+        <button class="btn btn-primary" onclick="checkAnswer1()">送信</button>
+        <button class="btn btn-hint" onclick="showHint1()">ヒント</button>
+        <button class="btn btn-answer" onclick="showAnswer1()">答えを見る</button>
       </div>
+
       <p id="message"></p>
-      <p id="hint" class="hidden-hint"></p>
+      <p id="hint" class="hint"></p>
 
-      <div id="explanation" class="hidden-explanation">
+      <div id="explanation" class="explain">
         <h3>🧩 謎の構造</h3>
-        <p>この表は <strong>五十音表（あいうえお表）</strong>。<br>
-        縦は「行（あ・か・さ・た・な…）」、横は「段（a・i・u・e・o）」を表している。</p>
-
-        <p>線は、それぞれ音の位置をたどって、日本語の言葉を示していた。</p>
+        <p>この表は五十音表（あいうえお表）。縦は「行（あ・か・さ・た・な…）」、横は「段（a・i・u・e・o）」を表している。</p>
+        <p>線は、それぞれ音の位置をたどって、日本語の言葉を描いていた。</p>
         <ul>
-          <li>🔴 赤い線＝東大（とうだい）</li>
-          <p>赤線は上の方を横切り、「と → う → だ → い」と音を結んでいる。</p>
-
-          <li>🔵 紺色線＝富山（とやま）</li>
-          <p>紺線は右下へ向かい、「と → や → ま」の形になっている。</p>
-
-          <li>🟢 緑線＝？</li>
-          <p>よく見ると、左上の「か」から始まり、右へ「ぐ」、下に「ら」へと続いている。</p>
+          <li>🔴 赤い線：「と → う → だ → い」＝東大</li>
+          <li>🔵 紺色線：「と → や → ま」＝富山</li>
+          <li>🟢 緑色線：「か → ぐ → ら」＝KAGRA</li>
         </ul>
-
         <p><strong>コナン：</strong>「……“か → ぐ → ら”。 緑の線は『KAGRA（かぐら）』だ！」</p>
-     </div>
-   </div>
+      </div>
+
+      <div id="ending">
+        <h3>🌙 結論と旅立ち</h3>
+        <p>灰原：「KAGRA……聞いたことがあるような、ないような。」<br>
+           コナン：「“見えない宇宙の声”を捕まえる施設――キッドが言いたかったのは、きっとそこだ。」<br>
+           阿笠：「ほっほっ、まさかコナンくん、そこへ行くつもりか？」<br>
+           コナン：「ああ。キッドが次に現れるのは、富山の山奥……“KAGRA”だ。」</p>
+        <p>歩美：「行こうよ！ 探偵団の出番だね！」<br>
+           光彦：「科学の謎に挑むなんて、わくわくします！」<br>
+           元太：「オレ、おにぎり持ってくぞ！」<br>
+           灰原：「まったく……あなたたち、ほんとに行く気なのね。」<br>
+           <em>コナン（心の声）：「宇宙中一番優しい声？　一体、キッドは何を狙ってるんだ？」</em></p>
+        <div class="next">
+          <a href="puzzle2.html">▶ 第2話へ：波のひみつ（重力波）</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div id="ending" class="story ending">
-  <h3>🌙 結論と旅立ち</h3>
-  <p>灰原：「KAGRA……聞いたことがあるような、ないような。」</p>
-  <p>コナン：「“見えない宇宙の声”を捕まえる施設――キッドが言いたかったのは、きっとそこだ。」</p>
-  <p>阿笠：「ほっほっ、まさかコナンくん、そこへ行くつもりか？」</p>
-  <p>コナン：「ああ。キッドが次に現れるのは、富山の山奥……“KAGRA”だ。」</p>
-  <p>歩美：「行こうよ！ 探偵団の出番だね！」</p>
-  <p>光彦：「科学の謎に挑むなんて、わくわくします！」</p>
-  <p>元太：「オレ、おにぎり持ってくぞ！」</p>
-  <p>灰原：「まったく……あなたたち、ほんとに行く気なのね。」</p>
-  <p>コナンは笑いながら考えた。</p>
-  <p><em>コナン（心の声）：「宇宙中一番優しい声？　一体、キッドは何を狙ってるんだ？」</em></p>
-  <p>月光が差し込み、コナンの眼鏡がきらりと光る。</p>
-
-  <div class="next-episode">
-    <a href="puzzle2.html" class="next-btn">▶ 第2話へ進む</a>
-  </div>
-</div>
-
-  <script src="../js/common.js"></script>
+  <script src="js/common.js"></script>
   <script>
     // ==== Puzzle 1 専用スクリプト ====
-
     const hints1 = [
       "🔍 ヒント①：線は“文字”ではなく“音”をたどっているようだ。読んでみると何かの言葉になるかも？",
       "🧭 ヒント②：赤い線は『と→う→だ→い』（東大）、紺の線は『と→や→ま』（富山）。",
@@ -123,7 +109,7 @@
       if (["KAGRA", "かぐら", "カグラ"].includes(input)) {
         msg.style.color = "#00ffcc";
         msg.textContent = "🎉 正解！ 緑の線は『KAGRA』だ！";
-        setTimeout(revealExplanation, 1200);
+        setTimeout(revealExplanation, 1000);
       } else {
         msg.style.color = "#ff6666";
         msg.textContent = "残念…もう一度考えてみよう。";
