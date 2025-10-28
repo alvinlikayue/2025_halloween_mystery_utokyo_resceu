@@ -179,3 +179,50 @@ button:hover {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.ending {
+  margin-top: 60px;
+  padding: 25px;
+  border-top: 2px solid #888;
+  animation: fadeIn 2s ease forwards;
+}
+
+.ending h3 {
+  color: #ffcc00;
+  text-align: center;
+  text-shadow: 0 0 6px #ffcc00;
+  margin-bottom: 20px;
+}
+
+.ending p {
+  line-height: 1.8;
+  margin-bottom: 8px;
+  animation: appearLine 1.2s ease forwards;
+}
+
+@keyframes appearLine {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 次の話ボタン */
+.next-episode {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.next-btn {
+  background-color: #ffcc00;
+  color: black;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  background-color: #ffee88;
+  box-shadow: 0 0 15px #fff08a;
+}
