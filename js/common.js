@@ -28,10 +28,12 @@ window.showHint = function(hints, id="hint") {
   if (!hint) return;
   let step = parseInt(hint.dataset.step || "0");
   hint.style.display = "block";
-  hint.innerText = hints[Math.min(step, hints.length - 1)];
+  // ✅ HTMLタグ（img, br など）を正しく描画する
+  hint.innerHTML = hints[Math.min(step, hints.length - 1)];
   hint.dataset.step = step + 1;
   hint.style.opacity = 1;
 };
+
 
 // === 汎用解説＋まとめ表示 ===
 window.revealExplanation = function() {
