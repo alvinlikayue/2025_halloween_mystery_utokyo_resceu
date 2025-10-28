@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎩《重力波探偵団》第1話 光の交差点（KAGRA）</title>
+  <title>🎩《宇宙で一番優しい音》第1話 運命の交差点</title>
   <link rel="stylesheet" href="css/common.css" />
 </head>
 <body>
   <canvas id="stars"></canvas>
 
   <div class="container">
-    <h1>🎩《重力波探偵団》第1話　光の交差点（KAGRA）</h1>
+    <h1>🎩《宇宙で一番優しい音》第1話　運命の交差点</h1>
 
     <div class="scene">
       <p>夜の帝都。満月が街を照らすころ、喫茶ポアロの店内に不思議な静寂が流れていた。</p>
@@ -25,7 +25,7 @@
 
     <div class="letter">
       <h2>💌 怪盗キッドの予告状</h2>
-      <p>「次にいただくのは、“宇宙中で一番優しい声”。ヒントをあげます。<br>
+      <p>「次にいただくのは、“宇宙中で一番優しい音”。ヒントをあげます。<br>
          赤い線のときは東大、紺色の線のときは富山。<br>
          では、緑の線のときは？」<br>
          ――月下の奇術師より 🌙</p>
@@ -55,7 +55,8 @@
       <p id="message"></p>
       <p id="hint" class="hint"></p>
 
-      <div id="explanation" class="explain">
+      <!-- 解説（※正解後に表示。ここではじめて KAGRA を出します） -->
+      <div id="explanation" class="explain" style="display:none;">
         <h3>🧩 謎の構造</h3>
         <p>この表は五十音表（あいうえお表）。縦は「行（あ・か・さ・た・な…）」、横は「段（a・i・u・e・o）」を表している。</p>
         <p>線は、それぞれ音の位置をたどって、日本語の言葉を描いていた。</p>
@@ -67,7 +68,8 @@
         <p><strong>コナン：</strong>「……“か → ぐ → ら”。 緑の線は『KAGRA（かぐら）』だ！」</p>
       </div>
 
-      <div id="ending">
+      <!-- エンディング（※正解後に表示。KAGRA の表記OK） -->
+      <div id="ending" style="display:none;">
         <h3>🌙 結論と旅立ち</h3>
         <p>灰原：「KAGRA……聞いたことがあるような、ないような。」<br>
            コナン：「“見えない宇宙の声”を捕まえる施設――キッドが言いたかったのは、きっとそこだ。」<br>
@@ -79,7 +81,7 @@
            灰原：「まったく……あなたたち、ほんとに行く気なのね。」<br>
            <em>コナン（心の声）：「宇宙中一番優しい声？　一体、キッドは何を狙ってるんだ？」</em></p>
         <div class="next">
-          <a href="puzzle2.html">▶ 第2話へ：波のひみつ（重力波）</a>
+          <a href="puzzle2.html">▶ 第2話へ：音のひみつ</a>
         </div>
       </div>
     </div>
@@ -91,11 +93,11 @@
     const hints1 = [
       "🔍 ヒント①：線は“文字”ではなく“音”をたどっているようだ。読んでみると何かの言葉になるかも？",
       "🧭 ヒント②：赤い線は『と→う→だ→い』（東大）、紺の線は『と→や→ま』（富山）。",
-      "🌌 ヒント③：緑の線は『か→ぐ→ら』。富山の山奥にある観測施設――KAGRA！"
+      "🌌 ヒント③：緑の線は『か→ぐ→ら』。富山の山奥にある“とても大きな施設”を思い出してみよう。"
     ];
 
     function showHint1() {
-      showHint(hints1);
+      showHint(hints1); // common.js の汎用ヒント表示
     }
 
     function checkAnswer1() {
@@ -108,8 +110,8 @@
       }
       if (["KAGRA", "かぐら", "カグラ"].includes(input)) {
         msg.style.color = "#00ffcc";
-        msg.textContent = "🎉 正解！ 緑の線は『KAGRA』だ！";
-        setTimeout(revealExplanation, 1000);
+        msg.textContent = "🎉 正解！ 緑の線の答えにたどり着いた！";
+        setTimeout(revealExplanation, 1000); // 解説とエンディングを表示（common.js）
       } else {
         msg.style.color = "#ff6666";
         msg.textContent = "残念…もう一度考えてみよう。";
@@ -126,4 +128,3 @@
   </script>
 </body>
 </html>
-

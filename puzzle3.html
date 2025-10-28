@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌟《重力波探偵団》第3話 光の迷宮（LASER）</title>
+  <title>🌟《宇宙で一番優しい音》第3話 光の迷宮</title>
   <link rel="stylesheet" href="css/common.css" />
 </head>
 <body>
   <canvas id="stars"></canvas>
 
   <div class="container">
-    <h1>🌟《重力波探偵団》第3話　光の迷宮（LASER）</h1>
+    <h1>🌟《宇宙で一番優しい音》第3話　光の迷宮</h1>
 
     <div class="story">
-      <p>KAGRAで“重力波”の謎を解き明かした翌朝。<br>
+      <p>前夜の謎を解き明かした翌朝。<br>
       コナンたちのもとに、再び白いハトが現れた。</p>
 
       <p>その足に結ばれた銀色の封筒には、光のように反射するインクでこう書かれていた。</p>
@@ -23,7 +23,7 @@
       鏡のような青い長方形、そして赤い矢印の光線――。だが、説明は一切ない。</p>
 
       <p>灰原：「まるで……迷路ね。」<br>
-      コナン：「いや、これは“光の迷路”。KAGRAの中を走るレーザー光を表してるんだ。」</p>
+      コナン：「いや、これは“光の迷宮”。施設の中を走る光の経路を示している。」</p>
     </div>
 
     <div class="puzzle-image">
@@ -43,8 +43,8 @@
 
     <div class="story">
       <p>コナンは手帳を取り出し、図に書き込みながら説明した。</p>
-      <p>コナン：「KAGRAの中では、光が鏡や“ビームスプリッター”に当たることで進む道が決まる。<br>
-      この装置が“半分反射・半分透過”をするんだ。」</p>
+      <p>コナン：「この装置の中では、光が鏡や“ビームスプリッター”に当たることで進む道が決まる。<br>
+      この素子は“半分反射・半分透過”する仕組みなんだ。」</p>
     </div>
 
     <div class="optics-rules">
@@ -91,7 +91,8 @@
     <p id="message"></p>
     <p id="hint" class="hint"></p>
 
-    <div id="explanation" class="explain">
+    <!-- 答えを出した後のみ表示 -->
+    <div id="explanation" class="explain" style="display:none;">
       <div class="puzzle-image">
         <img src="images/puzzle3_jp_answer.png" alt="LASERの答え図" />
       </div>
@@ -102,11 +103,11 @@
       <p><strong>L → A → S → E → R</strong></p>
 
       <p>灰原：「LASER……！」<br>
-      阿笠：「そうか！ 光を増幅し、干渉させて距離の変化を測る装置……まさにKAGRAの心臓部じゃ！」<br>
+      阿笠：「そうか！ 光を増幅し、干渉させて距離の変化を測る装置……まさにこの施設の心臓部じゃ！」<br>
       コナン：「キッドの言う“光の道”は、レーザーそのものを指していたんだ。」</p>
     </div>
 
-    <div id="ending" class="story">
+    <div id="ending" class="story" style="display:none;">
       <p>天井の反射光が集まり、白いマントの影が現れた。</p>
       <p>キッド：「お見事、探偵くん。光の迷宮を抜けたようだね。<br>
       だが――光がある限り、影もまた生まれる。」<br>
@@ -116,7 +117,7 @@
       <p>キッドは眩い閃光の中へと姿を消した。</p>
 
       <div class="next">
-        <a href="puzzle4.html">▶ 第4話へ：光の干渉（Interference）</a>
+        <a href="puzzle4.html">▶ 第4話へ：消える光の謎</a>
       </div>
     </div>
   </div>
@@ -124,11 +125,11 @@
   <script src="js/common.js"></script>
   <script>
     // ==== Puzzle 3 専用スクリプト ====
-  const hints3 = [
-  "💡 ヒント①：赤い線は“光”を表している。鏡に当たると反射し、ビームスプリッターでは２方向に進む。<br>光の進路を目で追ってみよう。",
-  "📘 ヒント②：光の一部をたどると、文字のような形が現れはじめる……。",
-  "🌙 ヒント③：部分完成な進路、下のように見えてくる。<br><br><img src='images/puzzle3_jp_hint.png' alt='puzzle3途中図' style='max-width:90%;border:1px solid #44aaff;border-radius:8px;margin:10px 0;'><br>“光を増幅して干渉させる装置”――この続きを完成させよう！"
-   ];
+    const hints3 = [
+      "💡 ヒント①：赤い線は“光”を表している。鏡に当たると反射し、ビームスプリッターでは２方向に進む。<br>光の進路を目で追ってみよう。",
+      "📘 ヒント②：分かれた光をよく見ると、文字のような形が現れはじめる……。",
+      "🌙 ヒント③：途中までの進路は下のように見えてくる。<br><br><img src='images/puzzle3_jp_hint.png' alt='puzzle3途中図' style='max-width:90%;border:1px solid #44aaff;border-radius:8px;margin:10px 0;'><br>“光を増幅して干渉させる装置”――この続きを完成させよう！"
+    ];
 
     function showHint3() {
       showHint(hints3);
@@ -156,10 +157,9 @@
       kidReveal([
         "🎩『フッ……光の道を追えたかな？』",
         "💡『L・A・S・E・R――“光を増幅する真実の道”。』",
-        "🌙『LASER、それがKAGRAの心臓部だ。』"
+        "🌙『LASER、それがこの施設の心臓部だ。』"
       ]);
     }
   </script>
 </body>
 </html>
-

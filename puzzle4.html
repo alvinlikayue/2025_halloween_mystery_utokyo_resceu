@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🌌《重力波探偵団》第4話 光の干渉（ひかりのかんしょう）</title>
+  <title>🌌《宇宙で一番優しい音》第4話　消える光の謎</title>
   <link rel="stylesheet" href="css/common.css" />
 </head>
 <body>
   <canvas id="stars"></canvas>
 
   <div class="container">
-    <h1>🌌《重力波探偵団》第4話　光の干渉（ひかりのかんしょう）</h1>
+    <h1>🌌《宇宙で一番優しい音》第4話　消える光の謎</h1>
 
     <div class="story">
-      <p>夜の神岡。KAGRAの地下実験室は、宇宙の静けさを閉じ込めたように静まり返っていた。</p>
+      <p>夜の山奥。地下の研究施設は、宇宙の静けさを閉じ込めたように静まり返っていた。</p>
       <p>モニターには、赤と緑の光がときおり重なっては、ふっと姿を消す様子が映る。</p>
-      <p>阿笠：「むむ？　赤と緑のレーザーが……重なったり消えたりしておるぞ？」<br>
+      <p>阿笠：「むむ？　赤と緑の光が……重なったり消えたりしておるぞ？」<br>
          灰原：「波みたいに強まったり、消えたり……規則がありそうね。」<br>
          コナン：「“ある法則”で重ねると、見えなくなる場所がある……ってことだな。」</p>
     </div>
@@ -31,7 +31,6 @@
     </div>
 
     <div class="puzzle-image">
-      <!-- 謎の図（赤と緑の経路） -->
       <img src="images/puzzle4_jp.png" alt="赤線と緑線が重なる謎の図" />
     </div>
 
@@ -60,9 +59,9 @@
     <p id="message"></p>
     <p id="hint" class="hint"></p>
 
-    <div id="explanation" class="explain">
+    <!-- 正解後にのみ表示 -->
+    <div id="explanation" class="explain" style="display:none;">
       <div class="puzzle-image">
-        <!-- 完成図（重なりを消した後：カンショウ） -->
         <img src="images/puzzle4_jp_answer.png" alt="重なりを消した後に浮かぶカンショウ" />
       </div>
 
@@ -74,25 +73,28 @@
       <p>コナン：「そうか……二つの光を重ねると、ある場所では強まり、ある場所では消える。<br>
          その現象の名は――<strong>干渉</strong>。」</p>
 
-      <p>阿笠：「なるほど！ KAGRAでは、この<strong>干渉</strong>の仕組みを使って、空間のわずかな伸び縮み――<br>
-         つまり重力波を測っておるのじゃ！」</p>
+      <p>阿笠：「なるほど！ この装置では、その<strong>干渉</strong>の仕組みを使って、空間のわずかな伸び縮み――<br>
+         つまり“宇宙のゆらぎ”を測っておるのじゃ！」<br>
+         灰原：「ほんの1億分の1メートルの差でも、光は打ち消し合う……それを読み取るなんて、すごいわね。」</p>
     </div>
 
-    <div id="ending" class="story">
+    <div id="ending" class="story" style="display:none;">
       <p>天井の反射光が揺れ、白いマントの影が現れる。</p>
       <p>キッド：「見事だね、探偵くん。重なりを“消す”ことで、真実を浮かび上がらせた。」<br>
          コナン：「光の“重ね方”が、世界の見え方を変える――そういうことだな。」<br>
          キッド：「フフ……見える真実と、見えない真実。重なったとき、世界は輝くのさ。」</p>
 
+      <p>残響のように、静かな光だけが部屋を照らしていた。</p>
+
       <div class="next">
-        <a href="puzzle5.html">▶ 第5話へ：真実はいつも一つ</a>
+        <a href="puzzle5.html">▶ 第5話へ：迷宮の果て（めいきゅうのはて）</a>
       </div>
     </div>
   </div>
 
   <script src="js/common.js"></script>
   <script>
-    // ==== Puzzle 4 ヒント（②と③を統合し、③で部分完成図を提示） ====
+    // ==== Puzzle 4 ヒント ====
     const hints4 = [
       "💡 ヒント①：赤＝A経路、緑＝B経路。<u>重なった部分は見えなくなる</u>。⬛黒い四角は停止点。",
       "📘 ヒント②：二つの図を“重ねて”考え、重なりを消していくと形が残る。カタカナのような連なりに注目。",
@@ -100,7 +102,7 @@
     ];
 
     function showHint4() {
-      showHint(hints4); // common.js（innerHTML対応版）を利用
+      showHint(hints4);
     }
 
     function checkAnswer4() {
@@ -133,4 +135,3 @@
   </script>
 </body>
 </html>
-
