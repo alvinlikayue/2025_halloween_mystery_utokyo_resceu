@@ -90,8 +90,8 @@ window.showHint = function() {
 window.showAnswer = function() {
   const message = document.getElementById("message");
   const explanation = document.getElementById("explanation");
+  const ending = document.getElementById("ending");
 
-  // キッド風セリフを段階的に表示
   const lines = [
     "🎩『フッ……探偵くん、どうやら僕の謎は難しかったようだね。』",
     "🌙『まあいい、月下の奇術師は優しいからね。特別に教えてあげよう。』",
@@ -106,10 +106,18 @@ window.showAnswer = function() {
     if (index < lines.length) {
       message.innerText = lines[index];
       index++;
-      setTimeout(showNextLine, 2500); // 2.5秒ごとに次のセリフ
+      setTimeout(showNextLine, 2500);
     } else {
+      // すべてのセリフが終わったあと、解説とまとめを順に表示
       explanation.style.display = "block";
       explanation.scrollIntoView({ behavior: "smooth" });
+
+      setTimeout(() => {
+        if (ending) {
+          ending.style.display = "block";
+          ending.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 2000);
     }
   }
 
