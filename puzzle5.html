@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔭《重力波探偵団》第5話　迷宮の果て（めいきゅうのはて）</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🔭《重力波探偵団》第5話　迷宮の果て（めいきゅうのはて）</h1>
+
+    <div class="story">
+      <p>KAGRAで“光”の謎を解いた翌夜。<br>
+      少年探偵団の研究所に、黒いカードが届いた。</p>
+
+      <p>カードの表には白いトランプのマーク、そして銀色の文字が光っている。</p>
+
+      <div class="letter">
+        <h2>💌 怪盗キッドの予告状</h2>
+        <p>───怪盗キッドより───</p>
+        <p>光を見たなら、次は闇を見よ。<br>
+        宇宙の果て、黒き渦を越えた者だけが辿りつく。</p>
+        <p>すべてのブラックホールを通り抜けよ。<br>
+        だが、星や月の輝きに惑わされるな。<br>
+        それらは“観測者の錯覚”にすぎない。</p>
+        <p>――月下の奇術師より 🌙</p>
+      </div>
+
+      <p>テーブルに広げられたのは、光と闇が入り混じる不思議な迷路。<br>
+      所々に黒い渦――ブラックホールが点在していた。</p>
+
+      <p>灰原：「太陽や月のマークもあるけど……これは一体？」<br>
+      コナン：「“惑わされるな”って書いてある。通るべきは……黒い渦だけだ。」</p>
+    </div>
+
+    <div class="rules-card">
+      <h3>🧭 ルール</h3>
+      <ul>
+        <li>スタートからゴールまで進む。</li>
+        <li>必ずすべてのブラックホール（黒い渦）を通ること。</li>
+        <li>太陽や月（光のシンボル）は通ってはいけない。</li>
+        <li>まっすぐな道のみ通行可。壁を越えることはできない。</li>
+      </ul>
+      <p>正しい経路を見つけると、ある“言葉”が浮かび上がる。</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle5_jp.png" alt="ブラックホール迷路の図" />
+    </div>
+
+    <div class="controls">
+      <input type="text" id="answer" placeholder="答えを入力してください…" />
+      <button class="btn btn-primary" onclick="checkAnswer5()">送信</button>
+      <button class="btn btn-hint" onclick="showHint5()">ヒント</button>
+      <button class="btn btn-answer" onclick="showAnswer5()">答えを見る</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <div id="explanation" class="explain">
+      <div class="puzzle-image">
+        <img src="images/puzzle5_jp_answer.png" alt="迷路を通った後に現れる言葉" />
+      </div>
+
+      <p>迷路をすべてのブラックホールを通りながら抜けると、五つの文字が現れた。</p>
+      <p><strong>「しんじつはいつもひとつ」</strong></p>
+
+      <p>灰原：「……まさか、これ……！」<br>
+      光彦：「コナンくんの言葉だ！」<br>
+      元太：「やっぱり！ オレたちも名探偵だな！」</p>
+
+      <p>コナンは少し眉をひそめ、黒いカードを見つめた。</p>
+    </div>
+
+    <div id="ending" class="story">
+      <p>天井から黒い羽が舞い落ちる。<br>
+      そこにはキッドの筆跡が記されていた。</p>
+
+      <blockquote>
+        『見えないものを見つめる者こそ、答えに辿りつく。<br>
+         ……もっとも、君の“口癖”はもう聞き飽きたけどね？』
+      </blockquote>
+
+      <p>コナンの目が鋭く光り、静かに羽を掴む。</p>
+      <p>コナン：「……皮肉のつもりか？　なら教えてやる。」<br>
+         <strong>「これは口癖じゃねぇ。俺の信念だ。」</strong></p>
+
+      <p>灰原：「コナンくん、怒ってる？」<br>
+         阿笠：「はっはっは……探偵の誇りを侮った報いじゃな。」</p>
+
+      <p>コナンは短く息を吐き、闇の向こうを見据えた。<br>
+         （心の声）「光でも闇でもない……その先にあるものを、俺はこの目で確かめる。」</p>
+
+      <div class="next">
+        <a href="puzzle6.html">▶ 第6話へ：方向の法則（The Law of Direction）</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 5 ヒント ====
+    const hints5 = [
+      "💡 ヒント①：黒い渦（ブラックホール）を全て通ろう。星や月のマークは避けるんだ。",
+      "🌀 ヒント②：まっすぐ進める道だけ通行可能。全ての渦を一筆書きで通れるルートがある。",
+      "🌙 ヒント③：ゴールまでたどると、五つの文字が現れる。それは探偵団の信念を示す言葉だ。"
+    ];
+
+    function showHint5() {
+      showHint(hints5);
+    }
+
+    function checkAnswer5() {
+      const input = document.getElementById("answer").value.trim().toLowerCase();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "答えを入力してください。";
+        return;
+      }
+      const answers = ["真実はいつも一つ", "しんじつはいつもひとつ", "真実"];
+      if (answers.some(a => input.includes(a))) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正解！ 迷宮を抜けたその先に現れたのは、君たちの信念だった！";
+        setTimeout(revealExplanation, 1200);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "うーん、まだ“闇の先”を見つけられてないようだ。";
+      }
+    }
+
+    function showAnswer5() {
+      kidReveal([
+        "🎩『フッ……闇を抜けて辿り着いたか。』",
+        "💫『だが、それは“見える答え”にすぎない。』",
+        "🌙『君の言葉で言えば……そう、“しんじつはいつもひとつ”だろう？』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
