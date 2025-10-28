@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌌《重力波探偵団》第6話　方向の法則（ほうこうのほうそく）</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌌《重力波探偵団》第6話　方向の法則（ほうこうのほうそく）</h1>
+
+    <div class="story">
+      <p>KAGRAでの全ての謎を解き明かした翌朝。<br>
+      コナンたちのもとに、最後の予告状が届いた。</p>
+
+      <div class="letter">
+        <h2>💌 怪盗キッドの予告状</h2>
+        <p>───怪盗キッドより───</p>
+        <p>最後の鍵は、“宇宙の方向”にある。<br>
+        すべての矢印が示す方角を読み解けば、<br>
+        ひとつの答えが導かれるだろう。</p>
+        <p>――月下の奇術師より 🌙</p>
+      </div>
+
+      <p>テーブルの上に置かれたのは、赤と青の矢印が入り混じる奇妙な図だった。</p>
+
+      <div class="puzzle-image">
+        <img src="images/puzzle6_jp.png" alt="方向の法則パズル図" />
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="answer" placeholder="6文字の答えを入力…" />
+      <button class="btn btn-primary" onclick="checkAnswer6()">送信</button>
+      <button class="btn btn-hint" onclick="showHint6()">ヒント</button>
+      <button class="btn btn-answer" onclick="showAnswer6()">答えを見る</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- 解説 -->
+    <div id="explanation" class="explain">
+      <h3>🧩 解説</h3>
+      <p>赤と青の矢印は、それぞれ異なる種類の「方向」を示していた。</p>
+      <ul>
+        <li>❤️ 赤い矢印：立体的な上下・左右の動き（Up / Down / Left / Right）</li>
+        <li>💙 青い矢印：コンパスの方位（North / East / South / West）</li>
+      </ul>
+      <p>それぞれの段の矢印をたどって、英単語の頭文字を並べると…</p>
+
+      <ul>
+        <li>1段目 → Right, East, South, T → <code>REST</code></li>
+        <li>2段目 → Down, O, West, North → <code>DOWN</code></li>
+        <li>3段目 → Right, East, South, C, Up, East → <code>RESCEU</code></li>
+      </ul>
+
+      <p>これが、キッドの言う“宇宙の方向”の鍵だった。</p>
+    </div>
+
+    <!-- 物語の結末 -->
+    <div id="ending" class="story">
+      <p>天井にレーザーの光が交差し、白い羽がゆっくりと舞い落ちた。</p>
+      <blockquote>
+        「地の底で休み、深く潜り、そして空を見上げよ。<br>
+         その先に、君の探す“はじまり”がある。」
+      </blockquote>
+      <p>コナンはカードを見つめ、静かに息を整えた。</p>
+
+      <div class="next">
+        <a href="index.html">▶ トップへ戻る</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== 第6話：方向の法則 ====
+    const hints6 = [
+      "💡 ヒント①：赤と青の矢印、同じ“方向”を示しているように見えるが、実は違う役割を持っている。",
+      "🧭 ヒント②：❤️赤は“立体の動き（上・下・右・左）”、💙青は“方位（北・東・南・西）”を表しているようだ。<br>つまり、空間の方向とコンパスの方角を組み合わせた図なんだ。",
+      "🌌 ヒント③：各段（横一列）で、矢印の示す方向の英単語の頭文字を読んでみよう。<br>１段目は「休む」という意味の英単語になるはずだ。"
+    ];
+    function showHint6(){ showHint(hints6); }
+
+    function checkAnswer6(){
+      const input = (document.getElementById("answer").value || "").trim().toUpperCase();
+      const msg = document.getElementById("message");
+      if(!input){
+        msg.style.color="#ccc"; msg.textContent="答えを入力してください。"; return;
+      }
+      if(input === "RESCEU"){
+        msg.style.color="#00ffcc";
+        msg.textContent="🎉 正解！ 矢印が指し示していたのは、この6文字だった！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color="#ff6666";
+        msg.textContent="もう一度、赤と青の矢印の意味を見直してみよう。";
+      }
+    }
+
+    function showAnswer6(){
+      kidReveal([
+        "🎩『方向を読むんだ、探偵くん。』",
+        "🧭『赤は立体の動き、青はコンパスの方角。』",
+        "🌙『そして導かれる6文字は……RESCEU。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
