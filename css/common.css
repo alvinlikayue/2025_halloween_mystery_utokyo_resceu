@@ -140,3 +140,30 @@ h1 {
   .btn { width: 100%; margin-top: 6px; }
 }
 
+.optics-rules {
+  background: rgba(0, 0, 20, 0.6);
+  border: 1px solid #44aaff;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 40px 0;
+  box-shadow: 0 0 10px #00bfff33;
+  line-height: 1.8;
+}
+
+.optics-rules h2 {
+  color: #66ccff;
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.optics-rules ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.optics-rules li {
+  margin-bottom: 14px;
+  color: #eeeeee;
+}
+

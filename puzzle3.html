@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟《重力波探偵団》第3話 光の迷宮（LASER）</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌟《重力波探偵団》第3話　光の迷宮（LASER）</h1>
+
+    <div class="story">
+      <p>KAGRAで“重力波”の謎を解き明かした翌朝。<br>
+      コナンたちのもとに、再び白いハトが現れた。</p>
+
+      <p>その足に結ばれた銀色の封筒には、光のように反射するインクでこう書かれていた。</p>
+      <p>「次の宝は、“光の道”の奥にある。」</p>
+
+      <p>封筒を開けると、中には１枚の不思議な図が入っていた。<br>
+      鏡のような青い長方形、そして赤い矢印の光線――。だが、説明は一切ない。</p>
+
+      <p>灰原：「まるで……迷路ね。」<br>
+      コナン：「いや、これは“光の迷路”。KAGRAの中を走るレーザー光を表してるんだ。」</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle3_jp_main.png" alt="光の道と鏡が描かれた謎の図" />
+    </div>
+
+    <div class="story">
+      <p>阿笠博士：「うむむ……鏡に当たって反射してるようじゃが、どこへ行くのかさっぱり分からん！」<br>
+      光彦：「矢印がバラバラで、ゴールもないように見えます！」<br>
+      コナン：「つまり――これは“ルールを知らないと解けない謎”ってわけだ。」</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle3_jp_rule.png" alt="光線の反射とビームスプリッターの説明図" />
+    </div>
+
+    <div class="story">
+      <p>コナンは手帳を取り出し、図に書き込みながら説明した。</p>
+      <p>コナン：「KAGRAの中では、光が鏡や“ビームスプリッター”に当たることで進む道が決まる。<br>
+      この装置が“半分反射・半分透過”をするんだ。」</p>
+    </div>
+
+    <div class="optics-rules">
+      <h2>🌟 光学素子と光の動きのルールまとめ</h2>
+
+      <ul>
+        <li>🟥 <strong>光線（赤線）</strong><br>
+          光が進む道を表す。矢印の方向に進む。<br>
+          光は途中で鏡やビームスプリッターに当たると、反射・透過などで進路が変わる。
+        </li>
+
+        <li>🪞 <strong>鏡（Mirror）</strong><br>
+          光を反射する。入射角 = 反射角 の法則に従う。<br>
+          光は一方向に跳ね返るだけ（分かれない）。
+        </li>
+
+        <li>🔷 <strong>ビームスプリッター（Beam Splitter）</strong><br>
+          半透過鏡のような光学素子。<br>
+          光を2つの道に分ける：<br>
+          一部は透過してそのまま進み、<br>
+          一部は紺色の矢印の方向に反射して別の道へ進む。<br>
+          つまり、1本の光線が「透過光」と「反射光」に分かれて進む。
+        </li>
+
+        <li>⚫ <strong>黒い丸（停止点）</strong><br>
+          光がここに当たると止まる。<br>
+          それ以上は進まないし、反射もしない。
+        </li>
+      </ul>
+    </div>
+
+    <div class="story">
+      <p>灰原：「つまり、この“光の動き”を正しく追えば、答えが出るということね。」<br>
+      コナン：「ああ――“真実の光”が導く言葉が、キッドの狙いだ。」</p>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="answer" placeholder="答えを入力してください…" />
+      <button class="btn btn-primary" onclick="checkAnswer3()">送信</button>
+      <button class="btn btn-hint" onclick="showHint3()">ヒント</button>
+      <button class="btn btn-answer" onclick="showAnswer3()">答えを見る</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <div id="explanation" class="explain">
+      <div class="puzzle-image">
+        <img src="images/puzzle3_jp_answer.png" alt="LASERの答え図" />
+      </div>
+
+      <p>コナンは赤い線をたどり、次々と鏡を反射していった。<br>
+      やがて、赤い光は一つの単語を描き出した――</p>
+
+      <p><strong>L → A → S → E → R</strong></p>
+
+      <p>灰原：「LASER……！」<br>
+      阿笠：「そうか！ 光を増幅し、干渉させて距離の変化を測る装置……まさにKAGRAの心臓部じゃ！」<br>
+      コナン：「キッドの言う“光の道”は、レーザーそのものを指していたんだ。」</p>
+    </div>
+
+    <div id="ending" class="story">
+      <p>天井の反射光が集まり、白いマントの影が現れた。</p>
+      <p>キッド：「お見事、探偵くん。光の迷宮を抜けたようだね。<br>
+      だが――光がある限り、影もまた生まれる。」<br>
+      コナン：「“影の謎”……次の挑戦ってわけか。」<br>
+      キッド：「フフ、月明かりの下で会おう。――光と影の交わる場所で。」</p>
+
+      <p>キッドは眩い閃光の中へと姿を消した。</p>
+
+      <div class="next">
+        <a href="puzzle4.html">▶ 第4話へ：光の干渉（Interference）</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 3 専用スクリプト ====
+    const hints3 = [
+      "💡 ヒント①：赤い線は“光”を表している。鏡に当たると反射し、ビームスプリッターでは２方向に進む。",
+      "📘 ヒント②：光の道を正しく追っていくと、いくつかの英文字を形づくっているようだ。",
+      "🌙 ヒント③：“光を増幅して干渉させる装置”――KAGRAの中心技術に関係ある英単語。"
+    ];
+
+    function showHint3() {
+      showHint(hints3);
+    }
+
+    function checkAnswer3() {
+      const input = document.getElementById("answer").value.trim().toUpperCase();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "答えを入力してください。";
+        return;
+      }
+      if (["LASER"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正解！ 光の迷宮を抜けた！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "残念…もう一度考えてみよう。";
+      }
+    }
+
+    function showAnswer3() {
+      kidReveal([
+        "🎩『フッ……光の道を追えたかな？』",
+        "💡『L・A・S・E・R――“光を増幅する真実の道”。』",
+        "🌙『LASER、それがKAGRAの心臓部だ。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
