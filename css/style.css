@@ -1,0 +1,31 @@
+body {
+  background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
+  color: white;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+button {
+  background: #ff6600;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffaa00;
+  transform: scale(1.1);
+}
