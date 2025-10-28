@@ -70,10 +70,10 @@ window.checkAnswer = function() {
 window.showHint = function() {
   const hint = document.getElementById("hint");
   const hints = [
-    "🔍 ヒント①：緑の線を“ひらがな”でたどってみよう。",
-    "🧭 ヒント②：『か → ぐ → ら』……何かの地名みたいだね？",
-    "🌌 ヒント③：富山の山奥にある“重力波観測施設”を思い出して。"
-  ];
+  "🔍 ヒント①：線は“文字”ではなく“音”をたどっているようだ。読んでみると何かの言葉になるかも？",
+  "🧭 ヒント②：赤い線は『と → う → だ → い』、紺の線は『と → や → ま』。どちらも地名だね。",
+  "🌌 ヒント③：緑の線は『か → ぐ → ら』……その名は、富山の山奥にある“重力波観測施設”――KAGRA！"
+];
 
   let step = parseInt(hint.dataset.step || "0");
 
