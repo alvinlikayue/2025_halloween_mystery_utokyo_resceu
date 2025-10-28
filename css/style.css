@@ -110,3 +110,51 @@ button:hover {
   transform: scale(1.03);
 }
 
+.hint-btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0077ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hint-btn:hover {
+  background-color: #33aaff;
+}
+
+/* ヒント部分 */
+.hidden-hint {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffcc00;
+  margin-top: 15px;
+  display: none;
+  transition: opacity 0.6s ease;
+}
+
+.hidden-explanation {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ffd700;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff9d6;
+  line-height: 1.8;
+  margin-top: 30px;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.hidden-explanation h3 {
+  color: #ffcc00;
+  text-align: center;
+  text-shadow: 0 0 6px #ffcc00;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

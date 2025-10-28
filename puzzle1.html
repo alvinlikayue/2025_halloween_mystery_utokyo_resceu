@@ -51,9 +51,31 @@
       <div class="input-area">
         <input type="text" id="answer" placeholder="答えを入力してください…" />
         <button onclick="checkAnswer()">送信</button>
+        <button class="hint-btn" onclick="showHint()">ヒント</button> 
       </div>
       <p id="message"></p>
-    </div>
+      <p id="hint" class="hidden-hint"></p>
+
+      <div id="explanation" class="hidden-explanation">
+        <h3>🧩 謎の構造</h3>
+        <p>この表は <strong>五十音表（あいうえお表）</strong>。<br>
+        縦は「行（あ・か・さ・た・な…）」、横は「段（a・i・u・e・o）」を表している。</p>
+
+        <p>線は、それぞれ音の位置をたどって、日本語の言葉を示していた。</p>
+        <ul>
+          <li>🔴 赤い線＝東大（とうだい）</li>
+          <p>赤線は上の方を横切り、「と → う → だ → い」と音を結んでいる。</p>
+
+          <li>🔵 紺色線＝富山（とやま）</li>
+          <p>紺線は右下へ向かい、「と → や → ま」の形になっている。</p>
+
+          <li>🟢 緑線＝？</li>
+          <p>よく見ると、左上の「か」から始まり、右へ「ぐ」、下に「ら」へと続いている。</p>
+        </ul>
+
+        <p><strong>コナン：</strong>「……“か → ぐ → ら”。 緑の線は『KAGRA（かぐら）』だ！」</p>
+     </div>
+   </div>
   </div>
 
   <script src="js/main.js" defer></script>
