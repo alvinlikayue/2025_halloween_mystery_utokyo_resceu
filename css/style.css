@@ -9,7 +9,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* 背景の星 */
+/* === 背景の星 === */
 #stars {
   position: fixed;
   top: 0;
@@ -19,142 +19,13 @@ html, body {
   z-index: -1;
 }
 
-/* タイトル */
-.title {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-/* 手紙（予告状） */
-.letter {
-  border: 2px solid #d4af37;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #1b1b1b 0%, #0e0e0e 100%);
-  color: #f5f5dc;
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px 30px;
-  box-shadow: 0 0 20px rgba(255, 255, 200, 0.2);
-  text-align: center;
-  font-family: "Zen Old Mincho", "Times New Roman", serif;
-  position: relative;
-  animation: fadeInLetter 2.5s ease-out forwards;
-}
-
-.letter::before {
-  content: "✉️";
-  position: absolute;
-  top: -25px;
-  left: calc(50% - 15px);
-  font-size: 24px;
-}
-
-.letter h2 {
-  color: #ffd700;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 6px #ffdd77;
-}
-
-.letter p {
-  font-size: 1.1rem;
-  line-height: 1.8em;
-  font-style: italic;
-}
-
-@keyframes fadeInLetter {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ストーリー全体 */
-.story-container {
-  text-align: center;
-  padding: 0 10%;
-  animation: fadeIn 2s ease-out;
-}
-
-.story p {
-  opacity: 0;
-  animation: appear 1.5s ease forwards;
-  margin-bottom: 0.8rem;
-}
-
-/* 各行に時間差をつけて登場 */
-.story p:nth-child(1) { animation-delay: 0.5s; }
-.story p:nth-child(2) { animation-delay: 1.0s; }
-.story p:nth-child(3) { animation-delay: 1.5s; }
-.story p:nth-child(4) { animation-delay: 2.0s; }
-.story p:nth-child(5) { animation-delay: 2.5s; }
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.highlight {
-  color: #ffcc00;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-/* 謎リスト */
-.menu-container {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.menu-container h2 {
-  color: #ff9900;
-  font-size: 1.5rem;
-}
-
-.puzzle-list {
-  list-style: none;
-  padding: 0;
-}
-
-.puzzle-list li {
-  margin: 12px 0;
-}
-
-.puzzle-list a {
-  color: white;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.unlocked:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-.locked {
-  color: gray;
-  opacity: 0.5;
-  cursor: not-allowed;
-  text-decoration: line-through;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .title { font-size: 1.6rem; }
-  .letter { width: 85%; padding: 15px 20px; }
-  .letter p { font-size: 1rem; line-height: 1.6em; }
-  .story-container { padding: 0 5%; }
-  .story p { font-size: 0.95rem; }
-  .puzzle-list a { font-size: 1rem; }
-}
-
+/* === 物語全体 === */
 .episode-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   text-align: left;
   line-height: 1.8;
-  color: #f5f5f5;
 }
 
 .episode-title {
@@ -165,7 +36,7 @@ html, body {
   text-shadow: 0 0 8px #ffcc33;
 }
 
-/* 手紙 */
+/* === 手紙 === */
 .letter {
   border: 2px solid #d4af37;
   border-radius: 10px;
@@ -178,7 +49,7 @@ html, body {
   font-family: "Zen Old Mincho", "Times New Roman", serif;
 }
 
-/* 入力欄 */
+/* === 入力欄 === */
 .input-area {
   text-align: center;
   margin: 30px 0;
@@ -214,3 +85,10 @@ button:hover {
   font-size: 1.1rem;
   margin-top: 10px;
 }
+
+/* === スマホ対応 === */
+@media (max-width: 768px) {
+  .episode-title { font-size: 1.5rem; }
+  input[type="text"] { width: 80%; }
+}
+
