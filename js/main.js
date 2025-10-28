@@ -56,25 +56,28 @@ document.querySelectorAll(".locked").forEach(link => {
   });
 });
 
-// 星アニメーション（index.htmlと共通）
+// === 星アニメーション ===
 const canvas = document.getElementById("stars");
 if (canvas) {
   const ctx = canvas.getContext("2d");
-  let stars = [];
-  const numStars = 100;
+  const stars = Array.from({ length: 100 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.5,
+    d: Math.random() * 0.5,
+  }));
+
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
   resizeCanvas();
   window.addEventListener("resize", resizeCanvas);
-  for (let i = 0; i < numStars; i++) {
-    stars.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 1.5, d: Math.random() * 0.5 });
-  }
+
   function drawStars() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "white";
-    for (let s of stars) {
+    for (const s of stars) {
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fill();
@@ -86,14 +89,16 @@ if (canvas) {
   drawStars();
 }
 
-// 答えチェック
-function checkAnswer() {
+// === 答えチェック ===
+window.checkAnswer = function () {
   const input = document.getElementById("answer").value.trim();
   const message = document.getElementById("message");
+
+  if (!message) return;
+
   if (input === "KAGRA" || input === "かぐら" || input === "カグラ") {
     message.style.color = "#00ffcc";
     message.innerText = "🎉 正解！ 緑の線は『KAGRA』だ！";
-    // 次の謎をアンロックするならここで localStorage を更新
     localStorage.setItem("puzzle1Cleared", "true");
   } else if (input === "") {
     message.style.color = "#cccccc";
@@ -102,4 +107,4 @@ function checkAnswer() {
     message.style.color = "#ff6666";
     message.innerText = "残念… もう一度考えてみよう。";
   }
-}
+};
