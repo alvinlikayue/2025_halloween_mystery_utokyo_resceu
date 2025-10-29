@@ -303,3 +303,24 @@ h1 {
 .dialogue.left .speech { text-align: left; }
 .dialogue.right .speech { text-align: left; }
 
+.learn-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,255,204,0.3);
+  border-radius: 12px;
+  padding: 1.5em;
+  margin-top: 3em;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(0,255,204,0.2);
+}
+.learn-box h3 {
+  color: #00ffcc;
+  margin-bottom: 0.5em;
+}
+.learn-box a {
+  color: #00ffee;
+  text-decoration: underline;
+}
+.learn-box a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00ffcc;
+}
