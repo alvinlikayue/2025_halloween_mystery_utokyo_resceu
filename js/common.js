@@ -39,14 +39,26 @@ window.showHint = function(hints, id="hint") {
 window.revealExplanation = function() {
   const exp = document.getElementById("explanation");
   const end = document.getElementById("ending");
+  const learnBox = document.getElementById("learn-box");
+
   if (exp && exp.style.display !== "block") {
+    // 解説を表示
     exp.style.display = "block";
     setTimeout(() => exp.style.opacity = 1, 50);
+
+    // 2秒後：エンディングを表示
     setTimeout(() => {
       if (end) {
         end.style.display = "block";
         setTimeout(() => end.style.opacity = 1, 100);
         end.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // ✅ 同時に学びボックス（learn-box）もフェードイン
+      if (learnBox) {
+        learnBox.style.display = "block";
+        learnBox.style.opacity = 0;
+        setTimeout(() => learnBox.style.opacity = 1, 200);
       }
     }, 2000);
   }
