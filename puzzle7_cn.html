@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔭《宇宙中最溫柔的聲音》第7話 希望（HOPE）</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🔭《宇宙中最溫柔的聲音》第7話　希望（HOPE）</h1>
+
+    <!-- 🌙 場景 -->
+    <div class="story">
+      <p>黎明前的寂靜，瀰漫在 RESCEU 的實驗室中。<br>
+      在散落的觀測圖表之間，柯南發現了一張奇怪的表格——<br>
+      上面布滿了數字、圓點與箭頭……</p>
+    </div>
+
+    <!-- 💌 信件 -->
+    <div class="letter">
+      <h2>💌 來自基德的信</h2>
+      <p>「答案藏在白晝與黑夜之間。<br>
+      讀出時間的印記，翻轉世界，<br>
+      你將找到那個永不消逝的詞語。」</p>
+    </div>
+
+    <!-- 謎題圖 -->
+    <div class="puzzle-image">
+      <img src="images/puzzle7_en.png" alt="圓點與箭頭謎題" />
+    </div>
+
+    <!-- ✏️ 輸入 -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="請輸入答案…" />
+      <button class="btn btn-primary" onclick="checkAnswer7()">送出</button>
+      <button class="btn btn-hint" onclick="showHint7()">提示</button>
+      <button class="btn btn-answer" onclick="showAnswer7()">看答案</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- 🧩 解說 -->
+    <div id="explanation" class="explain" style="display:none;">
+      <h3>🧩 解題說明</h3>
+      <p>起初，表格看似毫無規律——但紅與黑的數字揭示了秘密。</p>
+      <p>兩個紅色數字代表<strong>週末</strong>——星期六與星期日。<br>
+      也就是說，這些數字實際上是<strong>日曆上的日期</strong>。</p>
+      <p>因此，26＝星期日、27＝星期一、28＝星期二、29＝星期三、30＝星期四、31＝星期五、1＝星期六。</p>
+
+      <p><strong>圓點</strong>表示取該星期名的第幾個字母（1點＝第1個字母、2點＝第2個字母、3點＝第3個字母）。<br>
+      <strong>箭頭</strong>則表示要翻轉字母形狀：↔ 水平翻轉、↕ 垂直翻轉。</p>
+
+      <h4>第2列：</h4>
+      <ul>
+        <li>29（三點，↔）→ Wednesday → d → b</li>
+        <li>30（三點）→ Thursday → u</li>
+        <li>28（一點）→ Tuesday → t</li>
+      </ul>
+      <p>→「but」</p>
+
+      <h4>第3列：</h4>
+      <ul>
+        <li>30（兩點）→ Thursday → h</li>
+        <li>27（兩點）→ Monday → o</li>
+        <li>29（三點，↔ + ↕）→ Wednesday → d → q → p</li>
+        <li>28（三點）→ Tuesday → e</li>
+      </ul>
+      <p>→「hope」</p>
+
+      <p class="highlight">✨ 最終答案：<strong>HOPE（希望）</strong></p>
+    </div>
+
+    <!-- 🌙 結尾 -->
+    <div id="ending" class="story" style="display:none;">
+      <h3>🌙 結語與別離</h3>
+
+      <div class="scene-visual" style="background-image:url('images/bg_monitor_glow.jpg');">
+        <div class="dialogue right">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>我明白了……「希望」並不是某個藏起來的寶藏，<br>
+            而是閃耀在我們心中的光。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>好奇、探究的精神，還有對未來的信念……<br>
+            這就是基德想讓我們明白的吧。</p>
+          </div>
+        </div>
+
+        <p>柯南靜靜地注視著螢幕。<br>
+        螢幕上的波形微微起伏，<br>
+        就像夜空中閃爍的星辰。</p>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>「希望」存在於每個人的心中。<br>
+            探索宇宙的科學，與追尋真相的推理——<br>
+            都是為了不讓我們失去那道光。</p>
+          </div>
+        </div>
+      </div>
+
+      <p>螢幕柔和的光脈動著，<br>
+      彷彿宇宙本身也在回應他們的心聲。</p>
+
+      <blockquote>
+        「真正的寶藏，不是我們看見的星辰，<br>
+        而是那份讓我們不斷仰望的心。」<br>
+        ——月下的魔術師 🌙
+      </blockquote>
+
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p>……他也還在尋找吧？</p>
+        </div>
+      </div>
+
+      <p>柯南微微一笑。</p>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p>嗯。我們都在仰望同一片天空。</p>
+        </div>
+      </div>
+
+      <p>窗外，黎明的第一道光劃破天際——<br>
+      彷彿連成了一個指向未來的「希望」星座。</p>
+
+      <p class="center-line" style="margin-top:18px;">🎃 <strong>萬聖節快樂！</strong> 🎃</p>
+      <p class="center-line" style="opacity:0.95;">🔎 <strong>永遠別失去你的好奇心。</strong></p>
+      <p class="center-line" style="opacity:0.95;">🕯️  <strong>真相永遠只有一個。</strong></p>
+
+      <div class="next">
+        <a href="index_cn.html">▶ 回到第1話：《宇宙中最溫柔的聲音》</a>
+      </div>
+    </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== 謎題7：希望（HOPE） ====
+    const hints7 = [
+      "提示①：為什麼有兩個數字是紅色，其他是黑色？它們代表什麼？",
+      "提示②：啊……那些不只是數字，而是日曆上的日期——每個數字對應星期幾。",
+      "提示③：圓點表示取星期名的第幾個字母。但箭頭又代表什麼呢？"
+    ];
+    function showHint7(){ showHint(hints7); }
+
+    function checkAnswer7(){
+      const input = (document.getElementById('answer').value || '').trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if(!input){
+        msg.style.color = '#ccc';
+        msg.textContent = '請輸入你的答案。';
+        return;
+      }
+      if(input === 'HOPE' || input === '希望'){
+        msg.style.color = '#00ffcc';
+        msg.textContent = '🎉 正確！你找到了那個永不消逝的詞語——HOPE（希望）！';
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = '#ff6666';
+        msg.textContent = '還不對喔……再仔細看看線索吧。';
+      }
+    }
+
+    function showAnswer7(){
+      kidReveal([
+        "🎩「白天轉動，世界翻轉，但有一個詞永遠存在。」",
+        "💫「你找到了它……HOPE（希望）。」",
+        "🌙「只要希望仍在，宇宙就不會沉默。」"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
