@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌌《宇宙中最溫柔的聲音》第6話 方向的法則</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌌《宇宙中最溫柔的聲音》第6話　方向的法則</h1>
+
+    <!-- 場景1：最後的挑戰 -->
+    <div class="story">
+      <p>在解開所有前面的謎題後的早晨，<br>
+      又一封來自怪盜基德的信件送到了柯南與夥伴們手中。</p>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_tokyo_night.jpg');">
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>……又來一封嗎？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>上面寫著「讀懂方向」。<br>只要再找出規則，就能解開答案。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 基德的挑戰信 -->
+    <div class="letter">
+      <h2>💌 怪盜基德的挑戰信</h2>
+      <p>最後的鑰匙，藏在<strong>宇宙的方向</strong>之中。<br>
+      讀出每一個箭頭的意義，<br>
+      唯一的答案便會出現。</p>
+      <p>――月下的魔術師 🌙</p>
+    </div>
+
+    <!-- 謎題圖 -->
+    <div class="story">
+      <p>桌上擺著一張奇怪的圖，滿是紅色與藍色的箭頭，<br>它們指向四面八方。</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle6_en.png" alt="方向箭頭謎題" />
+    </div>
+
+    <!-- ✏️ 輸入 -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="請輸入六個字母的答案…" />
+      <button class="btn btn-primary" onclick="checkAnswer6()">送出</button>
+      <button class="btn btn-hint" onclick="showHint6()">提示</button>
+      <button class="btn btn-answer" onclick="showAnswer6()">看答案</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- 🧩 解說 -->
+    <div id="explanation" class="explain" style="display:none;">
+      <h3>🧩 解說</h3>
+      <p>紅色與藍色箭頭各代表不同的<strong>方向系統</strong>：</p>
+      <ul>
+        <li>❤️ 紅色箭頭：三維方向——上 / 下 / 左 / 右</li>
+        <li>💙 藍色箭頭：羅盤方位——北 / 東 / 南 / 西</li>
+      </ul>
+      <p>依照每一橫列箭頭方向的首字母組合，可以得到：</p>
+      <ul>
+        <li>第1列 → Right, East, South, T → <code>REST</code></li>
+        <li>第2列 → Down, O, West, North → <code>DOWN</code></li>
+        <li>第3列 → Right, East, South, C, East, Up → <code>RESCEU</code></li>
+      </ul>
+      <p>這正是基德口中的「宇宙的方向」——<strong>RESCEU</strong>。</p>
+    </div>
+
+    <!-- 📡 延伸知識 -->
+    <div id="learn-box" class="learn-box" style="display:none; opacity:0;">
+      <h3>📡 延伸閱讀：什麼是 RESCEU？</h3>
+      <p>
+        RESCEU（<strong>Research Center for the Early Universe</strong>，早期宇宙研究中心）<br>
+        隸屬於東京大學理學系研究科，致力於探索宇宙的起源與結構，<br>
+        從理論與觀測兩方面研究宇宙的「方向」與「波動」。
+      </p>
+      <p>
+        RESCEU 與 <strong>KAGRA</strong>、<strong>LIGO</strong>、<strong>Virgo</strong> 等觀測計畫合作，<br>
+        透過光與重力波的訊號，共同揭示宇宙的結構與誕生。
+      </p>
+
+      <p class="link">
+        🌌 想了解更多 👉
+        <a href="https://www.resceu.s.u-tokyo.ac.jp/whatisRESCEU_en.php" target="_blank" rel="noopener noreferrer">
+          RESCEU 官方網站：What is RESCEU?
+        </a>
+      </p>
+    </div>
+
+    <!-- 🌙 結尾 -->
+    <div id="ending" class="story" style="display:none;">
+      <p>光束在頭頂交錯，一根白色羽毛緩緩從天花板飄落。</p>
+      <blockquote>
+        「在大地之下休息，向深處潛行，再抬頭仰望天空。<br>
+         超越那之後，便是你所尋的起點。」
+      </blockquote>
+
+      <div class="scene-visual" style="background-image:url('images/bg_night_lab.jpg');">
+        <div class="dialogue left">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>所以……RESCEU 其實是真實存在的地方？</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>沒錯。那就是這次方向所指向的目的地——<br>東京大學的「早期宇宙研究中心」。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle7_cn.html">▶ 前往最終之謎</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== 第6話：方向的法則 ====
+    const hints6 = [
+      "💡 提示①：紅色與藍色箭頭代表不同種類的方向。",
+      "🧭 提示②：❤️ 紅色＝三維方向（上/下/左/右），💙 藍色＝羅盤方位（北/東/南/西）。依序取各列首字母。",
+      "🌌 提示③：第一列組成的單字意思是「休息」。這是規則的關鍵線索。"
+    ];
+
+    function showHint6() { showHint(hints6); }
+
+    function checkAnswer6() {
+      const input = (document.getElementById('answer').value || '').trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if (!input) {
+        msg.style.color = '#ccc';
+        msg.textContent = '請輸入你的答案。';
+        return;
+      }
+      if (input === 'RESCEU') {
+        msg.style.color = '#00ffcc';
+        msg.textContent = '🎉 正確！你解開了隱藏在方向之中的六字母密碼！';
+        setTimeout(revealExplanation, 900);
+      } else {
+        msg.style.color = '#ff6666';
+        msg.textContent = '再仔細看看：紅色＝三維方向，藍色＝羅盤方位。依每列仔細讀。';
+      }
+    }
+
+    function showAnswer6() {
+      kidReveal([
+        "🎩『讀懂方向吧，小偵探。』",
+        "🧭『紅色代表空間方向，藍色代表方位角。』",
+        "🌙『它們合起來，拼出了……RESCEU。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
