@@ -211,7 +211,7 @@
         msg.textContent = "Please enter your answer.";
         return;
       }
-      if (["INTERFERENCE"].includes(v)) {
+      if (["INTERFERENCE","interference","Interference"].includes(v)) {
         msg.style.color = "#00ffcc";
         msg.textContent = "🎉 Correct! The two lights cancel — the answer is INTERFERENCE!";
         setTimeout(revealExplanation, 1000);

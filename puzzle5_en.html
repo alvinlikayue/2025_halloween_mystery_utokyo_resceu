@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔭 The Kindest Sound in the Universe — Episode 5: The End of the Labyrinth</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🔭 The Kindest Sound in the Universe — Episode 5: The End of the Labyrinth</h1>
+
+    <!-- 🌌 Scene 1: The Arrival of the Black Card -->
+    <p>The night after solving the mystery of “light” at KAGRA,<br>
+    a black card arrived at the Detective Boys’ lab.</p>
+
+    <div class="scene-visual" style="background-image:url('images/bg_night_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>…From Kid again? This time it’s a black card.</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>“If you’ve seen the light, now look into the darkness.” …I see. Another challenge.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 Kid’s Challenge -->
+    <div class="letter">
+      <h2>💌 Notice from Kaito Kid</h2>
+      <p>If you have seen the light, then look into the darkness.<br>
+      Only those who cross the black vortex at the edge of the universe may arrive.</p>
+      <p>Pass through every <strong>black hole</strong>.<br>
+      But do not be deceived by the light of the stars or the moon —<br>
+      they are mere illusions of the observer.</p>
+      <p>― The Magician under the Moonlight 🌙</p>
+    </div>
+
+    <p>On the table lay a strange maze where light and shadow intertwined.<br>
+    Scattered within were swirling black vortices — black holes.</p>
+
+    <div class="scene-visual" style="background-image:url('images/bg_table_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="Agasa" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">Agasa</div>
+          <p><em>Hmm… A maze of light and darkness, huh? Which way should we go?</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>There are suns and moons here too… what could they mean?</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>It says “Don’t be deceived.” The path must go through only the black vortices.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🧭 Rules -->
+    <div class="rules-card">
+      <h3>🧭 Rules</h3>
+      <ul>
+        <li>Find a path from START to GOAL.</li>
+        <li>You must pass through <strong>every black hole</strong>.</li>
+        <li>Do <strong>not</strong> pass through the Sun or Moon (light symbols).</li>
+        <li>You may only move in straight paths — no crossing walls.</li>
+      </ul>
+      <p>Follow the correct route, and a <strong>word</strong> will appear.</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle5_en.png" alt="Black hole maze puzzle" />
+    </div>
+
+    <!-- ✏️ Input -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="Enter your answer…" />
+      <button class="btn btn-primary" onclick="checkAnswer5()">Submit</button>
+      <button class="btn btn-hint" onclick="showHint5()">Hint</button>
+      <button class="btn btn-answer" onclick="showAnswer5()">Show Answer</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- ✅ Explanation -->
+    <div id="explanation" class="explain" style="display:none;">
+      <div class="puzzle-image">
+        <img src="images/puzzle5_en_answer.png" alt="Maze path forming the word TRUTH" />
+      </div>
+
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>Passing through every black hole… the path reveals a single word — <strong>TRUTH</strong>.</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/mitsuhiko.png" alt="Mitsuhiko" class="char-face">
+          <div class="speech">
+            <div class="char-name mitsuhiko">Mitsuhiko</div>
+            <p>That’s Conan’s motto!</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/genta.png" alt="Genta" class="char-face">
+          <div class="speech">
+            <div class="char-name genta">Genta</div>
+            <p>Heh, guess we really are detectives after all!</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="Haibara" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">Haibara</div>
+            <p>…Heh. So that’s what this puzzle was leading us to all along.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🌙 Ending -->
+    <div id="ending" style="display:none;">
+      <p>The white silhouette of a cape shimmered once more against the ceiling.</p>
+      <div class="scene-visual" style="background-image:url('images/bg_kid_shadow.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="Kaito Kid" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">Kaito Kid</div>
+            <p>Those who look into the unseen will find the answer… though I must admit, I’m tired of hearing your catchphrase.</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>…A catchphrase, huh? You’re wrong. It’s not a phrase — it’s my conviction.</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="Agasa" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">Agasa</div>
+            <p>Hahaha! That’s the pride of a true detective!</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="Haibara" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">Haibara</div>
+            <p>Conan, are you… a little angry?</p>
+          </div>
+        </div>
+
+        <div class="dialogue center">
+          <img src="images/conan.png" alt="Conan (inner voice)" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan (inner voice)</div>
+            <p><em>Light or darkness — whatever lies beyond, I’ll see it with my own eyes.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle6_en.html">▶ Next Episode: The Law of Direction</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 5 Script ====
+    const hints5 = [
+      "💡 Hint 1: Pass through all black holes. Avoid the Sun and Moon symbols.",
+      "🌀 Hint 2: You can only move in straight paths. There’s a single continuous route that connects all vortices.",
+      "🌙 Hint 3: When you reach the goal, 5 letters appear — the detective’s creed."
+    ];
+
+    function showHint5() {
+      showHint(hints5);
+    }
+
+    function checkAnswer5() {
+      const input = document.getElementById('answer').value.trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if (!input) {
+        msg.style.color = '#ccc';
+        msg.textContent = 'Please enter your answer.';
+        return;
+      }
+      if (["TRUTH"].includes(input)) {
+        msg.style.color = '#00ffcc';
+        msg.textContent = '🎉 Correct! Beyond the darkness, you’ve found what every detective seeks — the TRUTH!';
+        setTimeout(revealExplanation, 1200);
+      } else {
+        msg.style.color = '#ff6666';
+        msg.textContent = 'Not yet… you haven’t seen what lies beyond the darkness.';
+      }
+    }
+
+    function showAnswer5() {
+      kidReveal([
+        "🎩『Heh… You made it through the darkness.』",
+        "💫『But that’s only the visible answer.』",
+        "🌙『Or as you’d say… “There is only one TRUTH.”』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
