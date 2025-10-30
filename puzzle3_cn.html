@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟《宇宙中最溫柔的聲音》第3話 光之迷宮</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌟《宇宙中最溫柔的聲音》第3話　光之迷宮</h1>
+
+    <div class="story">
+      <p>解開前夜的謎題後的隔天早晨，<br>
+      柯南等人面前，再次出現了一隻白鴿。</p>
+
+      <p>牠腳上繫著一封銀色的信封，<br>
+      信上用閃著光的墨水寫著：</p>
+      <p>「下一個寶物，藏在『光之道』的深處。」</p>
+    </div>
+
+    <!-- 🕵️ 場景1：KAGRA通道 -->
+    <div class="scene-visual" style="background-image:url('images/bg_kagra_tunnel.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>這裡……就像一座迷宮。</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>不，這是「光之迷宮」。<br>
+          它描繪的是光線在設施內行進的路徑。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📜 謎之圖 -->
+    <div class="puzzle-image">
+      <img src="images/puzzle3_jp_main.png" alt="描繪光路與鏡子的謎圖" />
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_lab_discussion.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p><em>嗯嗯……看起來光會在鏡子上反射，但到底要去哪裡啊？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/mitsuhiko.png" alt="光彥" class="char-face">
+        <div class="speech">
+          <div class="char-name mitsuhiko">光彥</div>
+          <p><em>箭頭方向全都不同，好像也沒有終點！</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>也就是說——這是一道「不知道規則就無法解」的謎題。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📘 光學規則說明 -->
+    <div class="puzzle-image">
+      <img src="images/puzzle3_cn_rule.png" alt="光線反射與分光鏡的說明圖"
+      style="max-width: 80%; height: auto; display: block; margin: 0 auto;" />
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_optics_board.jpg');">
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>在這裝置裡，光線會因鏡子或「分光鏡」的反應而改變方向。<br>
+          分光鏡是一種「半反射、半透射」的光學元件。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="optics-rules">
+      <h2>🌟 光學元件與光線行進的規則</h2>
+      <ul>
+        <li>🟥 <strong>光線（紅線）</strong><br>
+          代表光的行進路徑，沿著箭頭前進。<br>
+          遇到鏡子或分光鏡時會改變方向。
+        </li>
+        <li>🪞 <strong>鏡子（Mirror）</strong><br>
+          反射光線，遵守「入射角＝反射角」的定律。
+        </li>
+        <li>🔷 <strong>分光鏡（Beam Splitter）</strong><br>
+          半透半反射的鏡面。<br>
+          光線會分成兩條，一部分透過，一部分反射。
+        </li>
+        <li>⬛ <strong>黑色方塊（終止點）</strong><br>
+          光線打到後會停止，不再反射。
+        </li>
+      </ul>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_optics_reflect.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>也就是說，只要正確追蹤光的路徑，就能找出答案。</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>沒錯——「真實之光」所指向的文字，就是基德要我們找到的。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔍 答案輸入 -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="請輸入答案…" />
+      <button class="btn btn-primary" onclick="checkAnswer3()">送出</button>
+      <button class="btn btn-hint" onclick="showHint3()">提示</button>
+      <button class="btn btn-answer" onclick="showAnswer3()">看答案</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- ✅ 解答（正確後顯示） -->
+    <div id="explanation" class="explain" style="display:none;">
+      <div class="puzzle-image">
+        <img src="images/puzzle3_jp_answer.png" alt="LASER 答案圖" />
+      </div>
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>沿著紅線追蹤下去……字母逐漸浮現——L → A → S → E → R！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>LASER……！</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>原來如此！能放大光線、利用干涉來測距的裝置——這正是這座設施的心臟啊！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>基德所說的「光之道」，其實指的就是雷射本身。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🌙 結尾 -->
+    <div id="ending" style="display:none;">
+      <p>天花板的反射光匯聚，一道白色斗篷的影子浮現。</p>
+      <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盜基德" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盜基德</div>
+            <p>真不錯啊，小偵探。你成功走出了光之迷宮。</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>但——只要有光，就一定會有影。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盜基德" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盜基德</div>
+            <p>呵呵，月光之下再見吧——在光與影交會之處。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle4_cn.html">▶ 前往第4話：消逝之光之謎</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 3 中文版 ====
+    const hints3 = [
+      "💡 提示①：紅線代表「光」。遇到鏡子會反射，遇到分光鏡會分成兩條路。用眼睛追蹤光的走向吧。",
+      "📘 提示②：仔細觀察分出的光，會發現它們開始組成字母的形狀……。",
+      "🌙 提示③：中途的光路大致如下。<br><br><img src='images/puzzle3_jp_hint.png' alt='puzzle3中途圖' style='max-width:90%;border:1px solid #44aaff;border-radius:8px;margin:10px 0;'><br>「放大光並利用干涉的裝置」——試著完成這個詞！"
+    ];
+
+    function showHint3() { showHint(hints3); }
+
+    function checkAnswer3() {
+      const input = document.getElementById("answer").value.trim().toUpperCase();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "請輸入你的答案。";
+        return;
+      }
+      if (["LASER"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正確！你走出了光之迷宮！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "還沒對喔，再想想看！";
+      }
+    }
+
+    function showAnswer3() {
+      kidReveal([
+        "🎩『呵……你追上光的軌跡了嗎？』",
+        "💡『L・A・S・E・R——「放大光的真實之路」。』",
+        "🌙『LASER，正是這座設施的心臟。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+

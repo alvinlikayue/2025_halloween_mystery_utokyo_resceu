@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎩《宇宙中最溫柔的聲音》第2話 聲音之謎</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🎩《宇宙中最溫柔的聲音》第2話　聲音之謎</h1>
+
+    <div class="story">
+      <p>岐阜縣・神岡。掘進山體的長長隧道深處——<br>
+      佇立著數面白色鏡子與靜靜運作的雷射裝置。</p>
+    </div>
+
+    <!-- 🧠 場景1：KAGRA內部 -->
+    <div class="scene-visual" style="background-image:url('images/bg_kagra_lab.png');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p><em>這裡就是……基德所指的地方嗎？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>用來「聽見宇宙聲音」的裝置？這到底是什麼意思？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>只要解開這道謎題，就能明白了。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story">
+      <p>柯南取出信封，信的背面印著三個奇妙的圖案。</p>
+    </div>
+
+    <div class="letter">
+      <h2>💌 怪盜基德的挑戰信</h2>
+      <p>解開「宇宙秘寶神殿」中沉睡的三個印記。<br>
+      找出方框中應放入的字。<br>
+      依照箭頭的方向組合漢字，<br>
+      就會浮現出一個「詞」。</p>
+      <p>當三個印記齊聚時，便能聽見「宇宙的聲音」。<br>
+      ――月下的魔術師 🌙</p>
+    </div>
+
+    <div class="story">
+      <p>柯南凝視著桌上的三個圖案。</p>
+
+      <div class="puzzle-image">
+        <img src="images/puzzle2_jp.png" alt="第2題：漢字謎題" />
+      </div>
+
+      <p>左邊的圖，紅色箭頭向外延伸。<br>
+      中間的圖，箭頭指向中心。<br>
+      右邊的圖，藍色波線向外擴散。</p>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_table_lab.png');">
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>三個方框要填的字……到底代表什麼呢？</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="controls">
+        <input type="text" id="answer" placeholder="請輸入答案…" />
+        <button class="btn btn-primary" onclick="checkAnswer2()">送出</button>
+        <button class="btn btn-hint" onclick="showHint2()">提示</button>
+        <button class="btn btn-answer" onclick="showAnswer2()">看答案</button>
+      </div>
+
+      <p id="message"></p>
+      <p id="hint" class="hint"></p>
+
+      <!-- ✅ 解答後顯示 -->
+      <div id="explanation" class="explain" style="display:none;">
+        <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>三個方框內的字連起來是……「重」＋「力」＋「波」＝<strong>「重力波」</strong>！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>咦、重力波！？那是宇宙中巨大事件產生的「時空之波」啊！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>也就是說，這個設施正是在「聽」那股波動。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>沒錯。——原來在「文字」裡，也藏著「宇宙的謎題」。</p>
+          </div>
+        </div>
+      </div>
+
+<!-- 🧭 想更了解重力波嗎？ -->
+<div id="learn-box" class="learn-box" style="display:none; opacity:0;">
+  <h3>🌊 想更了解嗎？什麼是「重力波」？</h3>
+  <p>
+    在宇宙中，當超巨大的天體相互碰撞時，<br>
+    <strong>「時空」這張看不見的布</strong>會如波浪般起伏。<br>
+    這種起伏，就是——<em>重力波</em>。
+  </p>
+
+  <p>
+    2015年，人類首次直接觀測到這種波，<br>
+    從此揭開「傾聽宇宙聲音」的新篇章。
+  </p>
+
+  <p>
+    位於日本神岡山區地下的 KAGRA，<br>
+    正是利用光與雷射，<br>
+    來捕捉這些微弱的宇宙波動。
+  </p>
+
+  <p class="link">
+    🌌 延伸閱讀 👉
+    <a href="https://youtu.be/BFKFLbfBogk?si=ZT6fSktnA97xanx9&t=214" target="_blank" rel="noopener noreferrer">
+      香港中文大學物理系 - 黎冠峰教授：什麼是重力波
+    </a>
+  </p>
+</div>
+
+      <div id="ending" style="display:none;">
+        <p>天花板上映出一道雷射光，鏡面上閃過一抹白色斗篷的身影。</p>
+
+        <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.png');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盜基德" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盜基德</div>
+            <p>真不錯啊，小偵探。竟能從「文字」中解讀出「宇宙」。</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>你從一開始的目的，就是想讓我們「學到」這些吧。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盜基德" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盜基德</div>
+            <p>科學與推理，本就是一體的。<br>——將看不見的真相「拼湊」起來，這不正是偵探的工作嗎？</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle3_cn.html">▶ 前往第3話：光之迷宮</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 2 中文版 ====
+    const hints2 = [
+      "📘 提示①：三個圖都有共同的規則。想想方框中應放的字。只要依箭頭方向能組成有意義的詞語，就對了。",
+      "💡 提示②：左圖箭頭向外延伸。填入「重」可形成「重量」「重壓」「重心」等詞。",
+      "🧭 提示③：中圖箭頭指向中心。若放入「力」，就能組成許多有意義的詞。",
+      "🌊 提示④：右圖波線代表「擴散」。想想「音波」「電波」「海嘯」這類詞語吧。"
+    ];
+
+    function showHint2() { showHint(hints2); }
+
+    function checkAnswer2() {
+      const input = document.getElementById("answer").value.trim();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "請輸入你的答案。";
+        return;
+      }
+      if (["重力波", "gravitational wave", "GRAVITATIONAL WAVE"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正確！三個印記合而為一！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "還沒對喔，再想想看！";
+      }
+    }
+
+    function showAnswer2() {
+      kidReveal([
+        "🎩『呵……看穿那三個印記了嗎？』",
+        "🌙『重、力、波——三者合一，宇宙便隨之震動。』",
+        "💎『“重力波”。這正是這座設施所傾聽的“宇宙之聲”。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
