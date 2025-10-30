@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎩 宇宙中最溫柔的聲音 — 第1話：命運的交叉點</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🎩 宇宙中最溫柔的聲音 — 第1話：命運的交叉點</h1>
+
+    <div class="scene">
+      <p>夜晚的東京。滿月映照著靜謐的城市，波洛咖啡廳裡格外安靜。</p>
+      <p>就在此時——一隻白鴿從窗外飛過，輕輕地落下一封信。</p>
+    </div>
+
+    <!-- 🏙️ Scene 1 -->
+    <div class="scene-visual" style="background-image:url('images/bg_cafe.png');">
+      <div class="dialogue left">
+        <img src="images/ayumi.png" alt="步美" class="char-face">
+        <div class="speech">
+          <div class="char-name ayumi">步美</div>
+          <p><em>哇！有封信從天上掉下來了！</em></p>
+        </div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/genta.png" alt="元太" class="char-face">
+        <div class="speech">
+          <div class="char-name genta">元太</div>
+          <p><em>嗯……可是一點都不像吃的啊。</em></p>
+        </div>
+      </div>
+      <div class="dialogue left">
+        <img src="images/mitsuhiko.png" alt="光彥" class="char-face">
+        <div class="speech">
+          <div class="char-name mitsuhiko">光彥</div>
+          <p><em>等等——你們看！信上寫著……「給名偵探柯南」！</em></p>
+        </div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>（輕聲）「致那位能看穿黑暗的小小偵探——」</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 基德的預告信 -->
+    <div class="letter">
+      <h2>💌 怪盜基德的預告信</h2>
+      <p>
+        「我的下一個目標，是<em>『宇宙中最溫柔的聲音』</em>。<br>
+        提示如下：<br>
+        <span style="color:red;">紅色的線</span>拼出 <strong>UTOKYO</strong>。<br>
+        <span style="color:blue;">藍色的線</span>拼出 <strong>TOYAMA</strong>。<br>
+        那麼，<span style="color:green;">綠色的線</span>又拼出什麼呢？」<br>
+        ――月下的魔術師 🌙
+      </p>
+    </div>
+
+    <!-- 🧠 Scene 2 -->
+    <div class="scene-visual" style="background-image:url('images/bg_tokyo_night.png');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p><em>呵呵！這個怪盜還真有詩意啊！</em></p>
+        </div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>紅線是 UTOKYO，藍線是 TOYAMA……那綠線指向什麼呢？</em></p>
+        </div>
+      </div>
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>UTOKYO，TOYAMA……或許它們是某種字母表格上的路徑……</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🧩 Puzzle -->
+    <h3>🧩 謎題1：命運的交叉點</h3>
+    <p>紅色的線拼出「UTOKYO」。<br>
+       藍色的線拼出「TOYAMA」。<br>
+       那麼，綠色的線拼出的是什麼？</p>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle1_en.png" alt="謎題1（字母方格）" />
+    </div>
+
+    <div class="controls">
+      <input type="text" id="answer" placeholder="請輸入你的答案…" />
+      <button class="btn btn-primary" onclick="checkAnswer1()">送出</button>
+      <button class="btn btn-hint" onclick="showHint1()">提示</button>
+      <button class="btn btn-answer" onclick="showAnswer1()">看答案</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- ✅ Explanation -->
+    <div id="explanation" class="explain" style="display:none;">
+      <h3>🧩 解題思路</h3>
+      <p>這張表是一個<strong>字母方格</strong>。每一條線依序連結字母，組成一個單字。</p>
+      <ul>
+        <li>🔴 紅線：U → T → O → K → Y → O → <strong>UTOKYO</strong></li>
+        <li>🔵 藍線：T → O → Y → A → M → A → <strong>TOYAMA</strong></li>
+        <li>🟢 綠線：K → A → G → R → A → <strong>KAGRA</strong></li>
+      </ul>
+      <p><strong>柯南：</strong>「K → A → G → R → A。綠線拼出的，是『KAGRA』！」</p>
+    </div>
+
+ <!-- 🌌 Learn Box -->
+    <div class="learn-box" style="display:none; opacity:0;">
+      <h3>🔭 延伸閱讀：什麼是 KAGRA？</h3>
+      <p>
+        <strong>KAGRA</strong> 是位於日本岐阜縣神岡山區地下的大型觀測設施。<br>
+        這是一個致力於
+        <strong>以光來觀測宇宙</strong> 的研究計畫——
+        透過數公里長的雷射通道，
+        偵測來自宇宙深處的
+        <em>微小振動</em>。
+      </p>
+
+      <p>
+        KAGRA 與世界各地的研究者合作，
+        持續挑戰觀測那
+        <strong>「宇宙的聲音」</strong>——
+        那是人類從未聽過的低語。
+      </p>
+
+      <p class="kagra-link">
+        🌌 了解更多 👉
+        <a href="https://www.nao.ac.jp/research/telescope/kagra.html" 
+           target="_blank" rel="noopener noreferrer">
+           日本國立天文台官方網站：KAGRA 專案
+        </a>
+      </p>
+    </div>
+
+    <!-- 🌙 Ending -->
+    <div id="ending" style="display:none;">
+      <h3>🌙 結論</h3>
+
+      <div class="scene-visual" style="background-image:url('images/bg_mountain_night.png');">
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>KAGRA……這個名字，好像在哪裡聽過。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>那是一座位於地底的巨大設施，用來捕捉「來自宇宙的無形聲音」……<br>基德的線索，應該正是指向那裡。</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>呵呵呵！柯南君，不會是打算親自去那兒吧？</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>沒錯。如果基德的下一步在富山的山裡，那就只有「KAGRA」了。</p>
+          </div>
+        </div>
+
+        <div class="dialogue center">
+          <img src="images/conan.png" alt="柯南（心聲）" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南（心聲）</div>
+            <p><em>「宇宙中最溫柔的聲音」嗎……基德，你這次究竟在追尋什麼？</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle2_cn.html">▶ 下一話：聲音之謎</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    const hints1 = [
+      "🔍 提示1：每條彩色線都依序連結字母方格。",
+      "🧭 提示2：紅線＝UTOKYO，藍線＝TOYAMA。",
+      "🌌 提示3：綠線從 K 開始，以 A 結尾。那會是哪個與富山有關的設施呢？"
+    ];
+
+    function showHint1() { showHint(hints1); }
+
+    function checkAnswer1() {
+      const input = document.getElementById('answer').value.trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "請輸入你的答案。";
+        return;
+      }
+      if (["KAGRA"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正確！你解開了綠色的線！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "還沒對喔，再試一次！";
+      }
+    }
+
+    function showAnswer1() {
+      kidReveal([
+        "🎩『呵……偵探，弄懂那些線的含義了嗎？』",
+        "🌙『紅線是 UTOKYO，藍線是 TOYAMA，而綠線是——』",
+        "💎『KAGRA。這就是答案。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
