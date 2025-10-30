@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔭《宇宙中最溫柔的聲音》第5話 迷宮的終點</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🔭《宇宙中最溫柔的聲音》第5話　迷宮的終點</h1>
+
+    <!-- 🌌 場景1：黑色卡片的到來 -->
+    <p>在解開 KAGRA「光之謎」的翌夜，<br>
+    一張黑色的卡片送到了少年偵探團的實驗室。</p>
+
+    <div class="scene-visual" style="background-image:url('images/bg_night_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>……又是基德寄的？這次居然是黑色的卡片。</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>「若已見光，便該凝視黑暗。」……原來如此，又是一道挑戰。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 基德的挑戰信 -->
+    <div class="letter">
+      <h2>💌 怪盜基德的挑戰信</h2>
+      <p>若你已經看見光，便該凝視黑暗。<br>
+      只有穿越宇宙邊緣的黑色漩渦者，才能抵達真相。</p>
+      <p>通過所有的<strong>黑洞</strong>。<br>
+      但別被星光與月光所欺騙——<br>
+      它們只是觀測者的幻象。</p>
+      <p>――月下的魔術師 🌙</p>
+    </div>
+
+    <p>桌上放著一張奇異的迷宮圖，光與影交錯，<br>
+    其中散落著旋轉的黑色漩渦——黑洞。</p>
+
+    <div class="scene-visual" style="background-image:url('images/bg_table_lab.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p><em>嗯……光與黑暗的迷宮啊？該往哪裡走才對？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>裡面還有太陽和月亮的符號……那又代表什麼？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>信上寫著「別被光欺騙」。<br>路線一定只能通過黑洞。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🧭 規則 -->
+    <div class="rules-card">
+      <h3>🧭 規則</h3>
+      <ul>
+        <li>從 START 前往 GOAL。</li>
+        <li>必須通過<strong>所有的黑洞</strong>。</li>
+	<li>黑洞只能穿過一次，路線不能重覆。</li>
+        <li><strong>禁止</strong>通過太陽或月亮（光的符號）。</li>
+        <li>只能沿直線前進，不能穿越牆壁。</li>
+      </ul>
+      <p>若遵循正確的路徑，<strong>一個單詞</strong>就會出現。</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle5_en.png" alt="黑洞迷宮謎題" />
+    </div>
+
+    <!-- ✏️ 輸入欄 -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="請輸入答案…" />
+      <button class="btn btn-primary" onclick="checkAnswer5()">送出</button>
+      <button class="btn btn-hint" onclick="showHint5()">提示</button>
+      <button class="btn btn-answer" onclick="showAnswer5()">看答案</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- ✅ 解說 -->
+    <div id="explanation" class="explain" style="display:none;">
+      <div class="puzzle-image">
+        <img src="images/puzzle5_en_answer.png" alt="迷宮路線形成單詞 TRUTH" />
+      </div>
+
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>經過所有黑洞之後……路線連成了一個字——<strong>TRUTH（真相）</strong>。</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/mitsuhiko.png" alt="光彥" class="char-face">
+          <div class="speech">
+            <div class="char-name mitsuhiko">光彥</div>
+            <p>等等——「真相永遠只有一個！」……這不就是柯南的座右銘嗎！</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/genta.png" alt="元太" class="char-face">
+          <div class="speech">
+            <div class="char-name genta">元太</div>
+            <p>哈哈，看來我們果然是偵探啊！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>……呵，原來整道謎題就是為了引出這句話啊。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🌙 結尾 -->
+    <div id="ending" style="display:none;">
+      <p>白色斗篷的身影再度在天花板的光影中浮現。</p>
+      <div class="scene-visual" style="background-image:url('images/bg_kid_shadow.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盜基德" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盜基德</div>
+            <p>能看見看不見之物的人，才能找到答案……不過老實說，我都聽膩你那句口頭禪了。</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>……口頭禪？錯了。那不是一句話，而是我的信念。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>哈哈哈！這才是真正偵探的驕傲啊！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>柯南……你該不會有點生氣吧？</p>
+          </div>
+        </div>
+
+        <div class="dialogue center">
+          <img src="images/conan.png" alt="柯南（心聲）" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南（心聲）</div>
+            <p><em>無論是光還是黑暗——前方的真相，我都要親眼見證。</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle6_cn.html">▶ 前往第6話：方向的法則</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 5 中文版 ====
+    const hints5 = [
+      "💡 提示①：通過所有黑洞，避開太陽與月亮符號。",
+      "🌀 提示②：只能沿直線移動，所有黑洞由一條連續路徑相連。",
+      "🌙 提示③：到達終點後，會出現五個字母——偵探的信念。"
+    ];
+
+    function showHint5() { showHint(hints5); }
+
+    function checkAnswer5() {
+      const input = document.getElementById('answer').value.trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if (!input) {
+        msg.style.color = '#ccc';
+        msg.textContent = '請輸入你的答案。';
+        return;
+      }
+      if (["TRUTH","真相"].includes(input)) {
+        msg.style.color = '#00ffcc';
+        msg.textContent = '🎉 正確！穿越黑暗之後，你找到了所有偵探追尋的答案——真相！';
+        setTimeout(revealExplanation, 1200);
+      } else {
+        msg.style.color = '#ff6666';
+        msg.textContent = '還沒對喔……你還沒看清黑暗之外的世界。';
+      }
+    }
+
+    function showAnswer5() {
+      kidReveal([
+        "🎩『呵……你穿越了黑暗。』",
+        "💫『但那只是可見的答案而已。』",
+        "🌙『正如你所說——「真相永遠只有一個」。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
