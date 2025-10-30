@@ -34,19 +34,17 @@ window.showHint = function(hints, id="hint") {
   hint.style.opacity = 1;
 };
 
-
-// === 汎用解説＋まとめ表示 ===
 window.revealExplanation = function() {
   const exp = document.getElementById("explanation");
   const end = document.getElementById("ending");
-  const learnBox = document.getElementById("learn-box");
+  const learnBox = document.querySelector(".learn-box");
 
   if (exp && exp.style.display !== "block") {
-    // 解説を表示
+    // 解説をフェードイン
     exp.style.display = "block";
     setTimeout(() => exp.style.opacity = 1, 50);
 
-    // 2秒後：エンディングを表示
+    // 2秒後：エンディングと learn-box を表示
     setTimeout(() => {
       if (end) {
         end.style.display = "block";
@@ -54,11 +52,11 @@ window.revealExplanation = function() {
         end.scrollIntoView({ behavior: "smooth" });
       }
 
-      // ✅ 同時に学びボックス（learn-box）もフェードイン
+      // ✅ KAGRA紹介をフェードイン
       if (learnBox) {
         learnBox.style.display = "block";
         learnBox.style.opacity = 0;
-        setTimeout(() => learnBox.style.opacity = 1, 200);
+        setTimeout(() => learnBox.style.opacity = 1, 300);
       }
     }, 2000);
   }
