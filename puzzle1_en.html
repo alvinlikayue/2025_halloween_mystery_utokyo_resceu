@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎩 The Kindest Sound in the Universe — Episode 1: Crossroads of Fate</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🎩 The Kindest Sound in the Universe — Episode 1: Crossroads of Fate</h1>
+
+    <div class="scene">
+      <p>Tokyo at night. A full moon shone over the quiet city, and Café Poirot was unusually silent.</p>
+      <p>Then — a white dove fluttered past the window, dropping an envelope onto the table.</p>
+    </div>
+
+    <!-- 🏙️ Scene 1 -->
+    <div class="scene-visual" style="background-image:url('images/bg_cafe.png');">
+      <div class="dialogue left">
+        <img src="images/ayumi.png" alt="Ayumi" class="char-face">
+        <div class="speech">
+          <div class="char-name ayumi">Ayumi</div>
+          <p><em>Wow! A letter just fell from the sky!</em></p>
+        </div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/genta.png" alt="Genta" class="char-face">
+        <div class="speech">
+          <div class="char-name genta">Genta</div>
+          <p><em>Doesn’t smell like food though...</em></p>
+        </div>
+      </div>
+      <div class="dialogue left">
+        <img src="images/mitsuhiko.png" alt="Mitsuhiko" class="char-face">
+        <div class="speech">
+          <div class="char-name mitsuhiko">Mitsuhiko</div>
+          <p><em>Wait—look! It’s addressed to... “Detective Conan”!</em></p>
+        </div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>(quietly opening it) “To the little detective who sees through the dark...”</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 Kid's Letter -->
+    <div class="letter">
+      <h2>💌 Letter from Kaitou Kid</h2>
+      <p>
+        “My next target is the <em>Kindest Sound in the Universe</em>.<br>
+        Here’s a hint:<br>
+        The <span style="color:red;">red line</span> spells <strong>UTOKYO</strong>.<br>
+        The <span style="color:blue;">blue line</span> spells <strong>TOYAMA</strong>.<br>
+        Then, what does the <span style="color:green;">green line</span> spell?”<br>
+        — From the Magician under the Moon 🌙
+      </p>
+    </div>
+
+    <!-- 🧠 Scene 2 -->
+    <div class="scene-visual" style="background-image:url('images/bg_tokyo_night.png');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="Professor Agasa" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">Agasa</div>
+          <p><em>Ho ho! That thief’s as poetic as ever!</em></p>
+        </div>
+      </div>
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>The red line is UTOKYO, the blue one TOYAMA... so what’s the green one pointing to?</em></p>
+        </div>
+      </div>
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>UTOKYO, TOYAMA... Maybe they follow letters on some kind of grid...</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🧩 Puzzle -->
+    <h3>🧩 Puzzle 1: Crossroads of Fate</h3>
+    <p>The red line makes “UTOKYO.”<br>
+       The blue line makes “TOYAMA.”<br>
+       Then, what word does the green line make?</p>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle1_en.png" alt="Puzzle 1 (Alphabet Grid)" />
+    </div>
+
+    <div class="controls">
+      <input type="text" id="answer" placeholder="Enter your answer…" />
+      <button class="btn btn-primary" onclick="checkAnswer1()">Submit</button>
+      <button class="btn btn-hint" onclick="showHint1()">Hint</button>
+      <button class="btn btn-answer" onclick="showAnswer1()">Show Answer</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- ✅ Explanation -->
+    <div id="explanation" class="explain" style="display:none;">
+      <h3>🧩 How It Works</h3>
+      <p>This grid is an <strong>alphabet chart</strong>. Each line traces letters in order to form a word.</p>
+      <ul>
+        <li>🔴 Red line: U → T → O → K → Y → O → <strong>UTOKYO</strong></li>
+        <li>🔵 Blue line: T → O → Y → A → M → A → <strong>TOYAMA</strong></li>
+        <li>🟢 Green line: K → A → G → R → A → <strong>KAGRA</strong></li>
+      </ul>
+      <p><strong>Conan:</strong> “...K → A → G → R → A. The green line spells ‘KAGRA’!”</p>
+    </div>
+
+    <!-- 🌙 Ending -->
+    <div id="ending" style="display:none;">
+      <h3>🌙 Conclusion</h3>
+
+      <div class="scene-visual" style="background-image:url('images/bg_mountain_night.png');">
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="Haibara" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">Haibara</div>
+            <p>KAGRA… I’ve heard that name somewhere before.</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>It’s a huge underground facility that captures the “unseen whispers” of the universe… Kid’s message must be pointing there.</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/agasa.png" alt="Agasa" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">Agasa</div>
+            <p>Ho ho ho! Don’t tell me you’re planning to go there, Conan-kun?</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>Yeah. If Kid’s next move is in the mountains of Toyama… it has to be “KAGRA.”</p>
+          </div>
+        </div>
+
+        <div class="dialogue center">
+          <img src="images/conan.png" alt="Conan (inner voice)" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan (inner voice)</div>
+            <p><em>“The Kindest Sound in the Universe,” huh… What are you after this time, Kid?</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle2_en.html">▶ Next Episode: The Secret of the Sound</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    const hints1 = [
+      "🔍 Hint 1: Each colored line follows letters in the alphabet grid.",
+      "🧭 Hint 2: Red = UTOKYO, Blue = TOYAMA.",
+      "🌌 Hint 3: The green one starts with K and ends with A. What facility could that be in Toyama?"
+    ];
+
+    function showHint1() { showHint(hints1); }
+
+    function checkAnswer1() {
+      const input = document.getElementById('answer').value.trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "Please enter your answer.";
+        return;
+      }
+      if (["KAGRA"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 Correct! You’ve solved the green line!";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "Not quite… Try again!";
+      }
+    }
+
+    function showAnswer1() {
+      kidReveal([
+        "🎩『Heh… figured out what the lines mean, detective?』",
+        "🌙『Red for UTOKYO, blue for TOYAMA, and green for—』",
+        "💎『KAGRA. That’s your answer.』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
