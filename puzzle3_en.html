@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 The Kindest Sound in the Universe — Episode 3: Labyrinth of Light</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌟 The Kindest Sound in the Universe — Episode 3: Labyrinth of Light</h1>
+
+    <div class="story">
+      <p>The morning after solving the previous night’s puzzle,<br>
+      another white dove appeared before Conan and his friends.</p>
+
+      <p>Tied to its leg was a silver envelope, reflecting the sunlight like a beam of light.</p>
+      <p>Inside, a single sentence was written in shining ink:<br>
+      <strong>“The next treasure lies at the end of the Path of Light.”</strong></p>
+    </div>
+
+    <!-- 🕵️ Scene 1: KAGRA Tunnel -->
+    <div class="scene-visual" style="background-image:url('images/bg_kagra_tunnel.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>It feels like… a maze.</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>No — it’s a <strong>labyrinth of light</strong>. It shows the optical paths running through this facility.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📜 Puzzle Diagram -->
+    <div class="puzzle-image">
+      <img src="images/puzzle3_en_main.png" alt="Labyrinth of light with mirrors and beam splitters" />
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_lab_discussion.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="Agasa" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">Agasa</div>
+          <p><em>Hmm… it looks like the beams are reflecting off mirrors, but where are they headed!?</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/mitsuhiko.png" alt="Mitsuhiko" class="char-face">
+        <div class="speech">
+          <div class="char-name mitsuhiko">Mitsuhiko</div>
+          <p><em>The arrows point in all directions! I don’t even see an exit!</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>Which means… this puzzle can only be solved if you understand the rules of light.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📘 Optics Rules Diagram -->
+    <div class="puzzle-image">
+      <img src="images/puzzle3_en_rule.png" alt="Explanation of light reflection and beam splitter behavior"
+      style="max-width: 80%; height: auto; display: block; margin: 0 auto;" />
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_optics_board.jpg');">
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>Inside this facility, light changes direction when it hits mirrors or <strong>beam splitters</strong>.<br>
+          A beam splitter both reflects and transmits light — half and half.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="optics-rules">
+      <h2>🌟 Summary: Optical Components and Light Behavior</h2>
+      <ul>
+        <li>🟥 <strong>Light Path (Red Line)</strong><br>
+          Shows the path of light. It follows the direction of the arrows.<br>
+          When it meets mirrors or beam splitters, its route changes.
+        </li>
+        <li>🪞 <strong>Mirror</strong><br>
+          Reflects light according to the law of reflection: angle of incidence = angle of reflection.
+        </li>
+        <li>🔷 <strong>Beam Splitter</strong><br>
+          A half-transparent mirror that splits light into two paths — one transmitted, one reflected.
+        </li>
+        <li>⬛ <strong>Black Square (Stop Point)</strong><br>
+          Light stops upon hitting it. No reflection.
+        </li>
+      </ul>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_optics_reflect.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>So if we follow the light correctly… the answer will appear.</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>Exactly — the word revealed by the “true path of light” is Kid’s target.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔍 Answer Input -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="Enter your answer…" />
+      <button class="btn btn-primary" onclick="checkAnswer3()">Submit</button>
+      <button class="btn btn-hint" onclick="showHint3()">Hint</button>
+      <button class="btn btn-answer" onclick="showAnswer3()">Show Answer</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- ✅ Explanation -->
+    <div id="explanation" class="explain" style="display:none;">
+      <div class="puzzle-image"><img src="images/puzzle3_en_answer.png" alt="LASER answer path diagram" /></div>
+
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>Following the red beam... letters start to appear... L → A → S → E → R!</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="Haibara" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">Haibara</div>
+            <p>LASER…!</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="Agasa" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">Agasa</div>
+            <p>Of course! A device that amplifies and interferes light to measure distances — the very heart of this observatory!</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>So Kid’s “Path of Light” was pointing to the LASER itself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🌙 Ending -->
+    <div id="ending" style="display:none;">
+      <p>Reflected light gathered above — and a white silhouette appeared in the glow.</p>
+
+      <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="Kaito Kid" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">Kaito Kid</div>
+            <p>Well done, detective. You’ve escaped the labyrinth of light.</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>But wherever there’s light… there’s always a shadow.</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="Kaito Kid" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">Kaito Kid</div>
+            <p>Heh… then let’s meet again — where light and shadow cross, under the moonlight.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle4_en.html">▶ Next Episode: The Mystery of the Vanishing Light</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 3 Script ====
+    const hints3 = [
+      "💡 Hint 1: The red line represents a beam of light. It reflects off mirrors and splits at beam splitters. Trace its path carefully.",
+      "📘 Hint 2: As the light splits, letters start to form along the path...",
+      "🌙 Hint 3: The partial pattern looks like this:<br><br><img src='images/puzzle3_en_hint.png' alt='Partial light path hint' style='max-width:90%;border:1px solid #44aaff;border-radius:8px;margin:10px 0;'><br>“A device that amplifies and interferes light” — complete the word!"
+    ];
+
+    function showHint3() {
+      showHint(hints3);
+    }
+
+    function checkAnswer3() {
+      const input = document.getElementById("answer").value.trim().toUpperCase();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "Please enter your answer.";
+        return;
+      }
+      if (["LASER"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 Correct! You’ve escaped the Labyrinth of Light!";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "Not quite... Try again!";
+      }
+    }
+
+    function showAnswer3() {
+      kidReveal([
+        "🎩『Heh… Did you follow the path of light?』",
+        "💡『L–A–S–E–R — the “Path of Amplified Light.”』",
+        "🌙『LASER — the beating heart of this observatory.』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
