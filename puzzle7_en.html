@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔭 “The Kindest Sound in the Universe” – Episode 7: HOPE</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🔭 “The Kindest Sound in the Universe” – Episode 7: HOPE</h1>
+
+    <!-- 🌙 Scene -->
+    <div class="story">
+      <p>Just before dawn, a quiet stillness filled the RESCEU laboratory.<br>
+      Among the scattered observation charts, Conan found a strange table filled with numbers, dots, and arrows…</p>
+    </div>
+
+    <!-- 💌 Letter -->
+    <div class="letter">
+      <h2>💌 Letter from KID</h2>
+      <p>“The answer lies between the days and nights.<br>
+      Read the marks of time, flip the world, and you shall find<br>
+      the one word that never fades.”</p>
+    </div>
+
+    <!-- Puzzle Image -->
+    <div class="puzzle-image">
+      <img src="images/puzzle7_en.png" alt="Dots and arrows puzzle" />
+    </div>
+
+    <!-- Input -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="Enter your answer..." />
+      <button class="btn btn-primary" onclick="checkAnswer7()">Submit</button>
+      <button class="btn btn-hint" onclick="showHint7()">Hint</button>
+      <button class="btn btn-answer" onclick="showAnswer7()">Show Answer</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- Explanation -->
+    <div id="explanation" class="explain" style="display:none;">
+      <h3>🧩 Solution Explanation</h3>
+      <p>At first, the table seemed random—but the red and black numbers revealed the secret.</p>
+      <p>The two red numbers mark <strong>weekends</strong>—Saturday and Sunday—showing that these numbers are actually <strong>dates on a calendar</strong>.<br>
+      So, 26 = Sunday, 27 = Monday, 28 = Tuesday, 29 = Wednesday, 30 = Thursday, 31 = Friday, and 1 = Saturday.</p>
+
+      <p>The <strong>dots</strong> tell you which letter of the weekday name to take (1 dot → 1st letter, 2 dots → 2nd letter, 3 dots → 3rd letter).<br>
+      The <strong>arrows</strong> tell you how to flip that letter’s shape: ↔ horizontally, ↕ vertically.</p>
+
+      <h4>Row 2:</h4>
+      <ul>
+        <li>29 (3 dots, ↔) → Wednesday → d → b</li>
+        <li>30 (3 dots) → Thursday → u</li>
+        <li>28 (1 dot) → Tuesday → t</li>
+      </ul>
+      <p>→ “but”</p>
+
+      <h4>Row 3:</h4>
+      <ul>
+        <li>30 (2 dots) → Thursday → h</li>
+        <li>27 (2 dots) → Monday → o</li>
+        <li>29 (3 dots, ↔ + ↕) → Wednesday → d → q → p</li>
+        <li>28 (3 dots) → Tuesday → e</li>
+      </ul>
+      <p>→ “hope”</p>
+
+      <p class="highlight">✨ Final Answer: <strong>HOPE</strong></p>
+    </div>
+
+<!-- Ending (Shown after correct answer) -->
+    <div id="ending" class="story" style="display:none;">
+      <h3>🌙 Conclusion and Departure</h3>
+
+      <div class="scene-visual" style="background-image:url('images/bg_monitor_glow.jpg');">
+        <div class="dialogue right">
+          <img src="images/agasa.png" alt="Professor Agasa" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">Professor Agasa</div>
+            <p>I see now... “Hope” isn’t a treasure hidden somewhere,<br>
+            but something that shines within our hearts.</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/haibara.png" alt="Haibara" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">Haibara</div>
+            <p>Curiosity, the spirit of exploration, and the faith to believe in the future...<br>
+            That’s what KID was trying to show us.</p>
+          </div>
+        </div>
+
+        <p>Conan gazed quietly at the monitor.<br>
+        The waveform on the screen swayed gently—<br>
+        flickering like stars across the night sky.</p>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>“Hope” exists in everyone’s heart.<br>
+            Science that explores the universe, and reasoning that seeks the truth—<br>
+            both exist so we never lose sight of that light.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>The soft glow of the monitor pulsed gently,<br>
+      as if the universe itself was whispering back in reply.</p>
+
+      <blockquote>
+        “The real treasure isn’t the stars we can see,<br>
+        but the heart that keeps looking up at them.”<br>
+        —The Moonlight Magician 🌙
+      </blockquote>
+
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p>...So he’s still searching too, isn’t he?</p>
+        </div>
+      </div>
+
+      <p>Conan smiled softly.</p>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p>Yeah. We’re all looking at the same sky.</p>
+        </div>
+      </div>
+
+      <p>Outside, the first light of dawn spread across the sky—<br>
+      forming a constellation of hope that seemed to lead toward the future.</p>
+
+      <p class="center-line" style="margin-top:18px;">🎃 <strong>Happy Halloween!</strong> 🎃</p>
+      <p class="center-line" style="opacity:0.95;">🔎 <strong>Never lose your curiosity.</strong></p>
+      <p class="center-line" style="opacity:0.95;">🕯️ <strong>There is always only one truth.</strong></p>
+
+      <div class="next">
+        <a href="index.html">▶ Back to Episode 1: “The Kindest Sound in the Universe”</a>
+      </div>
+    </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 7: HOPE ====
+    const hints7 = [
+      "Hint 1: Why are two numbers red and the others black? What do they represent?",
+      "Hint 2: Ah... they’re not just numbers. They’re dates on a calendar — and each corresponds to a day in a week.",
+      "Hint 3: The dots mark which letter of the weekday to take. But what about the arrows...?"
+    ];
+    function showHint7(){ showHint(hints7); }
+
+    function checkAnswer7(){
+      const input = (document.getElementById('answer').value || '').trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if(!input){
+        msg.style.color = '#ccc';
+        msg.textContent = 'Please enter your answer.';
+        return;
+      }
+      if(input === 'HOPE'){
+        msg.style.color = '#00ffcc';
+        msg.textContent = '🎉 Correct! You found the word that never fades—HOPE!';
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = '#ff6666';
+        msg.textContent = 'Not quite... try reading the clues more carefully.';
+      }
+    }
+
+    function showAnswer7(){
+      kidReveal([
+        "🎩 “The days turn, the world flips, but one word always remains.”",
+        "💫 “You’ve found it... HOPE.”",
+        "🌙 “As long as hope exists, the universe will never fall silent.”"
+      ]);
+    }
+  </script>
+</body>
+</html>
