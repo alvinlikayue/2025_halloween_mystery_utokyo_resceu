@@ -350,22 +350,23 @@ h1 {
 .creator-profile {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 20px;
 }
 
-.creator-photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+.creator-photo-square {
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px; /* わずかに角を丸めて柔らかさを残す */
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .creator-text {
   max-width: 500px;
+  text-align: left;
 }
 
 .creator-box a {
@@ -385,3 +386,4 @@ h1 {
   color: #a6f2ff;
   text-align: right;
 }
+
