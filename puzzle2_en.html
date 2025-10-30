@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎩 The Kindest Sound in the Universe — Episode 2: The Secret of the Sound</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🎩 The Kindest Sound in the Universe — Episode 2: The Secret of the Sound</h1>
+
+    <div class="story">
+      <p>Gifu, Kamioka — deep inside the mountain, a long underground tunnel stretched quietly into the darkness.<br>
+      There, mirrors and laser instruments stood in perfect alignment, glowing faintly in the dark.</p>
+    </div>
+
+    <!-- 🧠 Scene 1: Inside KAGRA -->
+    <div class="scene-visual" style="background-image:url('images/bg_kagra_lab.png');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="Agasa" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">Agasa</div>
+          <p><em>So this is the place Kid mentioned...</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>A device that “listens to the sound of the universe”? What could that mean?</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>We’ll know soon enough—once we solve this puzzle.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story">
+      <p>Conan pulled out an envelope. On its back were three strange diagrams printed in red and blue.</p>
+    </div>
+
+    <div class="letter">
+      <h2>💌 Challenge from Kaito Kid</h2>
+      <p>“Decode the three sacred marks hidden within the Temple of Cosmic Secrets.<br>
+      Find the missing letters for each square.<br>
+      Combine them according to the arrows—<br>
+      and one word shall appear.”<br><br>
+      “When all three unite, the ‘Sound of the Universe’ will be revealed.”<br>
+      — From the Magician under the Moon 🌙</p>
+    </div>
+
+    <div class="story">
+      <p>Conan placed the three diagrams on the desk and began to study them carefully.</p>
+
+      <div class="puzzle-image">
+        <img src="images/puzzle2_en.png" alt="English word puzzle" />
+      </div>
+
+      <p>Each square holds a missing letter.<br>
+      Follow the direction of the arrows to complete meaningful English words.<br>
+      When you find all five letters, combine them to reveal the hidden message.</p>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_table_lab.png');">
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>The five letters... What could they form?</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="controls">
+        <input type="text" id="answer" placeholder="Enter your answer…" />
+        <button class="btn btn-primary" onclick="checkAnswer2()">Submit</button>
+        <button class="btn btn-hint" onclick="showHint2()">Hint</button>
+        <button class="btn btn-answer" onclick="showAnswer2()">Show Answer</button>
+      </div>
+
+      <p id="message"></p>
+      <p id="hint" class="hint"></p>
+
+      <!-- ✅ Explanation (After Correct Answer) -->
+      <div id="explanation" class="explain" style="display:none;">
+        <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+          <div class="dialogue left">
+            <img src="images/conan.png" alt="Conan" class="char-face">
+            <div class="speech">
+              <div class="char-name conan">Conan</div>
+              <p>When we fill in all the letters... they spell out <strong>G W A V E</strong> — <em>Gravitational Wave!</em></p>
+            </div>
+          </div>
+
+          <div class="dialogue right">
+            <img src="images/agasa.png" alt="Agasa" class="char-face">
+            <div class="speech">
+              <div class="char-name agasa">Agasa</div>
+              <p>G… Gravitational waves!? They’re the ripples in spacetime caused by massive cosmic events!</p>
+            </div>
+          </div>
+
+          <div class="dialogue right">
+            <img src="images/haibara.png" alt="Haibara" class="char-face">
+            <div class="speech">
+              <div class="char-name haibara">Haibara</div>
+              <p>So this facility is listening to those waves... the true “sound” of the universe.</p>
+            </div>
+          </div>
+
+          <div class="dialogue left">
+            <img src="images/conan.png" alt="Conan" class="char-face">
+            <div class="speech">
+              <div class="char-name conan">Conan</div>
+              <p>Exactly. Even in the words themselves, the secrets of the cosmos were hidden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🌌 Learn Box -->
+      <div id="learn-box" class="learn-box" style="display:none; opacity:0;">
+        <h3>🌊 Learn More: What Are Gravitational Waves?</h3>
+        <p>
+          When massive celestial objects — like black holes or neutron stars — collide,
+          the very fabric of space and time begins to ripple.
+          These ripples are called <strong>gravitational waves</strong>.
+        </p>
+
+        <p>
+          First detected directly in 2015, they opened a brand-new way of
+          “listening” to the universe and studying cosmic events invisible to light.
+        </p>
+
+        <p>
+          In Japan, the underground KAGRA observatory uses light to detect
+          these faint cosmic waves — the whispers of the universe itself.
+        </p>
+
+        <p class="link">
+          🌌 Learn more 👉
+          <a href="https://gwpo.nao.ac.jp/en/about_gw/" target="_blank" rel="noopener noreferrer">
+            NAOJ Gravitational Wave Project (English)
+          </a>
+        </p>
+      </div>
+
+      <!-- 🌙 Ending -->
+      <div id="ending" style="display:none;">
+        <p>A beam of laser light traced across the ceiling. A white shadow fluttered on the mirrors.</p>
+
+        <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.png');">
+          <div class="dialogue left">
+            <img src="images/kid.png" alt="Kaito Kid" class="char-face">
+            <div class="speech">
+              <div class="char-name kid">Kaito Kid</div>
+              <p>Impressive, detective. You solved it — using words to uncover the universe itself.</p>
+            </div>
+          </div>
+
+          <div class="dialogue right">
+            <img src="images/conan.png" alt="Conan" class="char-face">
+            <div class="speech">
+              <div class="char-name conan">Conan</div>
+              <p>So it was your plan all along… to make us <em>learn</em> something.</p>
+            </div>
+          </div>
+
+          <div class="dialogue left">
+            <img src="images/kid.png" alt="Kaito Kid" class="char-face">
+            <div class="speech">
+              <div class="char-name kid">Kaito Kid</div>
+              <p>Heh. Science and mystery aren’t so different. You piece together invisible truths — that’s what detectives do, isn’t it?</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="next">
+          <a href="puzzle3_en.html">▶ Next Episode: Labyrinth of Light</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 2 Script ====
+    const hints2 = [
+      "📘 Hint 1: Each diagram hides one letter. When you add it, both horizontal and vertical words make sense.",
+      "💡 Hint 2: Think of simple English words like GOOD, HOST, GREAT... What letter connects them?",
+      "🧭 Hint 3: Combine all five missing letters — they form a single hidden word.",
+      "🌊 Hint 4: The final answer is something that travels through space… like a wave."
+    ];
+
+    function showHint2() {
+      showHint(hints2);
+    }
+
+    function checkAnswer2() {
+      const input = document.getElementById("answer").value.trim().toUpperCase();
+      const msg = document.getElementById("message");
+      if (!input) {
+        msg.style.color = "#ccc";
+        msg.textContent = "Please enter your answer.";
+        return;
+      }
+      if (["GWAVE", "G WAVE", "GRAVITATIONAL WAVE"].includes(input)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 Correct! The sound of the universe has been revealed!";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "Not quite... Try again!";
+      }
+    }
+
+    function showAnswer2() {
+      kidReveal([
+        "🎩『Heh... Did you figure out the three marks?』",
+        "🌙『Combine the letters — G, W, A, V, E — and the universe trembles.』",
+        "💎『“Gravitational Wave.” That’s the true voice this place listens to.』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
