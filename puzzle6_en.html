@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌌 The Kindest Sound in the Universe — Episode 6: The Law of Direction</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌌 The Kindest Sound in the Universe — Episode 6: The Law of Direction</h1>
+
+    <!-- Scene 1: The Final Challenge -->
+    <div class="story">
+      <p>The morning after solving every previous mystery,<br>
+      another letter from Kaito Kid arrived for Conan and his friends.</p>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_tokyo_night.jpg');">
+      <div class="dialogue left">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>…Another one, huh?</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>“Read the directions,” it says. If we can figure out the rule again, we’ll find the answer.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 Kid’s Challenge Letter -->
+    <div class="letter">
+      <h2>💌 Notice from Kaito Kid</h2>
+      <p>The final key lies in the <strong>directions of the universe</strong>.<br>
+      Decode the meaning of every arrow,<br>
+      and the single answer will reveal itself.</p>
+      <p>― The Magician under the Moonlight 🌙</p>
+    </div>
+
+    <!-- Puzzle Diagram -->
+    <div class="story">
+      <p>On the table was a strange diagram filled with red and blue arrows, pointing in all sorts of directions.</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle6_jp.png" alt="Directional puzzle diagram" />
+    </div>
+
+    <!-- Input -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="Enter the 6-letter answer…" />
+      <button class="btn btn-primary" onclick="checkAnswer6()">Submit</button>
+      <button class="btn btn-hint" onclick="showHint6()">Hint</button>
+      <button class="btn btn-answer" onclick="showAnswer6()">Show Answer</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- Explanation -->
+    <div id="explanation" class="explain" style="display:none;">
+      <h3>🧩 Explanation</h3>
+      <p>The red and blue arrows each represented a different kind of <strong>direction</strong>:</p>
+      <ul>
+        <li>❤️ Red arrows: 3D orientation — Up / Down / Left / Right</li>
+        <li>💙 Blue arrows: Compass directions — North / East / South / West</li>
+      </ul>
+      <p>By taking the first letter of each direction in every horizontal row, you get:</p>
+      <ul>
+        <li>Row 1 → Right, East, South, T → <code>REST</code></li>
+        <li>Row 2 → Down, O, West, North → <code>DOWN</code></li>
+        <li>Row 3 → Right, East, South, C, East, Up → <code>RESCEU</code></li>
+      </ul>
+      <p>That’s the “direction of the universe” Kid was talking about — the word <strong>RESCEU</strong>.</p>
+    </div>
+
+    <!-- 🧭 Learn More: What is RESCEU -->
+    <div id="learn-box" class="learn-box" style="display:none; opacity:0;">
+      <h3>📡 Learn More: What is RESCEU?</h3>
+      <p>
+        RESCEU — the <strong>Research Center for the Early Universe</strong> — is part of the Graduate School of Science at the University of Tokyo.
+        It studies the origins and large-scale structure of the cosmos, exploring cosmic “directions” and “fluctuations” through theoretical and observational research.
+      </p>
+      <p>
+        RESCEU also collaborates with observatories such as <strong>KAGRA</strong>, <strong>LIGO</strong>, and <strong>Virgo</strong>,
+        working together to uncover the universe’s structure through waves — such as gravitational waves — and light.
+      </p>
+
+      <p class="link">
+        🌌 Learn more 👉
+        <a href="https://www.resceu.s.u-tokyo.ac.jp/whatisRESCEU_en.php" target="_blank" rel="noopener noreferrer">
+          RESCEU Official: What is RESCEU?
+        </a>
+      </p>
+    </div>
+
+    <!-- 🌙 Ending -->
+    <div id="ending" class="story" style="display:none;">
+      <p>Light beams crossed above their heads, and a single white feather floated down from the ceiling.</p>
+      <blockquote>
+        “Rest below the earth, dive deep, and look up to the sky.<br>
+         Beyond that lies the beginning you seek.”
+      </blockquote>
+
+      <div class="scene-visual" style="background-image:url('images/bg_night_lab.jpg');">
+        <div class="dialogue left">
+          <img src="images/haibara.png" alt="Haibara" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">Haibara</div>
+            <p>So… RESCEU is an actual place?</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>Yeah. The “direction” led us there — the Research Center for the Early Universe, at the University of Tokyo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle7_en.html">▶ To the Final Mystery</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Episode 6: The Law of Direction ====
+    const hints6 = [
+      "💡 Hint 1: The red and blue arrows don’t represent the same type of direction.",
+      "🧭 Hint 2: ❤️ Red = 3D movement (Up/Down/Left/Right), 💙 Blue = Compass directions (North/East/South/West). Take the first letters in each row.",
+      "🌌 Hint 3: The first row forms a word meaning “to rest.” That’s your clue to the rule."
+    ];
+
+    function showHint6() { showHint(hints6); }
+
+    function checkAnswer6() {
+      const input = (document.getElementById('answer').value || '').trim().toUpperCase();
+      const msg = document.getElementById('message');
+      if (!input) {
+        msg.style.color = '#ccc';
+        msg.textContent = 'Please enter your answer.';
+        return;
+      }
+      if (input === 'RESCEU') {
+        msg.style.color = '#00ffcc';
+        msg.textContent = '🎉 Correct! You’ve uncovered the 6-letter code hidden in the directions!';
+        setTimeout(revealExplanation, 900);
+      } else {
+        msg.style.color = '#ff6666';
+        msg.textContent = 'Look again: red = 3D, blue = compass. Read each row carefully.';
+      }
+    }
+
+    function showAnswer6() {
+      kidReveal([
+        "🎩『Read the directions, detective.』",
+        "🧭『Red shows 3D orientation, blue shows compass bearing.』",
+        "🌙『And together, they spell… RESCEU.』"
+      ]);
+    }
+  </script>
+</body>
+</html>
