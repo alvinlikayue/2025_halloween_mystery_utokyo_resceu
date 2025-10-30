@@ -330,4 +330,58 @@ h1 {
   transition: opacity 1.2s ease;
 }
 
+.creator-box {
+  margin-top: 60px;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e0f7ff;
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.25);
+}
 
+.creator-box h3 {
+  text-align: center;
+  font-size: 1.4em;
+  color: #00ccff;
+  margin-bottom: 20px;
+}
+
+.creator-profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.creator-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.creator-text {
+  max-width: 500px;
+}
+
+.creator-box a {
+  color: #7fe8ff;
+  text-decoration: none;
+  border-bottom: 1px dotted #66d9ff;
+  transition: color 0.2s;
+}
+
+.creator-box a:hover {
+  color: #00ffff;
+}
+
+.creator-signature {
+  margin-top: 15px;
+  font-style: italic;
+  color: #a6f2ff;
+  text-align: right;
+}
