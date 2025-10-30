@@ -331,7 +331,7 @@ h1 {
 }
 
 .creator-box {
-  margin-top: 60px;
+  margin-top: 50px;
   padding: 25px;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.05);
@@ -342,7 +342,7 @@ h1 {
 
 .creator-box h3 {
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.3em;
   color: #00ccff;
   margin-bottom: 20px;
 }
@@ -356,17 +356,18 @@ h1 {
 }
 
 .creator-photo-square {
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  border-radius: 8px; /* わずかに角を丸めて柔らかさを残す */
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px; /* 少し丸みを残して柔らかく */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
 }
 
 .creator-text {
-  max-width: 500px;
-  text-align: left;
+  max-width: 480px;
+  font-size: 0.95em;
+  line-height: 1.6em;
 }
 
 .creator-box a {
