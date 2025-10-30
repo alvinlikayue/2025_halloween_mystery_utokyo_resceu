@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌌《宇宙中最溫柔的聲音》第4話 消逝之光之謎</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌌《宇宙中最溫柔的聲音》第4話　消逝之光之謎</h1>
+
+    <div class="story">
+      <p>深夜的群山之中，地下研究設施靜得出奇——<br>彷彿連宇宙的寂靜都被困在此處。</p>
+      <p>監視螢幕上，紅與綠的光交錯、閃耀，然後靜靜地消失。</p>
+    </div>
+
+    <!-- 🌙 場景1 -->
+    <div class="scene-visual" style="background-image:url('images/bg_lab_dark.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">阿笠博士</div>
+          <p><em>嗯？紅光與綠光……重疊之後居然消失了？</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>它們一會兒強、一會兒弱，像波一樣……肯定有某種規律。</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>沒錯——在某種條件下，兩道光線重疊時，會互相抵銷。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 基德的挑戰信 -->
+    <div class="letter">
+      <h2>💌 怪盜基德的挑戰信</h2>
+      <p>當兩道光相遇，真相便改變了形狀。<br>
+         紅色的路徑代表<strong>觀測</strong>，綠色的路徑代表<strong>心</strong>。<br>
+         但當它們重疊時——它們便會<em>消失</em>。</p>
+      <p>找出這「消逝的法則」，下一扇門就會開啟。<br>
+         ――月下的魔術師 🌙</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle4_en.png" alt="紅與綠路徑重疊的謎題" />
+    </div>
+
+    <!-- 🔦 規則 -->
+    <div class="rules-card">
+      <h3>🧭 光線重疊的規則</h3>
+      <ul>
+        <li>🟥 <strong>紅線</strong> = 路徑 A</li>
+        <li>🟩 <strong>綠線</strong> = 路徑 B</li>
+        <li>✨ <strong>重疊法則</strong>：<u>當紅與綠重疊時，重疊的部分會消失。</u></li>
+      </ul>
+      <p>將兩張圖疊在一起，刪除重疊的線後，<br><strong>真正的形狀</strong>就會出現。</p>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_reflection_lab.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="灰原" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">灰原</div>
+          <p><em>所以只要去掉互相抵銷的部分，剩下的就是真相。</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="柯南" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">柯南</div>
+          <p><em>沒錯，這是一道「光的抵銷」謎題。</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✏️ 輸入欄 -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="請輸入答案…" />
+      <button class="btn btn-primary" onclick="checkAnswer4()">送出</button>
+      <button class="btn btn-hint" onclick="showHint4()">提示</button>
+      <button class="btn btn-answer" onclick="showAnswer4()">看答案</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- 🌠 解說 -->
+    <div id="explanation" class="explain" style="display:none;">
+      <div class="puzzle-image">
+        <img src="images/puzzle4_en_answer.png" alt="重疊後形成 INTERFERENCE 的答案圖" />
+      </div>
+
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>當紅與綠的圖層重疊後，把重合部分去除……字母浮現——<strong>INTERFERENCE（干涉）</strong>！</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="灰原" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">灰原</div>
+            <p>干涉——當兩個光波相遇時，會相互增強或抵銷的現象。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="阿笠博士" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">阿笠博士</div>
+            <p>沒錯！這個設施就是利用<strong>雷射干涉</strong>來測量時空最微小的漣漪——重力波！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎓 延伸知識 -->
+    <div id="learn-box" class="learn-box" style="display:none; opacity:0;">
+      <h3>🔍 延伸閱讀：什麼是「光的干涉」？</h3>
+      <p>
+        光同時具有波的性質。當兩道相同頻率的波相遇時，<br>
+        會彼此增強或抵銷，這種現象稱為<strong>干涉（Interference）</strong>。
+      </p>
+      <p>
+        例如：若將雷射分成兩條路徑，反射後再重疊，<br>
+        有些位置會變亮，有些則完全消失。
+      </p>
+      <p>
+        在像 KAGRA 這樣的探測器中，<br>
+        只要路徑長度有極細微的變化，<br>
+        光波的重疊情況就會不同。<br>
+        科學家正是透過這些「光的消失之處」，<br>
+        去觀測宇宙那不可見的漣漪。
+      </p>
+
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://youtu.be/BFKFLbfBogk?si=YjVyHS2CVpSA6nRv"
+                title="什麼是光的干涉？" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- 🌙 結尾 -->
+    <div id="ending" style="display:none;">
+      <p>反射的光在天花板上閃爍，白色斗篷的身影再度浮現。</p>
+      <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盜基德" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盜基德</div>
+            <p>真漂亮啊，小偵探。讓光消失，反而讓真相現形。</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="柯南" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">柯南</div>
+            <p>原來——我們怎麼讓光重疊，就會改變我們所看到的世界。</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="怪盜基德" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">怪盜基德</div>
+            <p>呵……當可見與不可見的真相交會，世界會閃得更亮。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle5_cn.html">▶ 前往第5話：迷宮的終點</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 4 中文版 ====
+    const hints4 = [
+      "💡 提示①：紅＝路徑A，綠＝路徑B。<u>重疊部分會消失</u>。⬛ 黑色方塊是終止點。",
+      "📘 提示②：想像把兩張圖疊在一起，移除重疊的線。剩下的線能連成什麼字？",
+      "🌙 提示③：當部分重疊被去除後，形狀開始出現：<br><br><img src='images/puzzle4_en_hint.png' alt='部分圖' style='max-width:90%;border:1px solid #44aaff;border-radius:8px;margin:10px 0;'><br>完成剩下的部分，讀出留下的字母。"
+    ];
+
+    function showHint4() { showHint(hints4); }
+
+    function checkAnswer4() {
+      const v = document.getElementById("answer").value.trim().toUpperCase();
+      const msg = document.getElementById("message");
+      if (!v) {
+        msg.style.color = "#ccc";
+        msg.textContent = "請輸入你的答案。";
+        return;
+      }
+      if (["INTERFERENCE","干涉"].includes(v)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 正確！兩道光相互抵銷——答案是「INTERFERENCE（干涉）」！";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "還沒對喔，再想想看。試著重新重疊看看。";
+      }
+    }
+
+    function showAnswer4() {
+      kidReveal([
+        "🎩『呵……你學會讓光消失了嗎？』",
+        "💡『當波相遇時，有的消失、有的留下——』",
+        "🌙『答案是 INTERFERENCE（干涉）。下一扇門開啟了。』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
