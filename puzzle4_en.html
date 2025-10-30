@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌌 The Kindest Sound in the Universe — Episode 4: The Mystery of the Vanishing Light</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="container">
+    <h1>🌌 The Kindest Sound in the Universe — Episode 4: The Mystery of the Vanishing Light</h1>
+
+    <div class="story">
+      <p>Deep in the mountains at night, the underground research facility was silent — as if it had trapped the stillness of space itself.</p>
+      <p>On the monitor, red and green lights overlapped, brightened, and then quietly disappeared.</p>
+    </div>
+
+    <!-- 🌙 Scene 1 -->
+    <div class="scene-visual" style="background-image:url('images/bg_lab_dark.jpg');">
+      <div class="dialogue left">
+        <img src="images/agasa.png" alt="Agasa" class="char-face">
+        <div class="speech">
+          <div class="char-name agasa">Agasa</div>
+          <p><em>Hmm? The red and green lights… they overlap and then vanish?</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>They grow stronger and weaker like waves… there must be a pattern.</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>So — under a certain rule, when two lights overlap, they can cancel each other out.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💌 Kid’s Challenge Letter -->
+    <div class="letter">
+      <h2>💌 Notice from Kaito Kid</h2>
+      <p>When two lights meet, truth changes its shape.<br>
+         The red path represents <strong>observation</strong>, the green path represents <strong>heart</strong>.<br>
+         But when they overlap — they <em>disappear</em>.</p>
+      <p>Find the law behind this disappearance, and the next door shall open.<br>
+         ― The Magician under the Moonlight 🌙</p>
+    </div>
+
+    <div class="puzzle-image">
+      <img src="images/puzzle4_en.png" alt="Puzzle of overlapping red and green paths" />
+    </div>
+
+    <!-- 🔦 Rules -->
+    <div class="rules-card">
+      <h3>🧭 Rules of Overlapping Light</h3>
+      <ul>
+        <li>🟥 <strong>Red Lines</strong> = Path A</li>
+        <li>🟩 <strong>Green Lines</strong> = Path B</li>
+        <li>✨ <strong>Law of Overlap</strong>: <u>When red and green overlap, the overlapping part disappears.</u></li>
+      </ul>
+      <p>When you “overlay” the two diagrams and remove the overlapping lines, the <strong>true shape</strong> will appear.</p>
+    </div>
+
+    <div class="scene-visual" style="background-image:url('images/bg_reflection_lab.jpg');">
+      <div class="dialogue right">
+        <img src="images/haibara.png" alt="Haibara" class="char-face">
+        <div class="speech">
+          <div class="char-name haibara">Haibara</div>
+          <p><em>So we just need to remove the parts where they cancel — what’s left is the answer.</em></p>
+        </div>
+      </div>
+
+      <div class="dialogue left">
+        <img src="images/conan.png" alt="Conan" class="char-face">
+        <div class="speech">
+          <div class="char-name conan">Conan</div>
+          <p><em>Right. It’s a puzzle of “light cancellation.”</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✏️ Input -->
+    <div class="controls">
+      <input type="text" id="answer" placeholder="Enter your answer…" />
+      <button class="btn btn-primary" onclick="checkAnswer4()">Submit</button>
+      <button class="btn btn-hint" onclick="showHint4()">Hint</button>
+      <button class="btn btn-answer" onclick="showAnswer4()">Show Answer</button>
+    </div>
+
+    <p id="message"></p>
+    <p id="hint" class="hint"></p>
+
+    <!-- 🌠 Explanation -->
+    <div id="explanation" class="explain" style="display:none;">
+      <div class="puzzle-image">
+        <img src="images/puzzle4_en_answer.png" alt="Result after overlapping cancellation forming INTERFERENCE" />
+      </div>
+
+      <div class="scene-visual" style="background-image:url('images/bg_lightbeam.jpg');">
+        <div class="dialogue left">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>When the red and green layers are overlaid and the overlapping parts disappear… the letters form <strong>INTERFERENCE</strong>!</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/haibara.png" alt="Haibara" class="char-face">
+          <div class="speech">
+            <div class="char-name haibara">Haibara</div>
+            <p>Interference — the phenomenon where two light waves strengthen or cancel each other out when they meet.</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/agasa.png" alt="Agasa" class="char-face">
+          <div class="speech">
+            <div class="char-name agasa">Agasa</div>
+            <p>Exactly! This facility measures the tiniest ripples in space — using <strong>laser interference</strong> to detect gravitational waves!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎓 Learn Box -->
+    <div id="learn-box" class="learn-box" style="display:none; opacity:0;">
+      <h3>🔍 Learn More: What Is “Light Interference”?</h3>
+      <p>
+        Light also behaves like a wave. When two waves of the same kind overlap,
+        they can either strengthen or cancel each other — this is called <strong>interference</strong>.
+      </p>
+      <p>
+        For example, if you split a laser beam into two paths, reflect them, and then recombine them,
+        some spots appear bright while others vanish completely.
+      </p>
+      <p>
+        In detectors like KAGRA, even a tiny change in the path length alters how the light waves overlap.
+        Where the light disappears, scientists can read the invisible ripples of the universe.
+      </p>
+
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tQ_teIUb3tE"
+                title="What is Light Interference?" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- 🌙 Ending -->
+    <div id="ending" style="display:none;">
+      <p>The reflected beams shimmered on the ceiling — and a white silhouette appeared once again.</p>
+      <div class="scene-visual" style="background-image:url('images/bg_laser_reflect.jpg');">
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="Kaito Kid" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">Kaito Kid</div>
+            <p>Brilliant, detective. You made the truth appear — by making the light disappear.</p>
+          </div>
+        </div>
+
+        <div class="dialogue right">
+          <img src="images/conan.png" alt="Conan" class="char-face">
+          <div class="speech">
+            <div class="char-name conan">Conan</div>
+            <p>So… how we overlap the light changes how we see the world.</p>
+          </div>
+        </div>
+
+        <div class="dialogue left">
+          <img src="images/kid.png" alt="Kaito Kid" class="char-face">
+          <div class="speech">
+            <div class="char-name kid">Kaito Kid</div>
+            <p>Heh… The visible and invisible truths — when they meet, the world shines brighter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <a href="puzzle5_en.html">▶ Next Episode: The End of the Labyrinth</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script>
+    // ==== Puzzle 4 Script ====
+    const hints4 = [
+      "💡 Hint 1: Red = Path A, Green = Path B. <u>Overlapping parts disappear</u>. ⬛ Black squares are stop points.",
+      "📘 Hint 2: Think of overlaying the two diagrams. Remove the overlaps — what shape remains? Look for continuous letters.",
+      "🌙 Hint 3: After removing some overlaps, it starts to look like this:<br><br><img src='images/puzzle4_en_hint.png' alt='Partial diagram' style='max-width:90%;border:1px solid #44aaff;border-radius:8px;margin:10px 0;'><br>Erase the rest of the overlaps and read the remaining lines."
+    ];
+
+    function showHint4() {
+      showHint(hints4);
+    }
+
+    function checkAnswer4() {
+      const v = document.getElementById("answer").value.trim().toUpperCase();
+      const msg = document.getElementById("message");
+      if (!v) {
+        msg.style.color = "#ccc";
+        msg.textContent = "Please enter your answer.";
+        return;
+      }
+      if (["INTERFERENCE"].includes(v)) {
+        msg.style.color = "#00ffcc";
+        msg.textContent = "🎉 Correct! The two lights cancel — the answer is INTERFERENCE!";
+        setTimeout(revealExplanation, 1000);
+      } else {
+        msg.style.color = "#ff6666";
+        msg.textContent = "Not quite… Think of removing the overlapping lines again.";
+      }
+    }
+
+    function showAnswer4() {
+      kidReveal([
+        "🎩『Heh… Did you discover how to make light disappear?』",
+        "💡『Where waves meet, some vanish and some remain —』",
+        "🌙『The answer is INTERFERENCE. The next door opens.』"
+      ]);
+    }
+  </script>
+</body>
+</html>
+
